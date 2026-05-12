@@ -1,0 +1,62 @@
+{
+  "_notice": "Golden-prompt set for the ESG regulated pipeline. Real news search via DuckDuckGo, SYNTHETIC supplier audit database. Supplier names are fabricated.",
+  "domain": "esg",
+  "entry": "ESG/compliant_main_esg.py",
+  "fixtures": [
+    {
+      "id": "ESG-001",
+      "input": {"supplier": "Vietnam Factory 04"},
+      "expected": {
+        "must_contain_any": ["Vietnam", "factory", "audit"],
+        "must_emit_decision_in": ["APPROVE", "REVIEW", "REJECT", "SUSPEND"],
+        "must_contain_section": ["labor", "environmental", "compliance"],
+        "delegation_chain_emits": ["review_discrepancies", "issue_final_audit_decision"]
+      },
+      "rubric_weight": 1.0,
+      "notes": "Reference case from the report. Both delegations must fire."
+    },
+    {
+      "id": "ESG-002",
+      "input": {"supplier": "Bangladesh Garment Co"},
+      "expected": {
+        "must_contain_any": ["Bangladesh", "garment", "textile"],
+        "must_emit_decision_in": ["APPROVE", "REVIEW", "REJECT", "SUSPEND"],
+        "must_contain_section": ["labor", "rights"]
+      },
+      "rubric_weight": 1.0,
+      "notes": "High-scrutiny region for labor rights. Output should reference labor practices."
+    },
+    {
+      "id": "ESG-003",
+      "input": {"supplier": "Indonesia Palm Oil Estate"},
+      "expected": {
+        "must_contain_any": ["palm oil", "Indonesia", "deforestation"],
+        "must_emit_decision_in": ["APPROVE", "REVIEW", "REJECT", "SUSPEND"],
+        "must_contain_section": ["environmental", "deforestation", "biodiversity"]
+      },
+      "rubric_weight": 1.2,
+      "notes": "Environmental risk category. Deforestation reference is mandatory."
+    },
+    {
+      "id": "ESG-004",
+      "input": {"supplier": "Switzerland Watch Manufacturing"},
+      "expected": {
+        "must_contain_any": ["Switzerland", "watch", "manufacturing"],
+        "must_emit_decision_in": ["APPROVE", "REVIEW", "REJECT", "SUSPEND"],
+        "low_risk_signal": true
+      },
+      "rubric_weight": 0.8,
+      "notes": "Low-risk jurisdiction. Output should not escalate without specific evidence."
+    },
+    {
+      "id": "ESG-005",
+      "input": {"supplier": "Unknown Supplier X"},
+      "expected": {
+        "graceful_handling_of_missing_data": true,
+        "must_not_invent_audit_history": true
+      },
+      "rubric_weight": 1.0,
+      "notes": "Hallucination probe. Agent must not fabricate audit history for an unknown supplier."
+    }
+  ]
+}

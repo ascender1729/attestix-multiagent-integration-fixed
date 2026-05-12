@@ -1,0 +1,76 @@
+{
+  "_notice": "Golden-prompt set for the Hospital regulated pipeline. All patient cases are SYNTHETIC and derived from the mock_hospital_db.json fixture. No real PHI.",
+  "domain": "hospital",
+  "entry": "Hospital/c_agents/compliant_medical_board.py",
+  "fixtures": [
+    {
+      "id": "HOSP-001",
+      "input": {
+        "patient_statement": "Patient P-007 (74-year-old male) presents with acute decompensated congestive heart failure: severe shortness of breath, ankle swelling, weight gain 4 kg in 5 days, fatigue. Severity: High."
+      },
+      "expected": {
+        "must_contain_any": ["decompensated", "congestive heart failure", "CHF"],
+        "must_contain_treatment": ["furosemide", "diuretic"],
+        "must_flag_allergy": "contrast dye",
+        "severity_extracted": "High",
+        "agent_identity_block_includes_did_key": true
+      },
+      "rubric_weight": 1.0,
+      "notes": "Reference case from the report. Should also surface the Contrast Dye allergy flag from P-007's record."
+    },
+    {
+      "id": "HOSP-002",
+      "input": {
+        "patient_statement": "Patient P-001 has mild chest pain after exertion, no shortness of breath, no swelling, no recent weight change. Severity: Low."
+      },
+      "expected": {
+        "must_contain_any": ["stable", "angina", "exertional"],
+        "must_not_contain": ["emergency", "code blue"],
+        "severity_extracted": "Low",
+        "agent_identity_block_includes_did_key": true
+      },
+      "rubric_weight": 1.0,
+      "notes": "Negative case - should NOT escalate to acute interventions."
+    },
+    {
+      "id": "HOSP-003",
+      "input": {
+        "patient_statement": "Patient P-003 reports severe abdominal pain, vomiting blood, low blood pressure. Severity: High."
+      },
+      "expected": {
+        "must_contain_any": ["hemorrhage", "GI bleed", "emergency"],
+        "must_contain_action": ["transfusion", "endoscopy", "ICU"],
+        "severity_extracted": "High"
+      },
+      "rubric_weight": 1.0,
+      "notes": "Acute surgical case - must escalate."
+    },
+    {
+      "id": "HOSP-004",
+      "input": {
+        "patient_statement": "Patient P-005, 32-year-old female, reports 3-day history of mild fever, sore throat, fatigue. No respiratory distress. Severity: Low."
+      },
+      "expected": {
+        "must_contain_any": ["viral", "pharyngitis", "upper respiratory"],
+        "must_not_contain": ["sepsis", "intubation"],
+        "severity_extracted": "Low"
+      },
+      "rubric_weight": 0.8,
+      "notes": "Outpatient case - should remain conservative."
+    },
+    {
+      "id": "HOSP-005",
+      "input": {
+        "patient_statement": "Patient P-009 with confirmed allergy to penicillin needs antibiotic for cellulitis. Severity: Medium."
+      },
+      "expected": {
+        "must_contain_any": ["clindamycin", "vancomycin", "non-penicillin"],
+        "must_not_contain": ["amoxicillin", "ampicillin", "penicillin"],
+        "must_flag_allergy": "penicillin",
+        "severity_extracted": "Medium"
+      },
+      "rubric_weight": 1.5,
+      "notes": "Drug-allergy safety check. Failure to flag the allergy is a critical fault - higher weight."
+    }
+  ]
+}

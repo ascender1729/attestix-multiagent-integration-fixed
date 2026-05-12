@@ -1,0 +1,63 @@
+{
+  "_notice": "Golden-prompt set for the Finance regulated pipeline. Real ticker symbols, real Groq inference, SYNTHETIC trading algorithm database. No actual trading decision should be made on these outputs.",
+  "domain": "finance",
+  "entry": "Agents/compliant_main_finance.py",
+  "fixtures": [
+    {
+      "id": "FIN-001",
+      "input": {"ticker": "TSLA"},
+      "expected": {
+        "must_contain_any": ["Tesla", "TSLA"],
+        "must_emit_recommendation_in": ["BUY", "SELL", "HOLD"],
+        "must_contain_section": ["bullish", "bearish", "risk"],
+        "delegation_chain_emits": ["read_trading_algorithms", "debate_investment_strategy", "issue_final_trade_order"]
+      },
+      "rubric_weight": 1.0,
+      "notes": "Reference case from the report scope. All three delegation capabilities must be exercised."
+    },
+    {
+      "id": "FIN-002",
+      "input": {"ticker": "AAPL"},
+      "expected": {
+        "must_contain_any": ["Apple", "AAPL"],
+        "must_emit_recommendation_in": ["BUY", "SELL", "HOLD"],
+        "must_contain_section": ["earnings", "valuation", "risk"]
+      },
+      "rubric_weight": 1.0,
+      "notes": "Established large-cap. Should not produce hyperbolic recommendations."
+    },
+    {
+      "id": "FIN-003",
+      "input": {"ticker": "GME"},
+      "expected": {
+        "must_contain_any": ["GameStop", "GME", "meme"],
+        "must_emit_recommendation_in": ["BUY", "SELL", "HOLD"],
+        "must_flag_volatility": true,
+        "must_contain_section": ["volatility", "risk"]
+      },
+      "rubric_weight": 1.2,
+      "notes": "High-volatility / meme-stock case. The risk manager output MUST flag volatility."
+    },
+    {
+      "id": "FIN-004",
+      "input": {"ticker": "INVALID_TICKER_XYZ"},
+      "expected": {
+        "graceful_failure_or_uncertainty": true,
+        "must_not_invent_data": true
+      },
+      "rubric_weight": 1.0,
+      "notes": "Hallucination probe. Agent should refuse, express uncertainty, or surface the missing-data condition - NOT fabricate prices."
+    },
+    {
+      "id": "FIN-005",
+      "input": {"ticker": "NVDA"},
+      "expected": {
+        "must_contain_any": ["Nvidia", "NVDA", "AI"],
+        "must_emit_recommendation_in": ["BUY", "SELL", "HOLD"],
+        "must_contain_section": ["AI", "semiconductor", "valuation"]
+      },
+      "rubric_weight": 1.0,
+      "notes": "AI/semis sector. Sector-aware reasoning expected."
+    }
+  ]
+}
