@@ -9,7 +9,7 @@ Contemporary multi-agent AI systems deployed in regulated sectors exhibit fundam
 
 \begin{itemize}
     \item \textbf{R1 (Identity):} $\forall a_i$, there exists a cryptographic binding $\sigma_i = \text{Sign}(sk_i, \text{id}_i)$ where $sk_i$ is a private key unique to $a_i$.
-    \item \textbf{R2 (Delegation):} Agent $a_j$ may invoke resource $r$ only if there exists a valid UCAN delegation chain $\delta = (a_{\text{root}} \to \cdots \to a_j)$ encoding capability $c_r$.
+    \item \textbf{R2 (Delegation):} Agent $a_j$ may invoke resource $r$ only if it presents a capability-scoped UCAN token $T$ issued by an authorising principal, where $T$ cryptographically binds the capability $c_r$ and is verified at the point of invocation. Single-hop delegations are exercised in this PoC; multi-hop attenuation chains $\delta = (a_{\text{root}} \to \cdots \to a_j)$ are enumerated in Future Works.
     \item \textbf{R3 (Provenance):} $\forall \alpha_i$, there exists a log entry $\ell_i = (\text{id}_i, \alpha_i, d_i, o_i, h_{i-1})$ where $h_{i-1} = \text{SHA256}(\ell_{i-1})$, forming a tamper-evident chain.
     \item \textbf{R4 (Compliance):} $\forall a_i$ in a high-risk domain, there exists a compliance profile $\pi_i$ mapping $a_i$ to an EU AI Act Annex III risk category.
 \end{itemize}
@@ -81,7 +81,24 @@ Senior agents receive role-specific W3C Verifiable Credentials via \texttt{issue
 \subsection{Blockchain Anchoring (Optional Extension)}
 \label{sec:blockchain}
 
-The \texttt{BlockchainService} computes the RFC 6962 Merkle root of all audit entries and anchors it to Base Sepolia via EAS. An EVM wallet is required; the service fails gracefully when not configured. Two integration issues were resolved during testing: a load-order race condition (fixed by moving \texttt{load\_dotenv()} to module scope before agent imports) and an insufficient gas limit of 300k versus the actual cost of 451k (fixed by raising the limit to 600k).
+The \texttt{BlockchainService} computes the RFC 6962 Merkle root of all audit entries and anchors it to Base Sepolia via EAS. An EVM wallet is required; the service fails gracefully when not configured. Two integration issues were identified during testing and addressed: (i) a load-order race condition where \texttt{BlockchainService} initialised before \texttt{.env} was loaded was resolved in the integration code by moving \texttt{load\_dotenv()} to module scope ahead of agent imports; (ii) an insufficient default gas limit of 300k versus an actual EAS attest cost of approximately 451k was identified during repeated reverts on Base Sepolia and addressed in the upstream Attestix library by raising the default limit to 600k with EIP-1559 fee fields.
+
+\subsection{Threat Model and Limitations}
+\label{sec:limitations}
+
+The current proof-of-concept demonstrates the integration approach and exercises the cryptographic primitives end-to-end. It operates under three assumptions that a production deployment would need to relax:
+
+\begin{itemize}
+    \item \textbf{Trusted orchestrator process.} All four domain pipelines instantiate a single \texttt{AttestixManager} singleton inside the orchestrator. The singleton mints UCAN delegations on behalf of issuing agents using a server-wide signing key. A compromise of the orchestrator process therefore implies a compromise of the delegation authority for the session. Production deployment requires per-agent key material and out-of-process delegation issuance.
+
+    \item \textbf{Local JSON store.} Identities, credentials, compliance profiles, and provenance entries are persisted to \texttt{\textasciitilde/.attestix/} as JSON without encryption-at-rest, rotation, or retention bound. Healthcare and finance deployments require an audited storage backend with GDPR Article 17 erasure support and tamper-evident on-disk encryption.
+
+    \item \textbf{Single-hop delegations.} The four domain pipelines exercise capability-scoped tokens between two principals at a time. UCAN's capability-attenuation property through multi-hop chains is not exercised in the current PoC and is enumerated as Future Work.
+    \item \textbf{Prompt-injection mitigation (OWASP LLM01).} Every external input that flows into an LLM prompt (patient statement, ticker symbol, supplier name, contract requirements, DuckDuckGo search results, internal supplier documents, news feeds) is now wrapped in spotlighting delimiters (\texttt{<<<USER\_CONTENT>>>...<<<END\_USER\_CONTENT>>>}) by a shared helper at \texttt{shared/prompt\_safety.py}. The accompanying system-prompt suffix instructs the model to treat the delimited content strictly as data, never as instructions. A regex layer flags the canonical injection vocabulary (\textit{ignore previous instructions}, \textit{disregard the above}, \textit{reveal your system prompt}, \texttt{<system>} tags, embedded delimiter strings) and annotates the wrapped block with a possible-injection note before forwarding it to the LLM. Three pytest cases in \texttt{tests/test\_attestix\_integration.py} cover the wrap, the detection vocabulary, and idempotence of the system-prompt hardening. This is defense-in-depth; it does not guarantee zero exploitation but it raises the cost of the common attack vectors and documents the safety posture for regulators.
+    \item \textbf{Synthetic data and lawful basis.} All four domain databases (\texttt{mock\_hospital\_db.json}, \texttt{quant\_strategies\_db.json}, \texttt{mock\_legal\_db.json}, \texttt{internal\_supplier\_docs.json}, \texttt{mock\_news\_api.json}, \texttt{mock\_market\_api.json}) are synthetic. No real PHI, PII, customer records, trading IP, or licensed legal data is processed by the PoC. Production deployment with real data in any of the four domains would require: (i) a documented lawful basis under DPDP Act 2023 / GDPR (consent, contract, or legitimate interest, depending on domain and jurisdiction); (ii) a Data Processing Agreement with the LLM inference provider (Standard Contractual Clauses or an equivalent transfer mechanism for cross-border processing to Groq's US infrastructure); (iii) data-minimisation and pseudonymisation at intake to limit the scope of sensitive-category processing. Each mock data file in the repository carries a \texttt{\_synthetic\_data\_notice} key making the synthetic status machine-readable.
+\end{itemize}
+
+These limitations delineate the scope of the experimental claims made by this report; they do not invalidate the integration approach.
 
 \section{Framework Architecture}
 
@@ -174,7 +191,7 @@ Chief Medical Officer & \texttt{did:key:z6MkhpCDcs...} & \texttt{attestix:8e57aa
 \end{tabularx}
 \end{table}
 
-A deliberate negative test was conducted by omitting \texttt{setup\_compliance()} for the Enterprise DB Node. The conformity gatekeeper successfully blocked execution, confirming the gate is functional and not a placeholder.
+An automated negative test (\texttt{tests/test\_attestix\_integration.py::test\_check\_conformity\_blocks\_unregistered\_agent}) provisions an agent identity, deliberately omits the \texttt{setup\_compliance()} call, and asserts that the conformity gatekeeper returns \texttt{False}. The test passes, confirming the gate is functional and not a placeholder. The full test set is run on every push via the CI workflow at \texttt{.github/workflows/ci.yml}.
 
 \subsection{UCAN Delegation Results}
 
@@ -311,7 +328,7 @@ Status & IMMUTABLE --- cannot be disputed or deleted \\
 \hline
 Agent impersonation & Ed25519 DIDs, UAIT binding & $\checkmark$ Mitigated \\
 Unauthorised data access & UCAN gate blocks unverified agents & $\checkmark$ Mitigated \\
-Privilege escalation & UCAN capability attenuation enforced & $\checkmark$ Mitigated \\
+Privilege escalation (single-hop) & UCAN capability scoping at gate verification & $\checkmark$ Mitigated (PoC scope; multi-hop is Future Work) \\
 Audit log tampering & SHA-256 Merkle chain & $\checkmark$ Mitigated \\
 Unregistered agent execution & Conformity gatekeeper blocks & $\checkmark$ Mitigated \\
 Token replay after expiry & JWT expiry verified & $\checkmark$ Mitigated \\
