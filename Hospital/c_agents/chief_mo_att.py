@@ -1,5 +1,8 @@
 import os
-from openai import OpenAI
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_openai_client
 from c_agents.attestix_client import attestix_client
 
 # 1. Identity Provisioning
@@ -18,10 +21,7 @@ def run_cmo_ruling(crew_debate_output: str, patient_history: dict, *, delegation
     if not attestix_client.check_conformity(AGENT_ID):
         raise PermissionError("Attestix Conformity Assessment Failed.")
         
-    client = OpenAI(
-        base_url="https://api.groq.com/openai/v1",
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    client = get_openai_client()
     
     system_prompt = """
     You are the Chief Medical Officer of a highly regulated hospital.

@@ -6,9 +6,12 @@ from dotenv import load_dotenv
 # Patch 07 (post-audit 2026-05-12): single repo-root .env, fail-fast on missing key.
 _repo_root = Path(__file__).resolve().parents[2]
 load_dotenv(_repo_root / ".env")
-assert os.environ.get("GROQ_API_KEY"), (
-    "GROQ_API_KEY missing. Copy .env.example to .env at the repo root and fill in your key."
-)
+# LLM provider: groq (default) or bedrock. groq needs GROQ_API_KEY; bedrock uses AWS creds.
+if os.environ.get("LLM_PROVIDER", "groq").lower() != "bedrock":
+    assert os.environ.get("GROQ_API_KEY"), (
+        "GROQ_API_KEY missing. Copy .env.example to .env at the repo root and fill in your key, "
+        "or set LLM_PROVIDER=bedrock to route via AWS Bedrock."
+    )
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from c_agents.intake_agent_att import run_intake, AGENT_ID as INTAKE_ID

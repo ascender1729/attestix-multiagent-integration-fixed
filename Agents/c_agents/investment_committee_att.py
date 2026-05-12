@@ -16,9 +16,19 @@ def run_investment_committee(market_report: str, quant_strategy: str, agent_id: 
     if not attestix_client.check_conformity(agent_id):
         raise PermissionError("Attestix Gatekeeper blocked execution. Node failed conformity assessment.")
 
-    os.environ["OPENAI_API_BASE"] = "https://api.groq.com/openai/v1"
-    os.environ["OPENAI_MODEL_NAME"] = "llama-3.3-70b-versatile"
-    os.environ["OPENAI_API_KEY"] = os.environ.get("GROQ_API_KEY", "dummy")
+    import sys as _sys
+
+
+    from pathlib import Path as _Path
+
+
+    _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+
+
+    from llm_factory import configure_crewai_env
+
+
+    configure_crewai_env()
 
     aggressive_quant = Agent(
         role="Aggressive Quantitative Trader",

@@ -1,7 +1,10 @@
 import os
 import json
 from pathlib import Path
-from langchain_groq import ChatGroq
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_langchain_llm
 from langchain_core.messages import SystemMessage, HumanMessage
 from c_agents.attestix_client import attestix_client
 
@@ -30,11 +33,7 @@ def observe_supply_chain(target_supplier: str, agent_id: str) -> str:
     except Exception as e:
         relevant_news = [str(e)]
         
-    llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
-        temperature=0.2,
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    llm = get_langchain_llm(temperature=0.2)
     
     sys_msg = SystemMessage(content="You are a Corporate Intelligence Observer. Your job is to compare a company's internal supplier commitments against real-time global news. Generate a 'Discrepancy Report' highlighting any severe ESG (Environmental, Social, Governance) violations.")
     

@@ -1,5 +1,8 @@
 import os
-from langchain_groq import ChatGroq
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_langchain_llm
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
@@ -21,11 +24,7 @@ def run_intake(raw_text: str) -> dict:
     if not attestix_client.check_conformity(AGENT_ID):
         raise PermissionError("Attestix Conformity Assessment Failed.")
     
-    llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
-        temperature=0,
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    llm = get_langchain_llm(temperature=0)
     
     parser = JsonOutputParser(pydantic_object=PatientIntake)
     prompt = PromptTemplate(

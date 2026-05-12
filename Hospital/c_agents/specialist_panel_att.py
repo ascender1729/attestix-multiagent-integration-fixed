@@ -19,9 +19,19 @@ def run_specialist_panel(symptoms: list, severity: str, patient_history: dict, *
     if not attestix_client.check_conformity(AGENT_ID):
         raise PermissionError("Attestix Conformity Assessment Failed.")
         
-    os.environ["OPENAI_API_BASE"] = "https://api.groq.com/openai/v1"
-    os.environ["OPENAI_MODEL_NAME"] = "llama-3.3-70b-versatile"
-    os.environ["OPENAI_API_KEY"] = os.environ.get("GROQ_API_KEY", "dummy")
+    import sys as _sys
+
+        
+    from pathlib import Path as _Path
+
+        
+    _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+
+        
+    from llm_factory import configure_crewai_env
+
+        
+    configure_crewai_env()
 
     gp_agent = Agent(
         role="General Practitioner",

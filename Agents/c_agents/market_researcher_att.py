@@ -1,5 +1,8 @@
 import os
-from langchain_groq import ChatGroq
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_langchain_llm
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_community.tools import DuckDuckGoSearchRun
 from c_agents.attestix_client import attestix_client
@@ -21,11 +24,7 @@ def run_market_research(ticker: str, agent_id: str) -> str:
         search_results = f"Search failed: {str(e)}"
         print(" [LangChain] Web search failed, falling back.")
         
-    llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
-        temperature=0.2,
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    llm = get_langchain_llm(temperature=0.2)
     
     sys_msg = SystemMessage(content="You are a High-Frequency Trading Market Researcher. Summarize the raw web search results provided into a dense, highly analytical 'Market Sentiment Report'. You MUST explicitly declare the overall sentiment as BULLISH, BEARISH, or NEUTRAL at the very top of your report.")
     

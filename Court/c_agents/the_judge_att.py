@@ -1,5 +1,8 @@
 import os
-from openai import OpenAI
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_openai_client
 from c_agents.attestix_client import attestix_client
 
 def run_judge_ruling(draft: str, debate_report: str, precedents: str, agent_id: str, *, delegation_token: str) -> str:
@@ -16,10 +19,7 @@ def run_judge_ruling(draft: str, debate_report: str, precedents: str, agent_id: 
     if not attestix_client.check_conformity(agent_id):
         raise PermissionError("Attestix Gatekeeper blocked execution. Node failed conformity assessment.")
     
-    client = OpenAI(
-        base_url="https://api.groq.com/openai/v1",
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    client = get_openai_client()
     
     system_prompt = """
     You are an impartial Supreme Court Justice and expert in Corporate Law.

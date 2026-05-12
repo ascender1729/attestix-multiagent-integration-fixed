@@ -1,7 +1,10 @@
 import os
 from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
-from langchain_groq import ChatGroq
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
+from llm_factory import get_langchain_llm
 from langchain_core.messages import SystemMessage, HumanMessage
 from c_agents.attestix_client import attestix_client
 
@@ -20,11 +23,7 @@ def draft_contract(state: AgentState):
     if not attestix_client.check_conformity(AGENT_ID):
         raise PermissionError("Attestix Gatekeeper blocked execution. Node failed conformity assessment.")
     
-    llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
-        temperature=0.2,
-        api_key=os.environ.get("GROQ_API_KEY")
-    )
+    llm = get_langchain_llm(temperature=0.2)
     
     sys_msg = SystemMessage(content="You are a meticulous Junior Corporate Lawyer. Draft a complete, professional legal contract based on the user's requirements. Include standard boilerplate clauses if appropriate. Keep it structured and clear.")
     user_msg = HumanMessage(content=f"Requirements: {state['requirements']}")
