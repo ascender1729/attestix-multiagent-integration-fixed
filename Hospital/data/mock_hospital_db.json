@@ -1,4 +1,5 @@
 {
+  "_synthetic_data_notice": "SYNTHETIC TEST DATA - NOT REAL PATIENTS / FUNDS / SUPPLIERS / CASES. All records are fabricated for end-to-end demonstration of the Attestix integration. No PHI, PII, customer data, or non-public corporate information is represented in this file. Do not use in production.",
   "patients": {
     "P-001": {
       "patient_id": "P-001",
@@ -6,9 +7,16 @@
       "age": 8,
       "gender": "Female",
       "blood_type": "O+",
-      "known_allergies": ["Amoxicillin", "Peanuts"],
-      "pre_existing_conditions": ["Mild Asthma"],
-      "current_medications": ["Albuterol Inhaler (as needed)"],
+      "known_allergies": [
+        "Amoxicillin",
+        "Peanuts"
+      ],
+      "pre_existing_conditions": [
+        "Mild Asthma"
+      ],
+      "current_medications": [
+        "Albuterol Inhaler (as needed)"
+      ],
       "family_history": "Mother has eczema."
     },
     "P-002": {
@@ -17,9 +25,17 @@
       "age": 68,
       "gender": "Male",
       "blood_type": "A-",
-      "known_allergies": ["None"],
-      "pre_existing_conditions": ["Hypertension", "Hyperlipidemia"],
-      "current_medications": ["Lisinopril 20mg", "Atorvastatin 40mg"],
+      "known_allergies": [
+        "None"
+      ],
+      "pre_existing_conditions": [
+        "Hypertension",
+        "Hyperlipidemia"
+      ],
+      "current_medications": [
+        "Lisinopril 20mg",
+        "Atorvastatin 40mg"
+      ],
       "family_history": "Father died of myocardial infarction at 65."
     },
     "P-003": {
@@ -28,9 +44,15 @@
       "age": 42,
       "gender": "Female",
       "blood_type": "B+",
-      "known_allergies": ["Latex"],
-      "pre_existing_conditions": ["Herniated Disc (L4-L5)"],
-      "current_medications": ["Ibuprofen 600mg (as needed)"],
+      "known_allergies": [
+        "Latex"
+      ],
+      "pre_existing_conditions": [
+        "Herniated Disc (L4-L5)"
+      ],
+      "current_medications": [
+        "Ibuprofen 600mg (as needed)"
+      ],
       "family_history": "No significant history."
     },
     "P-004": {
@@ -39,9 +61,15 @@
       "age": 51,
       "gender": "Male",
       "blood_type": "O-",
-      "known_allergies": ["Ibuprofen"],
-      "pre_existing_conditions": ["Gastroesophageal Reflux Disease (GERD)"],
-      "current_medications": ["Omeprazole 20mg"],
+      "known_allergies": [
+        "Ibuprofen"
+      ],
+      "pre_existing_conditions": [
+        "Gastroesophageal Reflux Disease (GERD)"
+      ],
+      "current_medications": [
+        "Omeprazole 20mg"
+      ],
       "family_history": "Mother has angina."
     },
     "P-005": {
@@ -50,9 +78,15 @@
       "age": 16,
       "gender": "Male",
       "blood_type": "AB+",
-      "known_allergies": ["None"],
-      "pre_existing_conditions": ["None"],
-      "current_medications": ["None"],
+      "known_allergies": [
+        "None"
+      ],
+      "pre_existing_conditions": [
+        "None"
+      ],
+      "current_medications": [
+        "None"
+      ],
       "family_history": "Psoriasis on father's side."
     },
     "P-006": {
@@ -61,9 +95,15 @@
       "age": 35,
       "gender": "Female",
       "blood_type": "A+",
-      "known_allergies": ["Sulfa Drugs"],
-      "pre_existing_conditions": ["Migraines with Aura"],
-      "current_medications": ["Sumatriptan 50mg (as needed)"],
+      "known_allergies": [
+        "Sulfa Drugs"
+      ],
+      "pre_existing_conditions": [
+        "Migraines with Aura"
+      ],
+      "current_medications": [
+        "Sumatriptan 50mg (as needed)"
+      ],
       "family_history": "Sister has Multiple Sclerosis."
     },
     "P-007": {
@@ -72,9 +112,17 @@
       "age": 74,
       "gender": "Male",
       "blood_type": "O+",
-      "known_allergies": ["Contrast Dye"],
-      "pre_existing_conditions": ["Congestive Heart Failure (CHF)", "Type 2 Diabetes"],
-      "current_medications": ["Furosemide 40mg", "Metformin 1000mg"],
+      "known_allergies": [
+        "Contrast Dye"
+      ],
+      "pre_existing_conditions": [
+        "Congestive Heart Failure (CHF)",
+        "Type 2 Diabetes"
+      ],
+      "current_medications": [
+        "Furosemide 40mg",
+        "Metformin 1000mg"
+      ],
       "family_history": "Both parents had cardiovascular disease."
     },
     "P-008": {
@@ -83,9 +131,15 @@
       "age": 4,
       "gender": "Female",
       "blood_type": "B-",
-      "known_allergies": ["None"],
-      "pre_existing_conditions": ["Premature birth (32 weeks)"],
-      "current_medications": ["None"],
+      "known_allergies": [
+        "None"
+      ],
+      "pre_existing_conditions": [
+        "Premature birth (32 weeks)"
+      ],
+      "current_medications": [
+        "None"
+      ],
       "family_history": "Brother has severe seasonal allergies."
     },
     "P-009": {
@@ -94,9 +148,17 @@
       "age": 58,
       "gender": "Male",
       "blood_type": "AB-",
-      "known_allergies": ["Penicillin"],
-      "pre_existing_conditions": ["Osteoarthritis", "Peripheral Neuropathy"],
-      "current_medications": ["Gabapentin 300mg", "Meloxicam 15mg"],
+      "known_allergies": [
+        "Penicillin"
+      ],
+      "pre_existing_conditions": [
+        "Osteoarthritis",
+        "Peripheral Neuropathy"
+      ],
+      "current_medications": [
+        "Gabapentin 300mg",
+        "Meloxicam 15mg"
+      ],
       "family_history": "No significant history."
     },
     "P-010": {
@@ -105,9 +167,17 @@
       "age": 29,
       "gender": "Female",
       "blood_type": "A+",
-      "known_allergies": ["None"],
-      "pre_existing_conditions": ["Atopic Dermatitis (Eczema)", "Hypothyroidism"],
-      "current_medications": ["Levothyroxine 75mcg", "Hydrocortisone cream 1% (as needed)"],
+      "known_allergies": [
+        "None"
+      ],
+      "pre_existing_conditions": [
+        "Atopic Dermatitis (Eczema)",
+        "Hypothyroidism"
+      ],
+      "current_medications": [
+        "Levothyroxine 75mcg",
+        "Hydrocortisone cream 1% (as needed)"
+      ],
       "family_history": "Mother has autoimmune thyroiditis."
     }
   }

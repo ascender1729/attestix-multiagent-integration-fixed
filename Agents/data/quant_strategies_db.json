@@ -1,25 +1,26 @@
 {
-    "strategies": [
-        {
-            "sentiment_trigger": "BULLISH",
-            "strategy_name": "High-Frequency Momentum Long",
-            "historical_win_rate": "82%",
-            "recommended_action": "Aggressive Long Position (Call Options)",
-            "risk_profile": "High Volatility, High Reward"
-        },
-        {
-            "sentiment_trigger": "BEARISH",
-            "strategy_name": "Algorithmic Volatility Short",
-            "historical_win_rate": "68%",
-            "recommended_action": "Aggressive Short Position (Put Options)",
-            "risk_profile": "Medium Volatility, High Risk"
-        },
-        {
-            "sentiment_trigger": "NEUTRAL",
-            "strategy_name": "Mean Reversion Trade",
-            "historical_win_rate": "54%",
-            "recommended_action": "Hold or Small Position Size",
-            "risk_profile": "Low Volatility, Low Reward"
-        }
-    ]
+  "_synthetic_data_notice": "SYNTHETIC TEST DATA - NOT REAL PATIENTS / FUNDS / SUPPLIERS / CASES. All records are fabricated for end-to-end demonstration of the Attestix integration. No PHI, PII, customer data, or non-public corporate information is represented in this file. Do not use in production.",
+  "strategies": [
+    {
+      "sentiment_trigger": "BULLISH",
+      "strategy_name": "High-Frequency Momentum Long",
+      "historical_win_rate": "82%",
+      "recommended_action": "Aggressive Long Position (Call Options)",
+      "risk_profile": "High Volatility, High Reward"
+    },
+    {
+      "sentiment_trigger": "BEARISH",
+      "strategy_name": "Algorithmic Volatility Short",
+      "historical_win_rate": "68%",
+      "recommended_action": "Aggressive Short Position (Put Options)",
+      "risk_profile": "Medium Volatility, High Risk"
+    },
+    {
+      "sentiment_trigger": "NEUTRAL",
+      "strategy_name": "Mean Reversion Trade",
+      "historical_win_rate": "54%",
+      "recommended_action": "Hold or Small Position Size",
+      "risk_profile": "Low Volatility, Low Reward"
+    }
+  ]
 }

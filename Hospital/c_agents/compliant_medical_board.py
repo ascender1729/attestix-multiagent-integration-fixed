@@ -9,7 +9,7 @@ load_dotenv(_repo_root / ".env")
 assert os.environ.get("GROQ_API_KEY"), (
     "GROQ_API_KEY missing. Copy .env.example to .env at the repo root and fill in your key."
 )
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from c_agents.intake_agent_att import run_intake, AGENT_ID as INTAKE_ID
 from c_agents.db_connector_att import get_patient_history, AGENT_ID as DB_ID

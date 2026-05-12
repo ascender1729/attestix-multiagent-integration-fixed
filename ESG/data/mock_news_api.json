@@ -1,25 +1,26 @@
 {
-    "news_reports": [
-        {
-            "date": "2026-05-08T08:00:00Z",
-            "source": "Global Labor Watchdog",
-            "headline": "Massive Protests at Vietnam Factory 04",
-            "content": "Over 2,000 workers walked out of Vietnam Factory 04 today protesting unpaid overtime, 70-hour work weeks, and illegal withholding of passports.",
-            "severity": "CRITICAL"
-        },
-        {
-            "date": "2026-05-07T14:30:00Z",
-            "source": "Eco Tracker News",
-            "headline": "Chemical Spill Linked to Vietnam Factory 04",
-            "content": "Local environmental agencies report that toxic dye runoff from Vietnam Factory 04 has severely contaminated the local river, causing a massive fish die-off. Factory management denies involvement.",
-            "severity": "HIGH"
-        },
-        {
-            "date": "2026-05-01T09:15:00Z",
-            "source": "Tech Supply Daily",
-            "headline": "Taiwan Semiconductor Output Increases",
-            "content": "Production of new AI chips is up 15% this quarter, easing global supply chain bottlenecks.",
-            "severity": "LOW"
-        }
-    ]
+  "_synthetic_data_notice": "SYNTHETIC TEST DATA - NOT REAL PATIENTS / FUNDS / SUPPLIERS / CASES. All records are fabricated for end-to-end demonstration of the Attestix integration. No PHI, PII, customer data, or non-public corporate information is represented in this file. Do not use in production.",
+  "news_reports": [
+    {
+      "date": "2026-05-08T08:00:00Z",
+      "source": "Global Labor Watchdog",
+      "headline": "Massive Protests at Vietnam Factory 04",
+      "content": "Over 2,000 workers walked out of Vietnam Factory 04 today protesting unpaid overtime, 70-hour work weeks, and illegal withholding of passports.",
+      "severity": "CRITICAL"
+    },
+    {
+      "date": "2026-05-07T14:30:00Z",
+      "source": "Eco Tracker News",
+      "headline": "Chemical Spill Linked to Vietnam Factory 04",
+      "content": "Local environmental agencies report that toxic dye runoff from Vietnam Factory 04 has severely contaminated the local river, causing a massive fish die-off. Factory management denies involvement.",
+      "severity": "HIGH"
+    },
+    {
+      "date": "2026-05-01T09:15:00Z",
+      "source": "Tech Supply Daily",
+      "headline": "Taiwan Semiconductor Output Increases",
+      "content": "Production of new AI chips is up 15% this quarter, easing global supply chain bottlenecks.",
+      "severity": "LOW"
+    }
+  ]
 }

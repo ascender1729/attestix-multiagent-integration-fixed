@@ -1,20 +1,21 @@
 {
-    "market_data": [
-        {
-            "date": "2026-05-09T08:00:00Z",
-            "ticker": "TSLA",
-            "headline": "Tesla SEC Form 8-K: Surprise Gigafactory Announcement",
-            "content": "Tesla has officially filed an 8-K with the SEC announcing the immediate construction of three new automated Gigafactories in Southeast Asia, projected to double global output.",
-            "sentiment": "EXTREMELY BULLISH",
-            "source": "SEC EDGAR Database"
-        },
-        {
-            "date": "2026-05-09T08:30:00Z",
-            "ticker": "AAPL",
-            "headline": "Apple Supply Chain Bottleneck",
-            "content": "A sudden shortage of rare earth metals has delayed the production of the new iPhone by 3 months.",
-            "sentiment": "BEARISH",
-            "source": "Bloomberg"
-        }
-    ]
+  "_synthetic_data_notice": "SYNTHETIC TEST DATA - NOT REAL PATIENTS / FUNDS / SUPPLIERS / CASES. All records are fabricated for end-to-end demonstration of the Attestix integration. No PHI, PII, customer data, or non-public corporate information is represented in this file. Do not use in production.",
+  "market_data": [
+    {
+      "date": "2026-05-09T08:00:00Z",
+      "ticker": "TSLA",
+      "headline": "Tesla SEC Form 8-K: Surprise Gigafactory Announcement",
+      "content": "Tesla has officially filed an 8-K with the SEC announcing the immediate construction of three new automated Gigafactories in Southeast Asia, projected to double global output.",
+      "sentiment": "EXTREMELY BULLISH",
+      "source": "SEC EDGAR Database"
+    },
+    {
+      "date": "2026-05-09T08:30:00Z",
+      "ticker": "AAPL",
+      "headline": "Apple Supply Chain Bottleneck",
+      "content": "A sudden shortage of rare earth metals has delayed the production of the new iPhone by 3 months.",
+      "sentiment": "BEARISH",
+      "source": "Bloomberg"
+    }
+  ]
 }
