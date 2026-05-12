@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest ruff
+
+      - name: lint
+        run: |
+          ruff check shared/ Hospital/c_agents/ Agents/c_agents/ ESG/c_agents/ Court/c_agents/
+
+      - name: import smoke
+        env:
+          GROQ_API_KEY: "ci-fake-key-no-network"
+        run: |
+          python -c "from shared.attestix_client import make_attestix_client; print('shared OK')"
+          python -c "import sys; sys.path.insert(0, 'shared'); from attestix_client import make_attestix_client; c = make_attestix_client('CI','x','C','Annex III','D'); print('factory OK')"
+
+      - name: unit tests
+        env:
+          GROQ_API_KEY: "ci-fake-key-no-network"
+        run: |
+          pytest tests/ -v --maxfail=1

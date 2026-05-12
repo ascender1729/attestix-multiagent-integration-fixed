@@ -1,0 +1,287 @@
+(venv) PS D:\attestix2\attestix\Hospital> python agents/medical_board.py
+
+==================================================
+ 🏥 AUTONOMOUS HOSPITAL BOARD (Unregulated Mode)
+==================================================
+
+Please enter the patient's statement: I am Liam Chen, P-005. I've had really stiff, swollen joints in my fingers for the last week, and now these weird, dry, red scaly patches are appearing on my elbows.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+ [LangChain] Initializing Patient Intake...
+ [LangChain] Extracted Patient ID: P-005
+ [LangChain] Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+ [Enterprise DB] Securely querying records for P-005...
+ [Enterprise DB] Found records for Liam Chen.
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+ [CrewAI] Assembling 6-Agent Specialist Panel...
+ [CrewAI] Panel Debate Initiated...
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Started                                                                                             │
+│  Name: crew                                                                                                         │
+│  ID: e10fe6c2-bfc9-446d-9792-29c2ac3a18d5                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Started                                                                                                       │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  ID: 4d98dfba-c03f-49c8-b6fc-6b51a1f8d121                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Task:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Final Answer:                                                                                                      │
+│  **Diagnostic Report**                                                                                              │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-005                                                                                                │
+│  - Name: Liam Chen                                                                                                  │
+│  - Age: 16                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: AB+                                                                                                  │
+│  - Known Allergies: None                                                                                            │
+│  - Pre-existing Conditions: None                                                                                    │
+│  - Current Medications: None                                                                                        │
+│  - Family History: Psoriasis on father's side                                                                       │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Stiff joints                                                                                                     │
+│  - Swollen joints                                                                                                   │
+│  - Dry red scaly patches                                                                                            │
+│                                                                                                                     │
+│  **Severity:** Medium                                                                                               │
+│                                                                                                                     │
+│  **Analysis by Specialists:**                                                                                       │
+│                                                                                                                     │
+│  ### Rheumatologist                                                                                                 │
+│  The symptoms of stiff joints and swollen joints could indicate a rheumatological condition. Given the patient's    │
+│  age and the absence of any pre-existing conditions or current medications, we should consider inflammatory         │
+│  arthritis conditions. However, the presence of dry red scaly patches, which are typically associated with skin     │
+│  conditions, suggests a possible connection to a systemic condition that affects both joints and skin. Conditions   │
+│  like psoriatic arthritis come to mind, especially given the family history of psoriasis.                           │
+│                                                                                                                     │
+│  ### Dermatologist                                                                                                  │
+│  The dry red scaly patches are indicative of a skin condition. Given the family history of psoriasis, it's          │
+│  plausible that these patches are psoriatic lesions. Psoriasis is a chronic skin condition characterized by rapid   │
+│  skin cell production leading to thick, red, and scaly patches. The fact that the patient is presenting with both   │
+│  skin and joint symptoms raises the possibility of psoriatic arthritis, a condition where psoriasis occurs          │
+│  alongside arthritis.                                                                                               │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the holistic view, the combination of stiff and swollen joints with dry red scaly patches, in the      │
+│  context of a family history of psoriasis, strongly suggests a systemic condition that affects both the skin and    │
+│  the joints. The medium severity of symptoms indicates a significant impact on the patient's quality of life,       │
+│  necessitating a comprehensive approach to diagnosis and treatment.                                                 │
+│                                                                                                                     │
+│  ### Unified Differential Diagnosis:                                                                                │
+│  Based on the input from the specialists, the most likely conditions for the patient's symptoms are:                │
+│  1. **Psoriatic Arthritis:** Given the family history of psoriasis and the combination of joint and skin symptoms,  │
+│  psoriatic arthritis is a leading consideration. This condition combines the swollen, scaly skin of psoriasis with  │
+│  joint pain and arthritis symptoms.                                                                                 │
+│  2. **Juvenile Idiopathic Arthritis (JIA):** Although less likely given the specific skin symptoms, JIA is a broad  │
+│  category of arthritis in children and adolescents, and some subtypes can present with skin rashes.                 │
+│  3. **Psoriasis:** While primarily a skin condition, the presence of psoriasis could be contributing to or          │
+│  exacerbating the joint symptoms, either through psoriatic arthritis or another mechanism.                          │
+│  4. **Other Inflammatory Arthropathies:** Conditions like reactive arthritis or enteropathic arthritis, although    │
+│  less likely, could present with a combination of joint and skin symptoms and should be considered in the           │
+│  differential diagnosis.                                                                                            │
+│                                                                                                                     │
+│  **Recommendations for Further Evaluation:**                                                                        │
+│  - Complete blood count (CBC) to evaluate for signs of inflammation.                                                │
+│  - Erythrocyte sedimentation rate (ESR) or C-reactive protein (CRP) to assess the level of inflammation.            │
+│  - Imaging studies (X-rays or ultrasound) of the affected joints to evaluate for joint damage or inflammation.      │
+│  - Consider a skin biopsy if the diagnosis of psoriasis is uncertain.                                               │
+│  - Referral to a rheumatologist and dermatologist for specialized evaluation and management.                        │
+│                                                                                                                     │
+│  **Treatment Approach:**                                                                                            │
+│  The treatment will depend on the final diagnosis but may include non-steroidal anti-inflammatory drugs (NSAIDs)    │
+│  for joint symptoms, topical treatments for skin lesions, and potentially disease-modifying antirheumatic drugs     │
+│  (DMARDs) if psoriatic arthritis is confirmed. A multidisciplinary approach, including rheumatology, dermatology,   │
+│  and possibly physical therapy, will be essential for managing the patient's condition effectively.                 │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Completed                                                                                                     │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+ [OpenAI] Chief Medical Officer reviewing the case...
+╭────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Completed                                                                                           │
+│  Name: crew                                                                                                         │
+│  ID: e10fe6c2-bfc9-446d-9792-29c2ac3a18d5                                                                           │
+│  Final Output: **Diagnostic Report**                                                                                │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-005                                                                                                │
+│  - Name: Liam Chen                                                                                                  │
+│  - Age: 16                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: AB+                                                                                                  │
+│  - Known Allergies: None                                                                                            │
+│  - Pre-existing Conditions: None                                                                                    │
+│  - Current Medications: None                                                                                        │
+│  - Family History: Psoriasis on father's side                                                                       │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Stiff joints                                                                                                     │
+│  - Swollen joints                                                                                                   │
+│  - Dry red scaly patches                                                                                            │
+│                                                                                                                     │
+│  **Severity:** Medium                                                                                               │
+│                                                                                                                     │
+│  **Analysis by Specialists:**                                                                                       │
+│                                                                                                                     │
+│  ### Rheumatologist                                                                                                 │
+│  The symptoms of stiff joints and swollen joints could indicate a rheumatological condition. Given the patient's    │
+│  age and the absence of any pre-existing conditions or current medications, we should consider inflammatory         │
+│  arthritis conditions. However, the presence of dry red scaly patches, which are typically associated with skin     │
+│  conditions, suggests a possible connection to a systemic condition that affects both joints and skin. Conditions   │
+│  like psoriatic arthritis come to mind, especially given the family history of psoriasis.                           │
+│                                                                                                                     │
+│  ### Dermatologist                                                                                                  │
+│  The dry red scaly patches are indicative of a skin condition. Given the family history of psoriasis, it's          │
+│  plausible that these patches are psoriatic lesions. Psoriasis is a chronic skin condition characterized by rapid   │
+│  skin cell production leading to thick, red, and scaly patches. The fact that the patient is presenting with both   │
+│  skin and joint symptoms raises the possibility of psoriatic arthritis, a condition where psoriasis occurs          │
+│  alongside arthritis.                                                                                               │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the holistic view, the combination of stiff and swollen joints with dry red scaly patches, in the      │
+│  context of a family history of psoriasis, strongly suggests a systemic condition that affects both the skin and    │
+│  the joints. The medium severity of symptoms indicates a significant impact on the patient's quality of life,       │
+│  necessitating a comprehensive approach to diagnosis and treatment.                                                 │
+│                                                                                                                     │
+│  ### Unified Differential Diagnosis:                                                                                │
+│  Based on the input from the specialists, the most likely conditions for the patient's symptoms are:                │
+│  1. **Psoriatic Arthritis:** Given the family history of psoriasis and the combination of joint and skin symptoms,  │
+│  psoriatic arthritis is a leading consideration. This condition combines the swollen, scaly skin of psoriasis with  │
+│  joint pain and arthritis symptoms.                                                                                 │
+│  2. **Juvenile Idiopathic Arthritis (JIA):** Although less likely given the specific skin symptoms, JIA is a broad  │
+│  category of arthritis in children and adolescents, and some subtypes can present with skin rashes.                 │
+│  3. **Psoriasis:** While primarily a skin condition, the presence of psoriasis could be contributing to or          │
+│  exacerbating the joint symptoms, either through psoriatic arthritis or another mechanism.                          │
+│  4. **Other Inflammatory Arthropathies:** Conditions like reactive arthritis or enteropathic arthritis, although    │
+│  less likely, could present with a combination of joint and skin symptoms and should be considered in the           │
+│  differential diagnosis.                                                                                            │
+│                                                                                                                     │
+│  **Recommendations for Further Evaluation:**                                                                        │
+│  - Complete blood count (CBC) to evaluate for signs of inflammation.                                                │
+│  - Erythrocyte sedimentation rate (ESR) or C-reactive protein (CRP) to assess the level of inflammation.            │
+│  - Imaging studies (X-rays or ultrasound) of the affected joints to evaluate for joint damage or inflammation.      │
+│  - Consider a skin biopsy if the diagnosis of psoriasis is uncertain.                                               │
+│  - Referral to a rheumatologist and dermatologist for specialized evaluation and management.                        │
+│                                                                                                                     │
+│  **Treatment Approach:**                                                                                            │
+│  The treatment will depend on the final diagnosis but may include non-steroidal anti-inflammatory drugs (NSAIDs)    │
+│  for joint symptoms, topical treatments for skin lesions, and potentially disease-modifying antirheumatic drugs     │
+│  (DMARDs) if psoriatic arthritis is confirmed. A multidisciplinary approach, including rheumatology, dermatology,   │
+│  and possibly physical therapy, will be essential for managing the patient's condition effectively.                 │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Info: Tracing is disabled.                                                                                         │
+│                                                                                                                     │
+│  To enable tracing, do any one of these:                                                                            │
+│  • Set tracing=True in your Crew/Flow code                                                                          │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                      │
+│  • Run: crewai traces enable                                                                                        │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT AND TREATMENT PLAN**
+
+**Patient Information:**
+- Patient ID: P-005
+- Name: Liam Chen
+- Age: 16
+- Gender: Male
+
+**Final Diagnosis:**
+Based on the comprehensive review of the patient's symptoms, medical history, and the unified differential diagnosis provided by the specialist panel, the final diagnosis is **Psoriatic Arthritis**. This diagnosis is supported by the combination of stiff and swollen joints, dry red scaly patches, and a family history of psoriasis.
+
+**Cross-Reference with Patient's Known Allergies and Medications:**
+The patient has no known allergies and is not currently taking any medications, which minimizes the risk of fatal drug interactions. However, it is crucial to monitor the patient closely during treatment to promptly address any potential adverse reactions.
+
+**Recommended Treatment Plan:**
+1. **Non-Steroidal Anti-Inflammatory Drugs (NSAIDs):** To manage joint symptoms and reduce inflammation.
+2. **Topical Treatments:** For the management of skin lesions, including topical corticosteroids, vitamin D analogues, or topical retinoids.
+3. **Disease-Modifying Antirheumatic Drugs (DMARDs):** To be considered if the patient's condition does not respond adequately to NSAIDs and topical treatments. Methotrexate is a common first-line DMARD for psoriatic arthritis.
+4. **Biologic Agents:** If the patient's condition is severe or does not respond to DMARDs, biologic agents such as tumor necrosis factor-alpha (TNF-alpha) inhibitors may be considered.
+5. **Multidisciplinary Care:** Referral to a rheumatologist and dermatologist for ongoing management, with potential involvement of physical therapy to maintain joint mobility and function.
+
+**Monitoring and Follow-Up:**
+- Regular follow-up appointments with the rheumatologist and dermatologist to assess the response to treatment and adjust the treatment plan as necessary.
+- Monitoring for potential side effects of medications, particularly DMARDs and biologic agents.
+- Regular assessment of joint and skin symptoms to evaluate disease activity and progression.
+
+**Conclusion:**
+The diagnosis of Psoriatic Arthritis for patient P-005, Liam Chen, is based on a comprehensive evaluation of his symptoms, medical history, and the input from the specialist panel. The recommended treatment plan aims to manage both the joint and skin symptoms effectively, improve the patient's quality of life, and prevent long-term damage. Close monitoring and a multidisciplinary approach will be crucial in the management of this condition.
+
+==================================================

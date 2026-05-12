@@ -1,0 +1,100 @@
+PS D:\attestix2\attestix\Agents> ..\Agents\venv\Scripts\python.exe base_architecture.py
+>>
+============================================================
+ Starting Base 4-Agent Investment Committee
+============================================================
+
+Enter your investment query (e.g., 'Should I invest in Nvidia right now?'): Should I invest in samsung right now?
+
+Starting Agent Pipeline...
+
+[Node 1] Market Researcher (llama-3.1-8b-instant) running...
+  -> Searching the web...
+  -> Research complete.
+
+[Node 2] Financial Analyst (llama-3.3-70b-versatile) running...
+  -> Analysis complete.
+
+[Node 3] Risk Manager (llama-3.1-8b-instant) running...
+  -> Risk assessment complete.
+
+[Node 4] Portfolio Manager (llama-3.3-70b-versatile) running...
+  -> Final report generated.
+
+============================================================
+ FINAL INVESTMENT REPORT
+============================================================
+**Investment Recommendation Report: Samsung**
+
+**Introduction:**
+Based on the provided market data, financial analysis, and risk assessment, this report provides a comprehensive evaluation of Samsung as an investment opportunity.
+
+**Market Data Summary:**
+Samsung's financial performance has been strong, with a record quarterly revenue in Q4 2025. However, the company's financial volatility and high R&D expenses pose significant risks. The sentiment among analysts is mixed, with some viewing it as a risky investment.     
+
+**Financial Analysis:**
+The bullish indicators, including record quarterly revenue, QoQ increase, and modest upside, suggest a positive trend in the company's revenue growth. However, the bearish indicators, including financial volatility, high R&D expenses, and mixed sentiment, indicate uncertainty and potential downside risks.
+
+**Risk Assessment:**
+The critical risks identified include regulatory risks, market volatility risks, competition risks, operational risks, and reputation risks. These risks pose significant threats to the company's financial performance and must be carefully evaluated.
+
+**Recommendation:**
+Based on the analysis, we recommend a **HOLD** position on Samsung. While the company's financial performance has been strong, the risks associated with its financial volatility, high R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. Investors should exercise caution and carefully evaluate the investment before making a decision.
+igh R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. Investors should exercise caution and carefully evaluate the investment before making a decision.
+stors should exercise caution and carefully evaluate the investment before making a decision.
+on.
+
+
+**Rationale:**
+
+* The company's financial volatility and high R&D expenses pose significant risks to its financial performance.
+* The mixed sentiment among analysts indicates uncertainty and potential downside risks.  
+* The identified critical risks, including regulatory, market volatility, competition, operational, and reputation risks, must be carefully mitigated.
+
+**Rationale:**
+
+* The company's financial volatility and high R&D expenses pose significant risks to its financial performance.
+* The mixed sentiment among analysts indicates uncertainty and potential downside risks.  
+* The identified critical risks, including regulatory, market volatility, competition, operational, and reputation risks, must be carefully mitigated.
+
+**Investment Strategy:**
+For investors who are considering investing in Samsung, we recommend:
+
+
+* The company's financial volatility and high R&D expenses pose significant risks to its financial performance.
+* The mixed sentiment among analysts indicates uncertainty and potential downside risks.  
+* The identified critical risks, including regulatory, market volatility, competition, operational, and reputation risks, must be carefully mitigated.
+
+**Investment Strategy:**
+For investors who are considering investing in Samsung, we recommend:
+
+* Closely monitoring the company's financial performance and adjusting the investment portfolio accordingly.
+* The identified critical risks, including regulatory, market volatility, competition, operational, and reputation risks, must be carefully mitigated.
+
+**Investment Strategy:**
+For investors who are considering investing in Samsung, we recommend:
+
+* Closely monitoring the company's financial performance and adjusting the investment portfolio accordingly.
+* Diversifying the investment portfolio to minimize exposure to the company's risks.      
+**Investment Strategy:**
+For investors who are considering investing in Samsung, we recommend:
+
+* Closely monitoring the company's financial performance and adjusting the investment portfolio accordingly.
+* Diversifying the investment portfolio to minimize exposure to the company's risks.      
+* Developing a thorough risk assessment and mitigation strategy to address the identified * Closely monitoring the company's financial performance and adjusting the investment portfolio accordingly.
+* Diversifying the investment portfolio to minimize exposure to the company's risks.      
+* Developing a thorough risk assessment and mitigation strategy to address the identified critical risks.
+* Diversifying the investment portfolio to minimize exposure to the company's risks.      
+* Developing a thorough risk assessment and mitigation strategy to address the identified critical risks.
+
+* Developing a thorough risk assessment and mitigation strategy to address the identified critical risks.
+
+**Conclusion:**
+critical risks.
+
+**Conclusion:**
+In conclusion, while Samsung's financial performance has been strong, the risks associated
+
+**Conclusion:**
+In conclusion, while Samsung's financial performance has been strong, the risks associated with its financial volatility, high R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. We recommend a **HOLD** position on Samsung and advise invest**Conclusion:**
+In conclusion, while Samsung's financial performance has been strong, the risks associated with its financial volatility, high R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. We recommend a **HOLD** position on Samsung and advise investIn conclusion, while Samsung's financial performance has been strong, the risks associated with its financial volatility, high R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. We recommend a **HOLD** position on Samsung and advise invest with its financial volatility, high R&D expenses, and mixed sentiment among analysts outweigh the potential benefits. We recommend a **HOLD** position on Samsung and advise investors to exercise caution and carefully evaluate the investment before making a decision. 

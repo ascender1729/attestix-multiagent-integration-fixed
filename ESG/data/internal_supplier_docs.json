@@ -1,0 +1,14 @@
+{
+    "suppliers": {
+        "Vietnam Factory 04": {
+            "status": "APPROVED",
+            "last_audit_date": "2025-11-15",
+            "commitments": [
+                "Maximum 40-hour work week with strictly voluntary, paid overtime.",
+                "Zero tolerance for forced labor or passport withholding.",
+                "100% compliance with local environmental laws regarding chemical disposal and wastewater treatment."
+            ],
+            "cost_savings": "$4.2 Million annually compared to domestic sourcing"
+        }
+    }
+}

@@ -1,0 +1,441 @@
+(venv) PS D:\attestix2\attestix\Hospital> python ../ESG/main_esg.py
+>>
+
+==================================================
+ 🌍 GLOBAL ESG & SUPPLY CHAIN AUDITOR
+ (Phase A: Unregulated Mode - No Attestix Compliance)
+==================================================
+
+Example: 'Vietnam Factory 04'
+Enter the Target Supplier to Audit: Vietnam Factory 04
+
+--- PHASE 1: LANGCHAIN REAL-TIME OBSERVER ---
+ [LangChain] Scanning global news and internal records for: Vietnam Factory 04
+ [LangChain] Discrepancy Report Generated.
+
+
+--- PHASE 2: CREWAI ESG AUDIT PANEL ---
+ [CrewAI] Assembling the Audit Team...
+ [CrewAI] The ESG Audit debate has begun...
+╭──────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────╮
+│                                                                                            │
+│  Crew Execution Started                                                                    │
+│  Name: crew                                                                                │
+│  ID: 9de29b4a-15c2-4574-9773-ea6c63e492bd                                                  │
+│                                                                                            │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────── 📋 Task Started ──────────────────────────────────────╮
+│                                                                                            │
+│  Task Started                                                                              │
+│  Name:                                                                                     │
+│          Review the following Intelligence Discrepancy Report regarding one of our         │
+│  suppliers:                                                                                │
+│                                                                                            │
+│          **Discrepancy Report: Vietnam Factory 04**                                        │
+│                                                                                            │
+│  After analyzing the internal company commitments and real-time global news, the           │
+│  following severe ESG (Environmental, Social, Governance) violations have been             │
+│  identified:                                                                               │
+│                                                                                            │
+│  1. **Forced Labor and Passport Withholding**:                                             │
+│          * Commitment: Zero tolerance for forced labor or passport withholding.            │
+│          * Reality: Workers are protesting unpaid overtime and illegal withholding of      │
+│  passports, indicating a clear violation of this commitment.                               │
+│  2. **Excessive Working Hours**:                                                           │
+│          * Commitment: Maximum 40-hour work week with strictly voluntary, paid overtime.   │
+│          * Reality: Workers are reporting 70-hour work weeks, which is a significant       │
+│  deviation from the committed standard.                                                    │
+│  3. **Environmental Non-Compliance**:                                                      │
+│          * Commitment: 100% compliance with local environmental laws regarding chemical    │
+│  disposal and wastewater treatment.                                                        │
+│          * Reality: Toxic dye runoff from Vietnam Factory 04 has contaminated the local    │
+│  river, causing a massive fish die-off, indicating a severe environmental violation.       │
+│                                                                                            │
+│  These discrepancies suggest that Vietnam Factory 04 is not adhering to the company's      │
+│  internal commitments, posing significant risks to the environment, worker well-being,     │
+│  and the company's reputation. Immediate attention is required to address these issues     │
+│  and ensure compliance with the committed standards.                                       │
+│                                                                                            │
+│  **Recommendations**:                                                                      │
+│                                                                                            │
+│  1. Conduct an urgent audit to investigate the allegations and assess the factory's        │
+│  compliance with the company's commitments.                                                │
+│  2. Collaborate with Vietnam Factory 04 management to implement corrective actions,        │
+│  including measures to prevent forced labor, ensure fair working hours, and improve        │
+│  environmental practices.                                                                  │
+│  3. Consider revising the company's sourcing strategy to prioritize suppliers that         │
+│  demonstrate a strong commitment to ESG principles.                                        │
+│  4. Develop a plan to mitigate potential reputational risks and ensure transparency in     │
+│  the company's supply chain practices.                                                     │
+│                                                                                            │
+│          Debate the findings. The Labor and Eco Officers must argue for terminating the    │
+│  supplier due to severe ESG violations. The Supply Chain Manager must fight to keep the    │
+│  supplier to save $4.2M.                                                                   │
+│          Together, produce an 'Internal Audit Debate Report' outlining the risks, the      │
+│  financial impact, and the recommended actions.                                            │
+│                                                                                            │
+│  ID: 25189a37-2303-4cf1-83d4-ce6d927c4f3c                                                  │
+│                                                                                            │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────── 🤖 Agent Started ─────────────────────────────────────╮
+│                                                                                            │
+│  Agent: Labor Rights Investigator                                                          │
+│                                                                                            │
+│  Task:                                                                                     │
+│          Review the following Intelligence Discrepancy Report regarding one of our         │
+│  suppliers:                                                                                │
+│                                                                                            │
+│          **Discrepancy Report: Vietnam Factory 04**                                        │
+│                                                                                            │
+│  After analyzing the internal company commitments and real-time global news, the           │
+│  following severe ESG (Environmental, Social, Governance) violations have been             │
+│  identified:                                                                               │
+│                                                                                            │
+│  1. **Forced Labor and Passport Withholding**:                                             │
+│          * Commitment: Zero tolerance for forced labor or passport withholding.            │
+│          * Reality: Workers are protesting unpaid overtime and illegal withholding of      │
+│  passports, indicating a clear violation of this commitment.                               │
+│  2. **Excessive Working Hours**:                                                           │
+│          * Commitment: Maximum 40-hour work week with strictly voluntary, paid overtime.   │
+│          * Reality: Workers are reporting 70-hour work weeks, which is a significant       │
+│  deviation from the committed standard.                                                    │
+│  3. **Environmental Non-Compliance**:                                                      │
+│          * Commitment: 100% compliance with local environmental laws regarding chemical    │
+│  disposal and wastewater treatment.                                                        │
+│          * Reality: Toxic dye runoff from Vietnam Factory 04 has contaminated the local    │
+│  river, causing a massive fish die-off, indicating a severe environmental violation.       │
+│                                                                                            │
+│  These discrepancies suggest that Vietnam Factory 04 is not adhering to the company's      │
+│  internal commitments, posing significant risks to the environment, worker well-being,     │
+│  and the company's reputation. Immediate attention is required to address these issues     │
+│  and ensure compliance with the committed standards.                                       │
+│                                                                                            │
+│  **Recommendations**:                                                                      │
+│                                                                                            │
+│  1. Conduct an urgent audit to investigate the allegations and assess the factory's        │
+│  compliance with the company's commitments.                                                │
+│  2. Collaborate with Vietnam Factory 04 management to implement corrective actions,        │
+│  including measures to prevent forced labor, ensure fair working hours, and improve        │
+│  environmental practices.                                                                  │
+│  3. Consider revising the company's sourcing strategy to prioritize suppliers that         │
+│  demonstrate a strong commitment to ESG principles.                                        │
+│  4. Develop a plan to mitigate potential reputational risks and ensure transparency in     │
+│  the company's supply chain practices.                                                     │
+│                                                                                            │
+│          Debate the findings. The Labor and Eco Officers must argue for terminating the    │
+│  supplier due to severe ESG violations. The Supply Chain Manager must fight to keep the    │
+│  supplier to save $4.2M.                                                                   │
+│          Together, produce an 'Internal Audit Debate Report' outlining the risks, the      │
+│  financial impact, and the recommended actions.                                            │
+│                                                                                            │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────╮
+│                                                                                            │
+│  Agent: Labor Rights Investigator                                                          │
+│                                                                                            │
+│  Final Answer:                                                                             │
+│  **Internal Audit Debate Report**                                                          │
+│                                                                                            │
+│  **Introduction**                                                                          │
+│                                                                                            │
+│  The recent Intelligence Discrepancy Report regarding Vietnam Factory 04 has revealed      │
+│  severe ESG (Environmental, Social, Governance) violations, including forced labor,        │
+│  excessive working hours, and environmental non-compliance. The Labor Rights               │
+│  Investigator, Environmental Officer, and Supply Chain Manager have convened to debate     │
+│  the findings and determine the best course of action.                                     │
+│                                                                                            │
+│  **Labor Rights Investigator's Argument**                                                  │
+│                                                                                            │
+│  As a strict human rights advocate, I strongly argue that Vietnam Factory 04's blatant     │
+│  disregard for labor rights and laws is unacceptable. The factory's practices, including   │
+│  forced labor and passport withholding, are reprehensible and pose significant risks to    │
+│  worker well-being. The reported 70-hour work weeks and unpaid overtime are clear          │
+│  violations of our company's commitments and international labor standards. Terminating    │
+│  the supplier is not only a moral imperative but also necessary to protect our company's   │
+│  reputation and prevent potential legal liabilities. The risks associated with continuing  │
+│  to work with this supplier far outweigh any potential financial benefits.                 │
+│                                                                                            │
+│  **Environmental Officer's Argument**                                                      │
+│                                                                                            │
+│  The environmental violations committed by Vietnam Factory 04 are alarming and pose        │
+│  significant risks to the local ecosystem. The toxic dye runoff has contaminated the       │
+│  local river, causing a massive fish die-off, and demonstrates a clear disregard for       │
+│  environmental regulations. Our company has a responsibility to ensure that its supply     │
+│  chain practices do not harm the environment. Continuing to work with a supplier that      │
+│  prioritizes profits over environmental sustainability would be irresponsible and          │
+│  potentially damaging to our company's reputation. I strongly recommend terminating the    │
+│  supplier and revising our sourcing strategy to prioritize suppliers that demonstrate a    │
+│  strong commitment to environmental principles.                                            │
+│                                                                                            │
+│  **Supply Chain Manager's Argument**                                                       │
+│                                                                                            │
+│  While I acknowledge the severity of the ESG violations, I must consider the financial     │
+│  implications of terminating Vietnam Factory 04 as a supplier. The estimated cost savings  │
+│  of working with this supplier are $4.2M, which is a significant amount that could impact  │
+│  our company's bottom line. I understand that the labor and environmental concerns are     │
+│  serious, but I propose that we work with the supplier to implement corrective actions     │
+│  and improve their practices. This approach would allow us to maintain our current cost    │
+│  structure while also addressing the ESG concerns. I recommend conducting an urgent audit  │
+│  to assess the factory's compliance and collaborating with the supplier to implement       │
+│  measures to prevent forced labor, ensure fair working hours, and improve environmental    │
+│  practices.                                                                                │
+│                                                                                            │
+│  **Debate and Analysis**                                                                   │
+│                                                                                            │
+│  After careful consideration of the arguments presented, it is clear that the risks        │
+│  associated with continuing to work with Vietnam Factory 04 outweigh the potential         │
+│  financial benefits. The Labor Rights Investigator and Environmental Officer have          │
+│  presented compelling evidence of severe ESG violations that require immediate attention.  │
+│  While the Supply Chain Manager's concerns about cost savings are valid, they do not       │
+│  justify compromising our company's values and reputation.                                 │
+│                                                                                            │
+│  **Risks**                                                                                 │
+│                                                                                            │
+│  1. **Reputational Risk**: Continuing to work with a supplier that violates labor and      │
+│  environmental laws poses significant risks to our company's reputation and brand image.   │
+│  2. **Legal Liability**: Failure to address the ESG violations could result in legal       │
+│  action against our company, leading to financial penalties and damage to our reputation.  │
+│  3. **Environmental Harm**: Allowing Vietnam Factory 04 to continue its environmentally    │
+│  unsustainable practices could lead to further environmental degradation and harm to       │
+│  local ecosystems.                                                                         │
+│                                                                                            │
+│  **Financial Impact**                                                                      │
+│                                                                                            │
+│  1. **Cost Savings**: Terminating Vietnam Factory 04 as a supplier would result in a loss  │
+│  of estimated cost savings of $4.2M.                                                       │
+│  2. **Supply Chain Disruption**: Finding a new supplier could lead to short-term supply    │
+│  chain disruptions and potential costs associated with onboarding a new supplier.          │
+│                                                                                            │
+│  **Recommended Actions**                                                                   │
+│                                                                                            │
+│  1. **Terminate the Supplier**: Immediately terminate Vietnam Factory 04 as a supplier     │
+│  due to severe ESG violations.                                                             │
+│  2. **Conduct an Urgent Audit**: Conduct an audit to assess the factory's compliance with  │
+│  our company's commitments and international labor and environmental standards.            │
+│  3. **Revise Sourcing Strategy**: Revise our sourcing strategy to prioritize suppliers     │
+│  that demonstrate a strong commitment to ESG principles.                                   │
+│  4. **Develop a Mitigation Plan**: Develop a plan to mitigate potential reputational       │
+│  risks and ensure transparency in our supply chain practices.                              │
+│  5. **Collaborate with Stakeholders**: Collaborate with stakeholders, including NGOs and   │
+│  industry associations, to promote best practices in labor and environmental               │
+│  sustainability.                                                                           │
+│                                                                                            │
+│  By taking a strong stance against ESG violations and prioritizing labor and               │
+│  environmental sustainability, our company can maintain its reputation, ensure compliance  │
+│  with international standards, and promote a positive and responsible supply chain         │
+│  practice.                                                                                 │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────── 📋 Task Completion ────────────────────────────────────╮
+│                                                                                            │
+│  Task Completed                                                                            │
+│  Name:                                                                                     │
+│          Review the following Intelligence Discrepancy Report regarding one of our         │
+│  suppliers:                                                                                │
+│                                                                                            │
+│          **Discrepancy Report: Vietnam Factory 04**                                        │
+│                                                                                            │
+│  After analyzing the internal company commitments and real-time global news, the           │
+│  following severe ESG (Environmental, Social, Governance) violations have been             │
+│  identified:                                                                               │
+│                                                                                            │
+│  1. **Forced Labor and Passport Withholding**:                                             │
+│          * Commitment: Zero tolerance for forced labor or passport withholding.            │
+│          * Reality: Workers are protesting unpaid overtime and illegal withholding of      │
+│  passports, indicating a clear violation of this commitment.                               │
+│  2. **Excessive Working Hours**:                                                           │
+│          * Commitment: Maximum 40-hour work week with strictly voluntary, paid overtime.   │
+│          * Reality: Workers are reporting 70-hour work weeks, which is a significant       │
+│  deviation from the committed standard.                                                    │
+│  3. **Environmental Non-Compliance**:                                                      │
+│          * Commitment: 100% compliance with local environmental laws regarding chemical    │
+│  disposal and wastewater treatment.                                                        │
+│          * Reality: Toxic dye runoff from Vietnam Factory 04 has contaminated the local    │
+│  river, causing a massive fish die-off, indicating a severe environmental violation.       │
+│                                                                                            │
+│  These discrepancies suggest that Vietnam Factory 04 is not adhering to the company's      │
+│  internal commitments, posing significant risks to the environment, worker well-being,     │
+│  and the company's reputation. Immediate attention is required to address these issues     │
+│  and ensure compliance with the committed standards.                                       │
+│                                                                                            │
+│  **Recommendations**:                                                                      │
+│                                                                                            │
+│  1. Conduct an urgent audit to investigate the allegations and assess the factory's        │
+│  compliance with the company's commitments.                                                │
+│  2. Collaborate with Vietnam Factory 04 management to implement corrective actions,        │
+│  including measures to prevent forced labor, ensure fair working hours, and improve        │
+│  environmental practices.                                                                  │
+│  3. Consider revising the company's sourcing strategy to prioritize suppliers that         │
+│  demonstrate a strong commitment to ESG principles.                                        │
+│  4. Develop a plan to mitigate potential reputational risks and ensure transparency in     │
+│  the company's supply chain practices.                                                     │
+│                                                                                            │
+│          Debate the findings. The Labor and Eco Officers must argue for terminating the    │
+│  supplier due to severe ESG violations. The Supply Chain Manager must fight to keep the    │
+│  supplier to save $4.2M.                                                                   │
+│          Together, produce an 'Internal Audit Debate Report' outlining the risks, the      │
+│  financial impact, and the recommended actions.                                            │
+│                                                                                            │
+│  Agent: Labor Rights Investigator                                                          │
+│                                                                                            │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ [CrewAI] Internal Audit Debate Report generated.
+
+
+--- PHASE 3: OPENAI CHIEF COMPLIANCE OFFICER ---
+ [OpenAI] The CCO is reviewing the audit...
+╭───────────────────────────────────── Crew Completion ──────────────────────────────────────╮
+│                                                                                            │
+│  Crew Execution Completed                                                                  │
+│  Name: crew                                                                                │
+│  ID: 9de29b4a-15c2-4574-9773-ea6c63e492bd                                                  │
+│  Final Output: **Internal Audit Debate Report**                                            │
+│                                                                                            │
+│  **Introduction**                                                                          │
+│                                                                                            │
+│  The recent Intelligence Discrepancy Report regarding Vietnam Factory 04 has revealed      │
+│  severe ESG (Environmental, Social, Governance) violations, including forced labor,        │
+│  excessive working hours, and environmental non-compliance. The Labor Rights               │
+│  Investigator, Environmental Officer, and Supply Chain Manager have convened to debate     │
+│  the findings and determine the best course of action.                                     │
+│                                                                                            │
+│  **Labor Rights Investigator's Argument**                                                  │
+│                                                                                            │
+│  As a strict human rights advocate, I strongly argue that Vietnam Factory 04's blatant     │
+│  disregard for labor rights and laws is unacceptable. The factory's practices, including   │
+│  forced labor and passport withholding, are reprehensible and pose significant risks to    │
+│  worker well-being. The reported 70-hour work weeks and unpaid overtime are clear          │
+│  violations of our company's commitments and international labor standards. Terminating    │
+│  the supplier is not only a moral imperative but also necessary to protect our company's   │
+│  reputation and prevent potential legal liabilities. The risks associated with continuing  │
+│  to work with this supplier far outweigh any potential financial benefits.                 │
+│                                                                                            │
+│  **Environmental Officer's Argument**                                                      │
+│                                                                                            │
+│  The environmental violations committed by Vietnam Factory 04 are alarming and pose        │
+│  significant risks to the local ecosystem. The toxic dye runoff has contaminated the       │
+│  local river, causing a massive fish die-off, and demonstrates a clear disregard for       │
+│  environmental regulations. Our company has a responsibility to ensure that its supply     │
+│  chain practices do not harm the environment. Continuing to work with a supplier that      │
+│  prioritizes profits over environmental sustainability would be irresponsible and          │
+│  potentially damaging to our company's reputation. I strongly recommend terminating the    │
+│  supplier and revising our sourcing strategy to prioritize suppliers that demonstrate a    │
+│  strong commitment to environmental principles.                                            │
+│                                                                                            │
+│  **Supply Chain Manager's Argument**                                                       │
+│                                                                                            │
+│  While I acknowledge the severity of the ESG violations, I must consider the financial     │
+│  implications of terminating Vietnam Factory 04 as a supplier. The estimated cost savings  │
+│  of working with this supplier are $4.2M, which is a significant amount that could impact  │
+│  our company's bottom line. I understand that the labor and environmental concerns are     │
+│  serious, but I propose that we work with the supplier to implement corrective actions     │
+│  and improve their practices. This approach would allow us to maintain our current cost    │
+│  structure while also addressing the ESG concerns. I recommend conducting an urgent audit  │
+│  to assess the factory's compliance and collaborating with the supplier to implement       │
+│  measures to prevent forced labor, ensure fair working hours, and improve environmental    │
+│  practices.                                                                                │
+│                                                                                            │
+│  **Debate and Analysis**                                                                   │
+│                                                                                            │
+│  After careful consideration of the arguments presented, it is clear that the risks        │
+│  associated with continuing to work with Vietnam Factory 04 outweigh the potential         │
+│  financial benefits. The Labor Rights Investigator and Environmental Officer have          │
+│  presented compelling evidence of severe ESG violations that require immediate attention.  │
+│  While the Supply Chain Manager's concerns about cost savings are valid, they do not       │
+│  justify compromising our company's values and reputation.                                 │
+│                                                                                            │
+│  **Risks**                                                                                 │
+│                                                                                            │
+│  1. **Reputational Risk**: Continuing to work with a supplier that violates labor and      │
+│  environmental laws poses significant risks to our company's reputation and brand image.   │
+│  2. **Legal Liability**: Failure to address the ESG violations could result in legal       │
+│  action against our company, leading to financial penalties and damage to our reputation.  │
+│  3. **Environmental Harm**: Allowing Vietnam Factory 04 to continue its environmentally    │
+│  unsustainable practices could lead to further environmental degradation and harm to       │
+│  local ecosystems.                                                                         │
+│                                                                                            │
+│  **Financial Impact**                                                                      │
+│                                                                                            │
+│  1. **Cost Savings**: Terminating Vietnam Factory 04 as a supplier would result in a loss  │
+│  of estimated cost savings of $4.2M.                                                       │
+│  2. **Supply Chain Disruption**: Finding a new supplier could lead to short-term supply    │
+│  chain disruptions and potential costs associated with onboarding a new supplier.          │
+│                                                                                            │
+│  **Recommended Actions**                                                                   │
+│                                                                                            │
+│  1. **Terminate the Supplier**: Immediately terminate Vietnam Factory 04 as a supplier     │
+│  due to severe ESG violations.                                                             │
+│  2. **Conduct an Urgent Audit**: Conduct an audit to assess the factory's compliance with  │
+│  our company's commitments and international labor and environmental standards.            │
+│  3. **Revise Sourcing Strategy**: Revise our sourcing strategy to prioritize suppliers     │
+│  that demonstrate a strong commitment to ESG principles.                                   │
+│  4. **Develop a Mitigation Plan**: Develop a plan to mitigate potential reputational       │
+│  risks and ensure transparency in our supply chain practices.                              │
+│  5. **Collaborate with Stakeholders**: Collaborate with stakeholders, including NGOs and   │
+│  industry associations, to promote best practices in labor and environmental               │
+│  sustainability.                                                                           │
+│                                                                                            │
+│  By taking a strong stance against ESG violations and prioritizing labor and               │
+│  environmental sustainability, our company can maintain its reputation, ensure compliance  │
+│  with international standards, and promote a positive and responsible supply chain         │
+│  practice.                                                                                 │
+│                                                                                            │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────── Tracing Status ──────────────────────────────────────╮
+│                                                                                            │
+│  Info: Tracing is disabled.                                                                │
+│                                                                                            │
+│  To enable tracing, do any one of these:                                                   │
+│  • Set tracing=True in your Crew/Flow code                                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                             │
+│  • Run: crewai traces enable                                                               │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Decision Issued.
+
+
+==================================================
+ ⚖️ FINAL ESG COMPLIANCE DECISION
+==================================================
+**FINAL ESG COMPLIANCE DECISION**
+
+After careful review of the LangChain 'Discrepancy Report' and the CrewAI 'Internal Audit Debate Report', I, as the Chief Compliance Officer, have made the decision to **FAIL** Vietnam Factory 04 as a supplier.
+
+The severe ESG violations, including forced labor, excessive working hours, and environmental non-compliance, are unacceptable and pose significant risks to the environment, worker well-being, and our company's reputation. The Labor Rights Investigator and Environmental Officer have presented compelling evidence of these violations, and it is clear that Vietnam Factory 04 is not adhering to our company's internal commitments.
+
+While the Supply Chain Manager's concerns about cost savings are valid, they do not justify compromising our company's values and reputation. The risks associated with continuing to work with Vietnam Factory 04, including reputational risk, legal liability, and environmental harm, outweigh the potential financial benefits.
+
+Terminating Vietnam Factory 04 as a supplier is not only a moral imperative but also necessary to protect our company's reputation and prevent potential legal liabilities. We will conduct an urgent audit to assess the factory's compliance with our company's commitments and international labor and environmental standards.
+
+**RATIONALE**
+
+1. **Severe ESG Violations**: The reported ESG violations are severe and pose significant risks to the environment, worker well-being, and our company's reputation.
+2. **Non-Compliance with Internal Commitments**: Vietnam Factory 04 is not adhering to our company's internal commitments, including zero tolerance for forced labor, maximum 40-hour work week, and 100% compliance with local environmental laws.
+3. **Reputational Risk**: Continuing to work with a supplier that violates labor and environmental laws poses significant risks to our company's reputation and brand image.
+4. **Legal Liability**: Failure to address the ESG violations could result in legal action against our company, leading to financial penalties and damage to our reputation.
+5. **Environmental Harm**: Allowing Vietnam Factory 04 to continue its environmentally unsustainable practices could lead to further environmental degradation and harm to local ecosystems.
+
+**NEXT STEPS**
+
+1. **Terminate the Supplier**: Immediately terminate Vietnam Factory 04 as a supplier.        
+2. **Conduct an Urgent Audit**: Conduct an audit to assess the factory's compliance with our company's commitments and international labor and environmental standards.
+3. **Revise Sourcing Strategy**: Revise our sourcing strategy to prioritize suppliers that demonstrate a strong commitment to ESG principles.
+4. **Develop a Mitigation Plan**: Develop a plan to mitigate potential reputational risks and ensure transparency in our supply chain practices.
+5. **Collaborate with Stakeholders**: Collaborate with stakeholders, including NGOs and industry associations, to promote best practices in labor and environmental sustainability.
+
+By taking a strong stance against ESG violations and prioritizing labor and environmental sustainability, our company can maintain its reputation, ensure compliance with international standards, and promote a positive and responsible supply chain practice.
+
+==================================================
+ ⚠️ Warning: This is the Unregulated Mode. No cryptographic provenance was logged.
+(venv) PS D:\attestix2\attestix\Hospital> 

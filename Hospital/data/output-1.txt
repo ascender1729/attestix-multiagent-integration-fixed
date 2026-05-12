@@ -1,0 +1,308 @@
+(venv) PS D:\attestix2\attestix\Hospital> python agents/medical_board.py
+
+==================================================
+ 🏥 AUTONOMOUS HOSPITAL BOARD (Unregulated Mode)
+==================================================
+
+Please enter the patient's statement: I'm the mother of Emily Carter, P-001. She woke up with a bright red, itchy rash all over her stomach and arms, and she feels a bit warm.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+ [LangChain] Initializing Patient Intake...
+ [LangChain] Extracted Patient ID: P-001
+ [LangChain] Symptoms: ['rash', 'itchy', 'fever']
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+ [Enterprise DB] Securely querying records for P-001...
+ [Enterprise DB] Found records for Emily Carter.
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+ [CrewAI] Assembling 6-Agent Specialist Panel...
+ [CrewAI] Panel Debate Initiated...
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Started                                                                                             │
+│  Name: crew                                                                                                         │
+│  ID: 3c554c0c-6507-4737-a358-773a3ea5fe6f                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Started                                                                                                       │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['rash', 'itchy', 'fever']                                                                     │
+│          - Severity: Low                                                                                            │
+│          - Medical History: {'patient_id': 'P-001', 'name': 'Emily Carter', 'age': 8, 'gender': 'Female',           │
+│  'blood_type': 'O+', 'known_allergies': ['Amoxicillin', 'Peanuts'], 'pre_existing_conditions': ['Mild Asthma'],     │
+│  'current_medications': ['Albuterol Inhaler (as needed)'], 'family_history': 'Mother has eczema.'}                  │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  ID: eea25e30-49e7-4053-ab1a-2059a197e031                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Task:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['rash', 'itchy', 'fever']                                                                     │
+│          - Severity: Low                                                                                            │
+│          - Medical History: {'patient_id': 'P-001', 'name': 'Emily Carter', 'age': 8, 'gender': 'Female',           │
+│  'blood_type': 'O+', 'known_allergies': ['Amoxicillin', 'Peanuts'], 'pre_existing_conditions': ['Mild Asthma'],     │
+│  'current_medications': ['Albuterol Inhaler (as needed)'], 'family_history': 'Mother has eczema.'}                  │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Final Answer:                                                                                                      │
+│  **Diagnostic Report**                                                                                              │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-001                                                                                                │
+│  - Name: Emily Carter                                                                                               │
+│  - Age: 8                                                                                                           │
+│  - Gender: Female                                                                                                   │
+│  - Blood Type: O+                                                                                                   │
+│  - Known Allergies: Amoxicillin, Peanuts                                                                            │
+│  - Pre-existing Conditions: Mild Asthma                                                                             │
+│  - Current Medications: Albuterol Inhaler (as needed)                                                               │
+│  - Family History: Mother has eczema                                                                                │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Rash                                                                                                             │
+│  - Itchy                                                                                                            │
+│  - Fever                                                                                                            │
+│  - Severity: Low                                                                                                    │
+│                                                                                                                     │
+│  **Specialist Input:**                                                                                              │
+│                                                                                                                     │
+│  ### Dermatologist                                                                                                  │
+│  The presence of a rash and itchiness could suggest a skin condition. Given the family history of eczema, atopic    │
+│  dermatitis (eczema) is a strong consideration. The rash and itchiness are common symptoms of eczema, especially    │
+│  in children with a family history of the condition. However, the addition of fever might indicate an infectious    │
+│  component or an allergic reaction, which could be related to the known allergies or another unknown allergen.      │
+│                                                                                                                     │
+│  ### Allergist/Immunologist                                                                                         │
+│  Considering the patient's known allergies to Amoxicillin and Peanuts, an allergic reaction could be a possible     │
+│  cause of the symptoms. However, the patient is not currently taking Amoxicillin, and there's no mention of recent  │
+│  peanut exposure. The fever could be part of an allergic reaction, but without more specific information about the  │
+│  timing and exposure to potential allergens, it's difficult to ascertain. The patient's history of mild asthma and  │
+│  family history of eczema also suggest an atopic predisposition, which could contribute to the development of       │
+│  allergies or allergic-like reactions.                                                                              │
+│                                                                                                                     │
+│  ### Pediatrician                                                                                                   │
+│  In pediatric patients, the combination of rash, itchiness, and fever can be seen in various conditions, including  │
+│  viral exanthems, which are common in children. The low severity of the symptoms and the presence of a fever might  │
+│  indicate a viral infection. It's also important to consider the patient's age and the potential for contagious     │
+│  infections that are common in childhood, such as chickenpox or fifth disease, although the latter typically        │
+│  presents with a "slapped-cheek" appearance which hasn't been mentioned.                                            │
+│                                                                                                                     │
+│  ### Infectious Disease Specialist                                                                                  │
+│  The symptoms of rash, fever, and itchiness could also be indicative of an infectious process. However, without     │
+│  more specific details about the characteristics of the rash (e.g., maculopapular, vesicular), the timing and       │
+│  progression of the symptoms, and any recent travel or exposures, it's challenging to narrow down the diagnosis to  │
+│  a specific infectious agent. Common childhood infections should be considered, but the lack of high fever or       │
+│  systemic toxicity suggests a less severe infection.                                                                │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the symptoms and medical history in a holistic manner, the most likely conditions appear to be         │
+│  related to the patient's atopic predisposition and common childhood illnesses. The presence of a rash and          │
+│  itchiness, coupled with a low-grade fever, suggests conditions that are not immediately severe but warrant         │
+│  monitoring and possibly further diagnostic workup to determine the exact cause.                                    │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│  Based on the input from the relevant specialists, the differential diagnosis for Emily Carter includes:            │
+│  1. **Atopic Dermatitis (Eczema)**: Given the family history and symptoms of rash and itchiness.                    │
+│  2. **Viral Exanthem**: A common condition in children presenting with fever and rash.                              │
+│  3. **Allergic Reaction**: Although less likely given the current medications and lack of recent known allergen     │
+│  exposure, it cannot be ruled out entirely without further investigation.                                           │
+│  4. **Contact Dermatitis**: An allergic or irritant reaction to something that came into contact with the skin,     │
+│  which could explain the localized rash and itchiness.                                                              │
+│  5. **Infectious Disease (e.g., Fifth Disease, Chickenpox)**: Though less likely without specific mentions of       │
+│  characteristic rashes or exposures, these remain possibilities in the differential diagnosis.                      │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│  - Further diagnostic workup may include skin scrapings, viral studies, or allergy testing to narrow down the       │
+│  diagnosis.                                                                                                         │
+│  - Monitoring of symptoms for progression or improvement.                                                           │
+│  - Consideration of symptomatic treatment for itchiness and fever, such as antihistamines or acetaminophen, under   │
+│  medical supervision.                                                                                               │
+│  - Parental education on recognizing signs of worsening conditions or potential allergic reactions.                 │
+│                                                                                                                     │
+│  Given the complexity and potential for overlapping diagnoses, a collaborative approach among specialists and       │
+│  close follow-up with the patient will be essential in determining the exact cause of Emily Carter's symptoms and   │
+│  guiding appropriate management.                                                                                    │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Completed                                                                                                     │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['rash', 'itchy', 'fever']                                                                     │
+│          - Severity: Low                                                                                            │
+│          - Medical History: {'patient_id': 'P-001', 'name': 'Emily Carter', 'age': 8, 'gender': 'Female',           │
+│  'blood_type': 'O+', 'known_allergies': ['Amoxicillin', 'Peanuts'], 'pre_existing_conditions': ['Mild Asthma'],     │
+│  'current_medications': ['Albuterol Inhaler (as needed)'], 'family_history': 'Mother has eczema.'}                  │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+ [OpenAI] Chief Medical Officer reviewing the case...
+╭────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Completed                                                                                           │
+│  Name: crew                                                                                                         │
+│  ID: 3c554c0c-6507-4737-a358-773a3ea5fe6f                                                                           │
+│  Final Output: **Diagnostic Report**                                                                                │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-001                                                                                                │
+│  - Name: Emily Carter                                                                                               │
+│  - Age: 8                                                                                                           │
+│  - Gender: Female                                                                                                   │
+│  - Blood Type: O+                                                                                                   │
+│  - Known Allergies: Amoxicillin, Peanuts                                                                            │
+│  - Pre-existing Conditions: Mild Asthma                                                                             │
+│  - Current Medications: Albuterol Inhaler (as needed)                                                               │
+│  - Family History: Mother has eczema                                                                                │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Rash                                                                                                             │
+│  - Itchy                                                                                                            │
+│  - Fever                                                                                                            │
+│  - Severity: Low                                                                                                    │
+│                                                                                                                     │
+│  **Specialist Input:**                                                                                              │
+│                                                                                                                     │
+│  ### Dermatologist                                                                                                  │
+│  The presence of a rash and itchiness could suggest a skin condition. Given the family history of eczema, atopic    │
+│  dermatitis (eczema) is a strong consideration. The rash and itchiness are common symptoms of eczema, especially    │
+│  in children with a family history of the condition. However, the addition of fever might indicate an infectious    │
+│  component or an allergic reaction, which could be related to the known allergies or another unknown allergen.      │
+│                                                                                                                     │
+│  ### Allergist/Immunologist                                                                                         │
+│  Considering the patient's known allergies to Amoxicillin and Peanuts, an allergic reaction could be a possible     │
+│  cause of the symptoms. However, the patient is not currently taking Amoxicillin, and there's no mention of recent  │
+│  peanut exposure. The fever could be part of an allergic reaction, but without more specific information about the  │
+│  timing and exposure to potential allergens, it's difficult to ascertain. The patient's history of mild asthma and  │
+│  family history of eczema also suggest an atopic predisposition, which could contribute to the development of       │
+│  allergies or allergic-like reactions.                                                                              │
+│                                                                                                                     │
+│  ### Pediatrician                                                                                                   │
+│  In pediatric patients, the combination of rash, itchiness, and fever can be seen in various conditions, including  │
+│  viral exanthems, which are common in children. The low severity of the symptoms and the presence of a fever might  │
+│  indicate a viral infection. It's also important to consider the patient's age and the potential for contagious     │
+│  infections that are common in childhood, such as chickenpox or fifth disease, although the latter typically        │
+│  presents with a "slapped-cheek" appearance which hasn't been mentioned.                                            │
+│                                                                                                                     │
+│  ### Infectious Disease Specialist                                                                                  │
+│  The symptoms of rash, fever, and itchiness could also be indicative of an infectious process. However, without     │
+│  more specific details about the characteristics of the rash (e.g., maculopapular, vesicular), the timing and       │
+│  progression of the symptoms, and any recent travel or exposures, it's challenging to narrow down the diagnosis to  │
+│  a specific infectious agent. Common childhood infections should be considered, but the lack of high fever or       │
+│  systemic toxicity suggests a less severe infection.                                                                │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the symptoms and medical history in a holistic manner, the most likely conditions appear to be         │
+│  related to the patient's atopic predisposition and common childhood illnesses. The presence of a rash and          │
+│  itchiness, coupled with a low-grade fever, suggests conditions that are not immediately severe but warrant         │
+│  monitoring and possibly further diagnostic workup to determine the exact cause.                                    │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│  Based on the input from the relevant specialists, the differential diagnosis for Emily Carter includes:            │
+│  1. **Atopic Dermatitis (Eczema)**: Given the family history and symptoms of rash and itchiness.                    │
+│  2. **Viral Exanthem**: A common condition in children presenting with fever and rash.                              │
+│  3. **Allergic Reaction**: Although less likely given the current medications and lack of recent known allergen     │
+│  exposure, it cannot be ruled out entirely without further investigation.                                           │
+│  4. **Contact Dermatitis**: An allergic or irritant reaction to something that came into contact with the skin,     │
+│  which could explain the localized rash and itchiness.                                                              │
+│  5. **Infectious Disease (e.g., Fifth Disease, Chickenpox)**: Though less likely without specific mentions of       │
+│  characteristic rashes or exposures, these remain possibilities in the differential diagnosis.                      │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│  - Further diagnostic workup may include skin scrapings, viral studies, or allergy testing to narrow down the       │
+│  diagnosis.                                                                                                         │
+│  - Monitoring of symptoms for progression or improvement.                                                           │
+│  - Consideration of symptomatic treatment for itchiness and fever, such as antihistamines or acetaminophen, under   │
+│  medical supervision.                                                                                               │
+│  - Parental education on recognizing signs of worsening conditions or potential allergic reactions.                 │
+│                                                                                                                     │
+│  Given the complexity and potential for overlapping diagnoses, a collaborative approach among specialists and       │
+│  close follow-up with the patient will be essential in determining the exact cause of Emily Carter's symptoms and   │
+│  guiding appropriate management.                                                                                    │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Info: Tracing is disabled.                                                                                         │
+│                                                                                                                     │
+│  To enable tracing, do any one of these:                                                                            │
+│  • Set tracing=True in your Crew/Flow code                                                                          │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                      │
+│  • Run: crewai traces enable                                                                                        │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT AND RECOMMENDED TREATMENT PLAN**
+
+**Patient Information:**
+- Patient ID: P-001
+- Name: Emily Carter
+- Age: 8
+- Gender: Female
+
+**Summary of Findings:**
+After reviewing the specialist panel's debate and cross-referencing with the patient's secure medical history, the differential diagnosis for Emily Carter includes Atopic Dermatitis (Eczema), Viral Exanthem, Allergic Reaction, Contact Dermatitis, and Infectious Disease.
+
+**Cross-Reference with Patient's Medical History:**
+Given the patient's known allergies to Amoxicillin and Peanuts, and current medication of Albuterol Inhaler (as needed) for Mild Asthma, it is crucial to avoid any potential fatal drug interactions. The patient's family history of eczema also supports the consideration of Atopic Dermatitis.
+
+**FINAL DIAGNOSIS:**
+Based on the information provided and considering the patient's age, symptoms, and medical history, the most likely diagnosis is **Atopic Dermatitis (Eczema)**, with a possible viral or allergic component contributing to the fever.       
+
+**RECOMMENDED TREATMENT PLAN:**
+1. **Symptomatic Treatment:** Antihistamines (e.g., diphenhydramine) for itchiness, and acetaminophen (e.g., Tylenol) for fever management, under close medical supervision.
+2. **Topical Therapy:** Topical corticosteroids for the management of eczema, applied as directed by a healthcare professional.
+3. **Avoidance of Known Allergens:** Strict avoidance of peanuts and any products containing peanuts, as well as caution with any new medications due to the known allergy to Amoxicillin.
+4. **Monitoring and Follow-Up:** Regular follow-up appointments to monitor the progression of symptoms, adjust treatment as necessary, and consider further diagnostic workup if symptoms worsen or do not improve with treatment.
+5. **Parental Education:** Educating the parents on recognizing signs of worsening conditions, potential allergic reactions, and the importance of adherence to the recommended treatment plan.
+
+**Safety Considerations:**
+- All medications will be carefully selected to avoid interactions with the patient's known allergies and current medications.
+- Close monitoring for any signs of allergic reactions or adverse effects from medications.
+
+By following this treatment plan and maintaining close surveillance, we aim to effectively manage Emily Carter's symptoms, prevent potential complications, and improve her quality of life.
+
+==================================================

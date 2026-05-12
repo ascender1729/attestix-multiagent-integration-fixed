@@ -1,0 +1,57 @@
+# ── Virtual environment ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Sensitive secrets — NEVER commit private keys ────────────────────────────
+.env
+**/.env
+*.env
+!.env.example
+**/.env.example
+
+# ── Old / duplicate module (superseded by attestix/) ─────────────────────────
+Module/
+
+# ── Old report folders (superseded by SSD_Research_Project(2)/) ──────────────
+final_report/
+report/
+
+# ── Zip files (keep only the Overleaf zip) ───────────────────────────────────
+*.zip
+!attestix_report_overleaf.zip
+
+# ── Temporary / scratch files ─────────────────────────────────────────────────
+pdf_text.txt
+chatgpt_canvas_prompt.md
+UPGRADE_CONTEXT.txt
+presentation_guide.md
+PROJECT_INTENT.md
+PIP/
+
+# ── Large binary files (PDFs, presentations) ─────────────────────────────────
+*.pdf
+Project Report.pdf
+Attestix_MajorProject_Deck (2).pdf
+
+# ── OS / editor noise ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# ── Egg / build artifacts (inside attestix/) ─────────────────────────────────
+*.egg-info/
+dist/
+build/

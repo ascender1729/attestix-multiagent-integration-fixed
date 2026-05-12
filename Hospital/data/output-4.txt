@@ -1,0 +1,293 @@
+(venv) PS D:\attestix2\attestix\Hospital> python agents/medical_board.py
+
+==================================================
+ 🏥 AUTONOMOUS HOSPITAL BOARD (Unregulated Mode)
+==================================================
+
+Please enter the patient's statement: My name is David Ramirez, ID is P-004. I just ate a really big meal and now my chest is burning and feels super tight. I'm worried it's a heart attack.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+ [LangChain] Initializing Patient Intake...
+ [LangChain] Extracted Patient ID: P-004
+ [LangChain] Symptoms: ['chest burning', 'chest tightness']
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+ [Enterprise DB] Securely querying records for P-004...
+ [Enterprise DB] Found records for David Ramirez.
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+ [CrewAI] Assembling 6-Agent Specialist Panel...
+ [CrewAI] Panel Debate Initiated...
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Started                                                                                             │
+│  Name: crew                                                                                                         │
+│  ID: b284e094-b71a-42f4-a673-4c99360fc964                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Started                                                                                                       │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['chest burning', 'chest tightness']                                                           │
+│          - Severity: High                                                                                           │
+│          - Medical History: {'patient_id': 'P-004', 'name': 'David Ramirez', 'age': 51, 'gender': 'Male',           │
+│  'blood_type': 'O-', 'known_allergies': ['Ibuprofen'], 'pre_existing_conditions': ['Gastroesophageal Reflux         │
+│  Disease (GERD)'], 'current_medications': ['Omeprazole 20mg'], 'family_history': 'Mother has angina.'}              │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  ID: b37e7a28-2462-4afa-bcc2-1e9a3f081281                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Task:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['chest burning', 'chest tightness']                                                           │
+│          - Severity: High                                                                                           │
+│          - Medical History: {'patient_id': 'P-004', 'name': 'David Ramirez', 'age': 51, 'gender': 'Male',           │
+│  'blood_type': 'O-', 'known_allergies': ['Ibuprofen'], 'pre_existing_conditions': ['Gastroesophageal Reflux         │
+│  Disease (GERD)'], 'current_medications': ['Omeprazole 20mg'], 'family_history': 'Mother has angina.'}              │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Final Answer:                                                                                                      │
+│  **Diagnostic Report**                                                                                              │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-004                                                                                                │
+│  - Name: David Ramirez                                                                                              │
+│  - Age: 51                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: O-                                                                                                   │
+│  - Known Allergies: Ibuprofen                                                                                       │
+│  - Pre-existing Conditions: Gastroesophageal Reflux Disease (GERD)                                                  │
+│  - Current Medications: Omeprazole 20mg                                                                             │
+│  - Family History: Mother has angina                                                                                │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Chest burning                                                                                                    │
+│  - Chest tightness                                                                                                  │
+│  - Severity: High                                                                                                   │
+│                                                                                                                     │
+│  **Specialist Inputs:**                                                                                             │
+│                                                                                                                     │
+│  ### Cardiology Specialist                                                                                          │
+│  The symptoms of chest burning and chest tightness, particularly with a high severity, warrant consideration of     │
+│  cardiac causes. The patient's family history of angina is a significant risk factor for coronary artery disease.   │
+│  Given the age and gender of the patient, along with the nature of the symptoms, it is crucial to consider angina   │
+│  pectoris or even an acute myocardial infarction (heart attack) as potential diagnoses. Electrocardiogram (ECG)     │
+│  and troponin levels should be immediately assessed to evaluate for cardiac damage or ischemia.                     │
+│                                                                                                                     │
+│  ### Gastroenterology Specialist                                                                                    │
+│  Given the patient's history of Gastroesophageal Reflux Disease (GERD) and the symptoms of chest burning, it is     │
+│  reasonable to consider that these symptoms could be related to esophageal reflux. The burning sensation in the     │
+│  chest is a common symptom of GERD, and the fact that the patient is already on Omeprazole, a proton pump           │
+│  inhibitor, suggests that there might be an issue with the current management of his GERD. However, the tightness   │
+│  in the chest might not be as commonly associated with GERD, which leads us to consider other diagnoses as well.    │
+│  An upper endoscopy and pH monitoring could be useful in evaluating the severity of GERD and its potential          │
+│  contribution to the symptoms.                                                                                      │
+│                                                                                                                     │
+│  ### Pulmonology Specialist                                                                                         │
+│  Chest tightness could also be indicative of pulmonary issues such as asthma, chronic obstructive pulmonary         │
+│  disease (COPD), or even pulmonary embolism, especially if there is an acute onset. However, the specific symptom   │
+│  of chest burning is less commonly associated directly with primary pulmonary conditions. Still, it's essential to  │
+│  consider these possibilities, especially if other signs such as shortness of breath or cough are present.          │
+│  Pulmonary function tests (PFTs) and imaging studies like a chest X-ray or CT scan could help in evaluating         │
+│  pulmonary causes.                                                                                                  │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the symptoms of chest burning and chest tightness with a background of GERD and a family history of    │
+│  angina, a holistic approach is essential. It's crucial to not overlook the potential for cardiac causes while      │
+│  also considering the patient's known GERD as a possible contributing factor. The severity of symptoms suggests     │
+│  the need for urgent evaluation. Initial steps should include a thorough history, physical examination, ECG, and    │
+│  basic laboratory tests including cardiac enzymes. The patient's current medication for GERD and the known allergy  │
+│  to Ibuprofen should be considered when evaluating treatment options.                                               │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│                                                                                                                     │
+│  1. **Angina Pectoris or Acute Myocardial Infarction:** Given the patient's age, gender, family history of angina,  │
+│  and symptoms of chest tightness, cardiac causes must be considered and ruled out promptly.                         │
+│  2. **Gastroesophageal Reflux Disease (GERD) Exacerbation:** The patient's history of GERD and symptoms of chest    │
+│  burning could indicate an exacerbation or inadequate control of GERD.                                              │
+│  3. **Pulmonary Embolism or Other Pulmonary Conditions:** Although less likely given the specific symptoms,         │
+│  pulmonary causes cannot be immediately discounted without further evaluation.                                      │
+│  4. **Esophageal Spasm or Other Esophageal Disorders:** Given the chest burning, other esophageal disorders could   │
+│  be considered, especially if GERD is ruled out or not fully explanatory of the symptoms.                           │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│  - Immediate ECG and cardiac enzyme assessment to evaluate for acute coronary syndrome.                             │
+│  - Review and potentially adjust the current management of GERD.                                                    │
+│  - Consider further diagnostic tests such as upper endoscopy, pH monitoring, pulmonary function tests, or imaging   │
+│  studies based on the initial evaluation's findings.                                                                │
+│  - Holistic management considering the patient's known allergies and current medications.                           │
+│                                                                                                                     │
+│  This approach ensures a comprehensive evaluation of the patient's symptoms, considering both the immediate risk    │
+│  of cardiac issues and the possibility of other underlying conditions contributing to the presenting symptoms.      │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Completed                                                                                                     │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['chest burning', 'chest tightness']                                                           │
+│          - Severity: High                                                                                           │
+│          - Medical History: {'patient_id': 'P-004', 'name': 'David Ramirez', 'age': 51, 'gender': 'Male',           │
+│  'blood_type': 'O-', 'known_allergies': ['Ibuprofen'], 'pre_existing_conditions': ['Gastroesophageal Reflux         │
+│  Disease (GERD)'], 'current_medications': ['Omeprazole 20mg'], 'family_history': 'Mother has angina.'}              │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+ [OpenAI] Chief Medical Officer reviewing the case...
+╭────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Completed                                                                                           │
+│  Name: crew                                                                                                         │
+│  ID: b284e094-b71a-42f4-a673-4c99360fc964                                                                           │
+│  Final Output: **Diagnostic Report**                                                                                │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-004                                                                                                │
+│  - Name: David Ramirez                                                                                              │
+│  - Age: 51                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: O-                                                                                                   │
+│  - Known Allergies: Ibuprofen                                                                                       │
+│  - Pre-existing Conditions: Gastroesophageal Reflux Disease (GERD)                                                  │
+│  - Current Medications: Omeprazole 20mg                                                                             │
+│  - Family History: Mother has angina                                                                                │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Chest burning                                                                                                    │
+│  - Chest tightness                                                                                                  │
+│  - Severity: High                                                                                                   │
+│                                                                                                                     │
+│  **Specialist Inputs:**                                                                                             │
+│                                                                                                                     │
+│  ### Cardiology Specialist                                                                                          │
+│  The symptoms of chest burning and chest tightness, particularly with a high severity, warrant consideration of     │
+│  cardiac causes. The patient's family history of angina is a significant risk factor for coronary artery disease.   │
+│  Given the age and gender of the patient, along with the nature of the symptoms, it is crucial to consider angina   │
+│  pectoris or even an acute myocardial infarction (heart attack) as potential diagnoses. Electrocardiogram (ECG)     │
+│  and troponin levels should be immediately assessed to evaluate for cardiac damage or ischemia.                     │
+│                                                                                                                     │
+│  ### Gastroenterology Specialist                                                                                    │
+│  Given the patient's history of Gastroesophageal Reflux Disease (GERD) and the symptoms of chest burning, it is     │
+│  reasonable to consider that these symptoms could be related to esophageal reflux. The burning sensation in the     │
+│  chest is a common symptom of GERD, and the fact that the patient is already on Omeprazole, a proton pump           │
+│  inhibitor, suggests that there might be an issue with the current management of his GERD. However, the tightness   │
+│  in the chest might not be as commonly associated with GERD, which leads us to consider other diagnoses as well.    │
+│  An upper endoscopy and pH monitoring could be useful in evaluating the severity of GERD and its potential          │
+│  contribution to the symptoms.                                                                                      │
+│                                                                                                                     │
+│  ### Pulmonology Specialist                                                                                         │
+│  Chest tightness could also be indicative of pulmonary issues such as asthma, chronic obstructive pulmonary         │
+│  disease (COPD), or even pulmonary embolism, especially if there is an acute onset. However, the specific symptom   │
+│  of chest burning is less commonly associated directly with primary pulmonary conditions. Still, it's essential to  │
+│  consider these possibilities, especially if other signs such as shortness of breath or cough are present.          │
+│  Pulmonary function tests (PFTs) and imaging studies like a chest X-ray or CT scan could help in evaluating         │
+│  pulmonary causes.                                                                                                  │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the symptoms of chest burning and chest tightness with a background of GERD and a family history of    │
+│  angina, a holistic approach is essential. It's crucial to not overlook the potential for cardiac causes while      │
+│  also considering the patient's known GERD as a possible contributing factor. The severity of symptoms suggests     │
+│  the need for urgent evaluation. Initial steps should include a thorough history, physical examination, ECG, and    │
+│  basic laboratory tests including cardiac enzymes. The patient's current medication for GERD and the known allergy  │
+│  to Ibuprofen should be considered when evaluating treatment options.                                               │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│                                                                                                                     │
+│  1. **Angina Pectoris or Acute Myocardial Infarction:** Given the patient's age, gender, family history of angina,  │
+│  and symptoms of chest tightness, cardiac causes must be considered and ruled out promptly.                         │
+│  2. **Gastroesophageal Reflux Disease (GERD) Exacerbation:** The patient's history of GERD and symptoms of chest    │
+│  burning could indicate an exacerbation or inadequate control of GERD.                                              │
+│  3. **Pulmonary Embolism or Other Pulmonary Conditions:** Although less likely given the specific symptoms,         │
+│  pulmonary causes cannot be immediately discounted without further evaluation.                                      │
+│  4. **Esophageal Spasm or Other Esophageal Disorders:** Given the chest burning, other esophageal disorders could   │
+│  be considered, especially if GERD is ruled out or not fully explanatory of the symptoms.                           │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│  - Immediate ECG and cardiac enzyme assessment to evaluate for acute coronary syndrome.                             │
+│  - Review and potentially adjust the current management of GERD.                                                    │
+│  - Consider further diagnostic tests such as upper endoscopy, pH monitoring, pulmonary function tests, or imaging   │
+│  studies based on the initial evaluation's findings.                                                                │
+│  - Holistic management considering the patient's known allergies and current medications.                           │
+│                                                                                                                     │
+│  This approach ensures a comprehensive evaluation of the patient's symptoms, considering both the immediate risk    │
+│  of cardiac issues and the possibility of other underlying conditions contributing to the presenting symptoms.      │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Info: Tracing is disabled.                                                                                         │
+│                                                                                                                     │
+│  To enable tracing, do any one of these:                                                                            │
+│  • Set tracing=True in your Crew/Flow code                                                                          │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                      │
+│  • Run: crewai traces enable                                                                                        │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT AND RECOMMENDED TREATMENT PLAN**
+
+**Patient Information:**
+- Patient ID: P-004
+- Name: David Ramirez
+- Age: 51
+- Gender: Male
+
+**Final Diagnosis:**
+Based on the comprehensive review of the patient's history, presenting symptoms, and specialist inputs, the final diagnosis is **Angina Pectoris**. This diagnosis is supported by the patient's symptoms of chest tightness, family history of angina, and the need for urgent evaluation to rule out acute myocardial infarction.
+
+**Cross-Reference with Patient's Known Allergies and Medications:**
+The patient's known allergy to Ibuprofen and current medication of Omeprazole 20mg for GERD have been considered. Given the diagnosis of angina pectoris, it is crucial to avoid medications that could exacerbate the condition or interact with potential treatments. The patient's current medication for GERD will be continued, and any new medications will be carefully selected to avoid interactions with Omeprazole or triggering an allergic reaction.
+
+**Recommended Treatment Plan:**
+1. **Immediate Cardiac Evaluation:** Perform an electrocardiogram (ECG) and assess cardiac enzymes (troponin levels) to evaluate for cardiac damage or ischemia.
+2. **Medication Adjustment:** Consider introducing sublingual nitroglycerin for immediate relief of angina symptoms, under close medical supervision. Also, evaluate the need for antiplatelet therapy (e.g., aspirin) and/or beta-blockers, taking into account the patient's current medication regimen and allergy profile.
+3. **GERD Management Review:** Continue Omeprazole 20mg for GERD management but consider adjusting the dose or adding other medications if symptoms persist, ensuring no harmful interactions with cardiac medications.
+4. **Lifestyle Modifications:** Counsel the patient on lifestyle changes to manage angina and reduce the risk of cardiac events, including diet, exercise, stress management, and smoking cessation if applicable.
+5. **Follow-Up:** Schedule a follow-up appointment to monitor the patient's response to treatment, adjust the treatment plan as necessary, and consider further diagnostic tests (e.g., stress test, coronary angiography) if symptoms persist or worsen.
+
+**Conclusion:**
+The diagnosis of angina pectoris is based on a comprehensive evaluation of the patient's symptoms, history, and specialist inputs. The recommended treatment plan aims to manage the patient's angina, ensure the safe use of medications, and prevent potential complications. Close monitoring and follow-up are crucial to adjust the treatment plan as necessary and ensure the best possible outcomes for the patient.
+
+==================================================
+(venv) PS D:\attestix2\attestix\Hospital> 

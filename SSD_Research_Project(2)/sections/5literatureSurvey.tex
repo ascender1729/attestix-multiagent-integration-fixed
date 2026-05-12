@@ -1,0 +1,86 @@
+\chapter{Literature Survey}
+\noindent\rule{\linewidth}{2pt}
+
+\section{Review}
+
+\begin{itemize}
+
+\item \textbf{Multi-Agent Systems and LLM Orchestration Frameworks} (Wooldridge, 2009; Chase, 2023; Moura, 2024).
+
+A Multi-Agent System (MAS) is a group of autonomous software agents that work together to complete tasks. When powered by large language models, each agent uses an LLM as its reasoning engine and can call external tools, query databases, or trigger other agents. Popular frameworks like LangChain, CrewAI, LangGraph, Semantic Kernel, and the OpenAI Agents SDK make it easy to build these pipelines. The problem is they were designed to make agents capable, not to make them secure or auditable.
+
+\item \textbf{Security Challenges: Identity, Over-Privilege, and Audit Tampering} (Perez \& Ribeiro, 2022; Saltzer \& Schroeder, 1975).
+
+In most agent systems, an agent's identity is just a name in a variable or a label in a prompt. There is no cryptographic proof that the agent claiming to be ``Medical DB Agent'' actually is one. This opens the door to prompt injection attacks where a malicious input tricks one agent into impersonating another. On top of that, agents tend to be given broad access to resources for the whole session rather than just for the specific task they are doing. Audit logs, when they exist at all, are stored in plain files that can be edited after the fact without any trace.
+
+\item \textbf{Agent Identity Fragmentation Across Platforms.}
+
+A growing challenge in the industry is that agent identity is being handled differently by every major provider. Microsoft uses Entra, AWS has AgentCore, Google has A2A, and there is also the ERC-8004 token standard. None of these combine agent identity, EU AI Act compliance, and verifiable credentials in a single protocol. This fragmentation makes it hard to build systems where agents from different platforms can verify each other in a standardised way. Attestix was built specifically to solve this by providing a vendor-neutral identity layer.
+
+\item \textbf{EU AI Act and Regulatory Requirements} (European Parliament, 2024).
+
+The EU AI Act (Regulation (EU) 2024/1689) classifies AI systems used in healthcare, law enforcement, judicial processes, and financial services as high-risk. These systems are required to maintain automatic logs (Article 12), support human oversight (Article 14), produce technical documentation (Article 11), and go through conformity assessments (Article 43). Transparency enforcement begins August 2, 2026, with fines reaching up to EUR 35 million or 7\% of global revenue. No existing open-source agent framework produces the machine-readable, cryptographically verifiable proof that regulators require.
+
+\item \textbf{Decentralised Identity Standards: W3C DIDs and Verifiable Credentials} (Sporny et al., 2022).
+
+The W3C DID specification defines Decentralised Identifiers, which are unique identifiers that are controlled by their owner without needing a central registry. The W3C Verifiable Credentials standard allows claims about an entity to be cryptographically signed so they can be verified by anyone. Attestix uses both of these standards to give each AI agent a self-sovereign identity and a signed certificate of its role.
+
+\item \textbf{UCAN: User Controlled Authorization Networks} (Zelenka et al., 2022; Miller et al., 2003).
+
+UCAN is a JWT-based token format for delegating specific permissions from one party to another. Each token encodes who is granting the permission, who is receiving it, what they are allowed to do, and when the permission expires. A key feature is capability attenuation, meaning a delegated token can only carry a subset of the original permissions. This prevents privilege escalation and is why UCAN works well for controlling what each agent in a pipeline is allowed to do.
+
+\item \textbf{Reputation Scoring for AI Agents.}
+
+When an agent makes decisions repeatedly over time, there is value in tracking whether those decisions were good ones. Attestix includes a reputation module that builds a recency-weighted trust score for each agent based on its action history. Newer actions carry more weight than older ones, and scores are broken down by category. This kind of longitudinal tracking becomes useful when you want to give more trusted agents access to sensitive resources, or flag agents whose performance has dropped.
+
+\item \textbf{Merkle Trees and Tamper-Evident Audit Logs} (Laurie, Langley \& Kasper, RFC 6962, 2013).
+
+Merkle trees are used in systems like Certificate Transparency and Bitcoin to create data structures where any change to a record invalidates all the hashes that follow it. Attestix uses this principle in its provenance module: every agent action produces a log entry, and each entry's hash is computed from both the entry content and the previous hash. This creates a chain where you can verify that nothing has been changed or deleted after the fact.
+
+\item \textbf{Ethereum Attestation Service and Base L2 Blockchain} (EAS, 2023; Coinbase, 2024).
+
+The Ethereum Attestation Service (EAS) is an on-chain system for recording structured, signed claims permanently on a blockchain. Base L2 is a low-cost EVM-compatible network built on the OP Stack. Attestix uses these together to anchor the Merkle root of an audit batch on-chain, so there is a public, time-stamped record that a specific audit trail existed at a specific point in time.
+
+\item \textbf{Attestix Research Paper} (Dubasi, 2026).
+
+The Attestix protocol is described formally in a research paper titled \textit{Attestix: A Unified Attestation Infrastructure for Autonomous AI Agents} by Pavan Kumar Dubasi, VibeTensor, 2026. The paper covers the cryptographic architecture, the 9-module design, and evaluation results across different agent frameworks. This project builds directly on that work by applying Attestix in four regulated domain simulations.
+
+\end{itemize}
+
+\newpage
+
+\section{Challenges in Existing Systems}
+
+Based on the literature reviewed and practical observation during this project, the main gaps in current agent frameworks are:
+
+\begin{itemize}
+    \item Any component can claim to be any agent since there is no cryptographic identity binding
+    \item Agents are given session-wide access to resources instead of task-scoped permissions
+    \item Audit logs are stored in plain files and can be edited silently
+    \item No framework provides EU AI Act Annex III compliance profiles
+    \item Decisions cannot be attributed to specific agents after the fact
+    \item Agent identity is fragmented across vendor platforms with no interoperability
+\end{itemize}
+
+\section{Comparison of Existing Multi-Agent Frameworks}
+
+\begin{table}[H]
+\centering
+\caption{Security Properties of Existing Multi-Agent Frameworks}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Framework} & \textbf{Identity} & \textbf{Delegation} & \textbf{Provenance} & \textbf{Compliance} \\
+\hline
+LangChain & $\times$ & $\times$ & Partial & $\times$ \\
+CrewAI & $\times$ & $\times$ & $\times$ & $\times$ \\
+LangGraph & $\times$ & $\times$ & Partial & $\times$ \\
+OpenAI Agents SDK & $\times$ & $\times$ & $\times$ & $\times$ \\
+Semantic Kernel & $\times$ & $\times$ & $\times$ & $\times$ \\
+\hline
+\textbf{Attestix (proposed)} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+\hline
+\end{tabular}
+\label{tab:framework_comparison}
+\end{table}
+
+None of the existing frameworks address all four gaps at once. Attestix was designed to fill exactly this space by providing a single vendor-neutral layer that works on top of any of them.

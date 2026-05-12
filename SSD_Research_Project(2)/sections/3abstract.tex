@@ -1,0 +1,31 @@
+\pagebreak
+\phantomsection
+\cleardoublepage
+
+\vspace*{-\topskip}
+\rule{\linewidth}{2pt} \\
+\vspace{0.1in}
+
+\begin{center}
+{\bf \Large ABSTRACT }\\
+\par\vspace{5mm}
+\end{center}
+
+\setlength{\parindent}{15pt}
+\setlength{\parskip}{0.4em}
+Autonomous AI agents are being deployed increasingly in regulated sectors such as healthcare, finance, law, and environmental governance. While these systems can make high-stakes decisions, most existing multi-agent frameworks like LangChain, CrewAI, LangGraph, and the OpenAI Agents SDK were built for capability and not for compliance. They offer no built-in mechanisms for verifying agent identity, controlling data access, or maintaining tamper-proof records of decisions.
+\\[0.1in]
+
+This project addresses that gap by integrating the Attestix Protocol, a pip-installable Python security library, as a security layer across four domain simulations: an Autonomous Medical Board, an Algorithmic Hedge Fund, a Global ESG Supply Chain Auditor, and an Autonomous Legal Advisory Panel. Each domain uses a different combination of orchestration frameworks, showing that the security layer works independently of the underlying tools.
+\\[0.1in]
+
+The integration covers five security areas: agent identity using Ed25519-backed Decentralised Identifiers (DIDs); access control through UCAN delegation tokens with cryptographic verification; role certification via W3C Verifiable Credentials; tamper-evident decision logging through SHA-256 Merkle provenance chains; and EU AI Act compliance profiles mapping each agent to Annex III risk categories. As an optional extension, audit records are anchored to the Base Sepolia blockchain using the Ethereum Attestation Service (EAS).
+\\[0.1in]
+
+Results show that every agent decision is traceable and cryptographically signed, unauthorised access is blocked at the delegation gate, and the full audit trail is hash-chained and cannot be silently modified. A live on-chain transaction (EAS attestation UID: \texttt{0xb2cdbd85...}) confirms that audit records can be made permanently verifiable on a public blockchain.
+
+\vspace{2cm}
+
+\vfill
+\rule{\linewidth}{1pt}
+\newpage

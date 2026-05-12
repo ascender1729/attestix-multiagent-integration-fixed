@@ -1,0 +1,302 @@
+(venv) PS D:\attestix2\attestix\Hospital> python agents/medical_board.py
+
+==================================================
+ 🏥 AUTONOMOUS HOSPITAL BOARD (Unregulated Mode)
+==================================================
+
+Please enter the patient's statement: Hi, I am Thomas Brown, patient P-009. Out of nowhere, both of my legs started feeling incredibly weak, and I have this shooting pain going down my lower back.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+ [LangChain] Initializing Patient Intake...
+ [LangChain] Extracted Patient ID: P-009
+ [LangChain] Symptoms: ['weakness in legs', 'shooting pain in lower back']
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+ [Enterprise DB] Securely querying records for P-009...
+ [Enterprise DB] Found records for Thomas Brown.
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+ [CrewAI] Assembling 6-Agent Specialist Panel...
+ [CrewAI] Panel Debate Initiated...
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Started                                                                                             │
+│  Name: crew                                                                                                         │
+│  ID: 0b83d254-4a3d-451c-b009-bc8d53ebb2d1                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Started                                                                                                       │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['weakness in legs', 'shooting pain in lower back']                                            │
+│          - Severity: High                                                                                           │
+│          - Medical History: {'patient_id': 'P-009', 'name': 'Thomas Brown', 'age': 58, 'gender': 'Male',            │
+│  'blood_type': 'AB-', 'known_allergies': ['Penicillin'], 'pre_existing_conditions': ['Osteoarthritis', 'Peripheral  │
+│  Neuropathy'], 'current_medications': ['Gabapentin 300mg', 'Meloxicam 15mg'], 'family_history': 'No significant     │
+│  history.'}                                                                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  ID: bae1f2cc-b75a-4e8e-b41a-d4dff9dafb11                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     ││  Task:                                                                                                              ││          Analyze the following patient data:                                                                        ││          - Symptoms: ['weakness in legs', 'shooting pain in lower back']                                            ││          - Severity: High                                                                                           ││          - Medical History: {'patient_id': 'P-009', 'name': 'Thomas Brown', 'age': 58, 'gender': 'Male',            ││  'blood_type': 'AB-', 'known_allergies': ['Penicillin'], 'pre_existing_conditions': ['Osteoarthritis', 'Peripheral  ││  Neuropathy'], 'current_medications': ['Gabapentin 300mg', 'Meloxicam 15mg'], 'family_history': 'No significant     ││  history.'}                                                                                                         ││                                                                                                                     ││          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           ││  expertise.                                                                                                         ││          Provide a final unified differential diagnosis (a list of the most likely conditions).                     ││                                                                                                                     ││                                                                                                                     │╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Final Answer:                                                                                                      │
+│  **Diagnostic Report**                                                                                              │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-009                                                                                                │
+│  - Name: Thomas Brown                                                                                               │
+│  - Age: 58                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Medical History:                                                                                                 │
+│    - Known Allergies: Penicillin                                                                                    │
+│    - Pre-existing Conditions: Osteoarthritis, Peripheral Neuropathy                                                 │
+│    - Current Medications: Gabapentin 300mg, Meloxicam 15mg                                                          │
+│    - Family History: No significant history.                                                                        │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Weakness in legs                                                                                                 │
+│  - Shooting pain in lower back                                                                                      │
+│  - Severity: High                                                                                                   │
+│                                                                                                                     │
+│  **Specialist Input:**                                                                                              │
+│                                                                                                                     │
+│  ### Neurologist                                                                                                    │
+│  The symptoms of weakness in legs and shooting pain in the lower back could indicate a neurological issue. Given    │
+│  the patient's history of Peripheral Neuropathy, it's possible that the condition has progressed or that there's    │
+│  an additional neurological factor at play. The symptom of shooting pain, in particular, suggests a potential       │
+│  issue with nerve compression or damage. Conditions such as lumbar radiculopathy or a herniated disc could be       │
+│  considered, especially if the pain radiates down the legs. The patient's current medication, Gabapentin, which is  │
+│  used to treat neuropathic pain, might not be fully addressing the issue, or the dosage might need adjustment.      │
+│                                                                                                                     │
+│  ### Orthopedic Specialist                                                                                          │
+│  From an orthopedic perspective, the symptoms could be related to spinal issues, particularly given the patient's   │
+│  age and history of Osteoarthritis. The shooting pain in the lower back and weakness in legs could be indicative    │
+│  of spinal stenosis, a condition where the spaces within the spine narrow, putting pressure on the nerves. This     │
+│  condition can cause pain, numbness, and weakness in the legs. Additionally, the osteoarthritis could be            │
+│  contributing to the spinal issues, making the spinal stenosis worse. An MRI or CT scan would be beneficial in      │
+│  diagnosing any structural issues within the spine.                                                                 │
+│                                                                                                                     │
+│  ### Rheumatologist                                                                                                 │
+│  While the primary symptoms suggest neurological or orthopedic issues, it's also important to consider the          │
+│  patient's history of Osteoarthritis. Although the current medication, Meloxicam, is aimed at reducing              │
+│  inflammation and pain associated with osteoarthritis, the high severity of the current symptoms might indicate     │
+│  that the osteoarthritis is not well-managed, or there could be another underlying rheumatological condition        │
+│  contributing to the symptoms. However, without additional symptoms such as joint swelling, redness, or warmth,     │
+│  it's less likely that a new rheumatological condition is the primary cause.                                        │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the patient's overall medical history, current medications, and the presenting symptoms, it's crucial  │
+│  to take a holistic approach. The combination of weakness in legs and shooting pain in the lower back suggests a    │
+│  condition that affects both neurological and musculoskeletal systems. The patient's pre-existing conditions and    │
+│  current medications provide a baseline understanding but do not fully explain the high severity of the current     │
+│  symptoms. Therefore, a comprehensive evaluation, including possibly adjusting current medications or considering   │
+│  additional diagnostic tests (like EMG for neuropathy, or imaging studies for spinal issues), is necessary.         │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│                                                                                                                     │
+│  Based on the input from various specialists and considering the patient's medical history and presenting           │
+│  symptoms, the following conditions are included in the differential diagnosis:                                     │
+│                                                                                                                     │
+│  1. **Lumbar Radiculopathy** - A condition where a nerve root in the lower back is compressed or inflamed, causing  │
+│  pain, numbness, and weakness in the legs.                                                                          │
+│  2. **Spinal Stenosis** - Narrowing of the spinal canal, which can put pressure on the spinal cord and nerves,      │
+│  leading to pain, numbness, and weakness in the legs.                                                               │
+│  3. **Herniated Disc** - A condition where the soft tissue between spinal vertebrae protrudes, potentially          │
+│  pressing on nearby nerves and causing pain and weakness.                                                           │
+│  4. **Progression of Peripheral Neuropathy** - Given the patient's history, a worsening of the neuropathy could     │
+│  explain the increased severity of symptoms.                                                                        │
+│  5. **Osteoarthritis of the Spine** - Although primarily considered for joint issues, spinal osteoarthritis can     │
+│  contribute to the symptoms presented, especially if there's significant spinal involvement.                        │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│                                                                                                                     │
+│  - Conduct a thorough physical examination, including a neurological exam to assess nerve function and muscle       │
+│  strength.                                                                                                          │
+│  - Order diagnostic tests such as MRI or CT scans of the spine to evaluate for structural abnormalities.            │
+│  - Consider electromyography (EMG) to assess the health of muscles and the nerve cells that control them (motor     │
+│  neurons).                                                                                                          │
+│  - Review and potentially adjust the patient's current medication regimen to ensure optimal management of           │
+│  symptoms.                                                                                                          │
+│  - Refer to specialists (e.g., neurologist, orthopedic specialist) for further evaluation and management as         │
+│  necessary.                                                                                                         │
+│                                                                                                                     │
+│  This approach will help in pinpointing the exact cause of the symptoms and guide the development of an effective   │
+│  treatment plan.                                                                                                    │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Completed                                                                                                     │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['weakness in legs', 'shooting pain in lower back']                                            │
+│          - Severity: High                                                                                           │
+│          - Medical History: {'patient_id': 'P-009', 'name': 'Thomas Brown', 'age': 58, 'gender': 'Male',            │
+│  'blood_type': 'AB-', 'known_allergies': ['Penicillin'], 'pre_existing_conditions': ['Osteoarthritis', 'Peripheral  │
+│  Neuropathy'], 'current_medications': ['Gabapentin 300mg', 'Meloxicam 15mg'], 'family_history': 'No significant     │
+│  history.'}                                                                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in if the symptoms fall under their           │
+│  expertise.                                                                                                         │
+│          Provide a final unified differential diagnosis (a list of the most likely conditions).                     │
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+ [OpenAI] Chief Medical Officer reviewing the case...
+╭────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Completed                                                                                           │
+│  Name: crew                                                                                                         │
+│  ID: 0b83d254-4a3d-451c-b009-bc8d53ebb2d1                                                                           │
+│  Final Output: **Diagnostic Report**                                                                                │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-009                                                                                                │
+│  - Name: Thomas Brown                                                                                               │
+│  - Age: 58                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Medical History:                                                                                                 │
+│    - Known Allergies: Penicillin                                                                                    │
+│    - Pre-existing Conditions: Osteoarthritis, Peripheral Neuropathy                                                 │
+│    - Current Medications: Gabapentin 300mg, Meloxicam 15mg                                                          │
+│    - Family History: No significant history.                                                                        │
+│                                                                                                                     │
+│  **Presenting Symptoms:**                                                                                           │
+│  - Weakness in legs                                                                                                 │
+│  - Shooting pain in lower back                                                                                      │
+│  - Severity: High                                                                                                   │
+│                                                                                                                     │
+│  **Specialist Input:**                                                                                              │
+│                                                                                                                     │
+│  ### Neurologist                                                                                                    │
+│  The symptoms of weakness in legs and shooting pain in the lower back could indicate a neurological issue. Given    │
+│  the patient's history of Peripheral Neuropathy, it's possible that the condition has progressed or that there's    │
+│  an additional neurological factor at play. The symptom of shooting pain, in particular, suggests a potential       │
+│  issue with nerve compression or damage. Conditions such as lumbar radiculopathy or a herniated disc could be       │
+│  considered, especially if the pain radiates down the legs. The patient's current medication, Gabapentin, which is  │
+│  used to treat neuropathic pain, might not be fully addressing the issue, or the dosage might need adjustment.      │
+│                                                                                                                     │
+│  ### Orthopedic Specialist                                                                                          │
+│  From an orthopedic perspective, the symptoms could be related to spinal issues, particularly given the patient's   │
+│  age and history of Osteoarthritis. The shooting pain in the lower back and weakness in legs could be indicative    │
+│  of spinal stenosis, a condition where the spaces within the spine narrow, putting pressure on the nerves. This     │
+│  condition can cause pain, numbness, and weakness in the legs. Additionally, the osteoarthritis could be            │
+│  contributing to the spinal issues, making the spinal stenosis worse. An MRI or CT scan would be beneficial in      │
+│  diagnosing any structural issues within the spine.                                                                 │
+│                                                                                                                     │
+│  ### Rheumatologist                                                                                                 │
+│  While the primary symptoms suggest neurological or orthopedic issues, it's also important to consider the          │
+│  patient's history of Osteoarthritis. Although the current medication, Meloxicam, is aimed at reducing              │
+│  inflammation and pain associated with osteoarthritis, the high severity of the current symptoms might indicate     │
+│  that the osteoarthritis is not well-managed, or there could be another underlying rheumatological condition        │
+│  contributing to the symptoms. However, without additional symptoms such as joint swelling, redness, or warmth,     │
+│  it's less likely that a new rheumatological condition is the primary cause.                                        │
+│                                                                                                                     │
+│  ### General Practitioner (Internal Medicine)                                                                       │
+│  Considering the patient's overall medical history, current medications, and the presenting symptoms, it's crucial  │
+│  to take a holistic approach. The combination of weakness in legs and shooting pain in the lower back suggests a    │
+│  condition that affects both neurological and musculoskeletal systems. The patient's pre-existing conditions and    │
+│  current medications provide a baseline understanding but do not fully explain the high severity of the current     │
+│  symptoms. Therefore, a comprehensive evaluation, including possibly adjusting current medications or considering   │
+│  additional diagnostic tests (like EMG for neuropathy, or imaging studies for spinal issues), is necessary.         │
+│                                                                                                                     │
+│  **Differential Diagnosis:**                                                                                        │
+│                                                                                                                     │
+│  Based on the input from various specialists and considering the patient's medical history and presenting           │
+│  symptoms, the following conditions are included in the differential diagnosis:                                     │
+│                                                                                                                     │
+│  1. **Lumbar Radiculopathy** - A condition where a nerve root in the lower back is compressed or inflamed, causing  │
+│  pain, numbness, and weakness in the legs.                                                                          │
+│  2. **Spinal Stenosis** - Narrowing of the spinal canal, which can put pressure on the spinal cord and nerves,      │
+│  leading to pain, numbness, and weakness in the legs.                                                               │
+│  3. **Herniated Disc** - A condition where the soft tissue between spinal vertebrae protrudes, potentially          │
+│  pressing on nearby nerves and causing pain and weakness.                                                           │
+│  4. **Progression of Peripheral Neuropathy** - Given the patient's history, a worsening of the neuropathy could     │
+│  explain the increased severity of symptoms.                                                                        │
+│  5. **Osteoarthritis of the Spine** - Although primarily considered for joint issues, spinal osteoarthritis can     │
+│  contribute to the symptoms presented, especially if there's significant spinal involvement.                        │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│                                                                                                                     │
+│  - Conduct a thorough physical examination, including a neurological exam to assess nerve function and muscle       │
+│  strength.                                                                                                          │
+│  - Order diagnostic tests such as MRI or CT scans of the spine to evaluate for structural abnormalities.            │
+│  - Consider electromyography (EMG) to assess the health of muscles and the nerve cells that control them (motor     │
+│  neurons).                                                                                                          │
+│  - Review and potentially adjust the patient's current medication regimen to ensure optimal management of           │
+│  symptoms.                                                                                                          │
+│  - Refer to specialists (e.g., neurologist, orthopedic specialist) for further evaluation and management as         │
+│  necessary.                                                                                                         │
+│                                                                                                                     │
+│  This approach will help in pinpointing the exact cause of the symptoms and guide the development of an effective   │
+│  treatment plan.                                                                                                    │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Info: Tracing is disabled.                                                                                         │
+│                                                                                                                     │
+│  To enable tracing, do any one of these:                                                                            │
+│  • Set tracing=True in your Crew/Flow code                                                                          │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                      │
+│  • Run: crewai traces enable                                                                                        │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT AND RECOMMENDED TREATMENT PLAN**
+
+**Patient Information:**
+- Patient ID: P-009
+- Name: Thomas Brown
+- Age: 58
+- Gender: Male
+
+**Summary of Findings:**
+After reviewing the specialist panel's debate and cross-referencing with the patient's known allergies and medications, the differential diagnosis includes Lumbar Radiculopathy, Spinal Stenosis, Herniated Disc, Progression of Peripheral Neuropathy, and Osteoarthritis of the Spine.
+
+**Cross-Reference with Patient's Medical History:**
+Given the patient's known allergy to Penicillin, it is crucial to avoid any medications that may contain Penicillin or have cross-reactivity. The patient's current medications, Gabapentin 300mg and Meloxicam 15mg, do not appear to have any significant interactions with the potential diagnoses. However, it is essential to monitor the patient's response to these medications and adjust as necessary.
+
+**FINAL DIAGNOSIS:**
+Based on the presenting symptoms of weakness in legs and shooting pain in the lower back, combined with the patient's medical history and the specialist panel's input, the most likely diagnosis is **Lumbar Radiculopathy**. This condition is supported by the patient's history of Peripheral Neuropathy and the severity of the current symptoms.
+
+**RECOMMENDED TREATMENT PLAN:**
+
+1. **Diagnostic Tests:** Order an MRI of the spine to evaluate for structural abnormalities, such as nerve compression or herniated discs.
+2. **Medication Adjustment:** Consider increasing the dosage of Gabapentin to 400mg or adding an alternative medication, such as Pregabalin, to better manage neuropathic pain. Monitor the patient's response to Meloxicam and adjust as necessary to control inflammation and pain associated with osteoarthritis.
+3. **Physical Therapy:** Refer the patient to physical therapy to improve mobility, strength, and flexibility, which can help alleviate symptoms.
+4. **Specialist Referral:** Refer the patient to a neurologist for further evaluation and management of the Lumbar Radiculopathy.
+5. **Follow-Up:** Schedule a follow-up appointment in 4-6 weeks to reassess the patient's symptoms and adjust the treatment plan as necessary.
+
+**CONCLUSION:**
+The diagnosis of Lumbar Radiculopathy is based on a comprehensive evaluation of the patient's symptoms, medical history, and specialist input. The recommended treatment plan aims to manage the patient's symptoms, improve mobility, and prevent further progression of the condition. Close monitoring and follow-up are essential to ensure the best possible outcome for the patient.

@@ -1,0 +1,61 @@
+\chapter{Introduction}
+\noindent\rule{\linewidth}{2pt}
+
+\section{Overview}
+
+AI agents are software programs that use a large language model as a reasoning engine, can call external tools, and take actions autonomously to complete a given task. They are now being used in real-world applications including medical diagnosis, financial trading, legal analysis, and supply chain auditing, where decisions carry serious consequences and there needs to be a clear record of what was decided, by whom, and based on what information.
+
+The problem is that most multi-agent frameworks today were not built with this kind of accountability in mind. A trading agent has no verifiable identity. A medical agent can query any patient record it wants. An ESG report can be edited after the fact with no trace. These are not just design flaws; they are compliance risks, especially as governments start regulating AI systems more strictly.
+
+\section{Regulated AI Orchestration Using Attestix}
+
+The \textbf{Attestix Protocol} is made as an open-source Python library (v0.3.0) installable via \texttt{pip install attestix} that provides attestation infrastructure for AI agents. It plugs into existing agent codebases without replacing them and implements Ed25519-backed Decentralised Identifiers, UCAN delegation tokens, W3C Verifiable Credentials, SHA-256 Merkle provenance chains, EU AI Act compliance profiles, and Base L2 blockchain anchoring.
+
+This project demonstrates Attestix integration across four multi-agent AI systems built using different combinations of LangChain, CrewAI, LangGraph, Semantic Kernel, and the OpenAI Agents SDK, covering healthcare, finance, ESG auditing, and judicial proceedings.
+
+\section{Objectives}
+
+The main objectives of this project are:
+
+\begin{itemize}
+    \item \textbf{Study Security Vulnerabilities:} Understand what security properties are missing in existing multi-agent frameworks like LangChain, CrewAI, and LangGraph.
+
+    \item \textbf{Integrate Attestix:} Add Attestix as a security layer across four agent systems without modifying the core agent logic.
+
+    \item \textbf{Agent Identity:} Give each agent a cryptographically unique identity using Ed25519-backed DIDs and UAITs.
+
+    \item \textbf{Access Control:} Use UCAN delegation tokens so that each agent only gets access to what it needs for its specific task.
+
+    \item \textbf{Audit Logging:} Record every agent action in a SHA-256 hash-chained log that cannot be tampered with silently.
+
+    \item \textbf{EU AI Act Compliance:} Assign each agent a compliance profile matching its risk category under Annex III of the EU AI Act.
+
+    \item \textbf{Blockchain Anchoring:} Store the audit trail's Merkle root on the Base Sepolia blockchain via EAS for permanent verification.
+\end{itemize}
+
+\section{Importance}
+
+\begin{itemize}
+
+\item \textbf{Regulatory Compliance:} The EU AI Act (2024/1689) requires high-risk AI systems in healthcare, finance, and law to maintain verifiable logs and undergo conformity assessments. Without something like Attestix, none of the popular agent frameworks can meet these requirements out of the box.
+
+\item \textbf{Access Control:} In most agent pipelines, once an agent is given access to a resource, it keeps that access throughout the session. Attestix issues a scoped token for each specific task, so an agent only gets what it needs at that moment, and nothing more.
+
+\item \textbf{Single Security Layer for Multiple Frameworks:} Building Attestix as a shared module means the same security code works across LangChain, CrewAI, LangGraph, Semantic Kernel, and the OpenAI SDK without any framework-specific changes.
+
+\item \textbf{Permanent Audit Records:} Anchoring the audit trail's hash on a public blockchain means the records cannot be quietly deleted or edited later, which is important in sectors like healthcare and law where decisions may need to be reviewed years later.
+
+\end{itemize}
+
+\section{Scope of Work}
+
+The project covers four simulation environments:
+
+\begin{itemize}
+    \item \textbf{Hospital:} Autonomous Medical Board (LangChain, CrewAI, Semantic Kernel, OpenAI SDK)
+    \item \textbf{Finance:} Algorithmic Hedge Fund (LangChain, CrewAI, Semantic Kernel, OpenAI SDK)
+    \item \textbf{ESG:} Global ESG Supply Chain Auditor (LangChain, CrewAI, OpenAI SDK)
+    \item \textbf{Court:} Autonomous Legal Advisory Panel (LangGraph, CrewAI, Semantic Kernel, OpenAI SDK)
+\end{itemize}
+
+All four share a single shared Attestix client module. Each domain only needs a 9-line configuration file to set it up.

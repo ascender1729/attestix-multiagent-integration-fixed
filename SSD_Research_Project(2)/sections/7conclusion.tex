@@ -1,0 +1,54 @@
+\chapter{Conclusion and Future Works}
+\noindent\rule{\linewidth}{2pt}
+
+\section{Conclusion}
+
+This project has demonstrated that production-grade Zero-Trust security for multi-agent AI systems is achievable through integration of the Attestix Protocol as a non-invasive security middleware layer. The result is what this work terms \textbf{Regulated AI Orchestration}: AI systems where every decision is cryptographically accountable and the audit trail is suitable for review by medical, financial, legal, and environmental regulators.
+
+Key achievements include:
+
+\begin{itemize}
+    \item \textbf{Shared Parameterised AttestixManager:} A single shared security client eliminates duplication across four domain projects, reducing domain-specific security code to a 9-line configuration file per project.
+
+    \item \textbf{End-to-End Cryptographic Accountability:} Every AI decision is traceable from Ed25519 identity provisioning through UCAN delegation gates, W3C Verifiable Credentials, SHA-256 Merkle provenance chains, and Base L2 blockchain anchoring.
+
+    \item \textbf{Demonstrated EU AI Act Compliance:} All agents have Annex III risk profiles, and the conformity gatekeeper actively blocks unregistered agents from execution --- confirmed through negative testing.
+
+    \item \textbf{Framework-Agnostic Integration:} The security layer operates identically across LangChain, CrewAI, LangGraph, Semantic Kernel, and the OpenAI SDK simultaneously.
+
+    \item \textbf{Live Blockchain Anchoring Confirmed:} A real EAS attestation (TX: \texttt{107aa293...}, UID: \texttt{0xb2cdbd85...}) on Base Sepolia confirms that audit records can be made permanently immutable and publicly verifiable.
+\end{itemize}
+
+\section{Future Works}
+
+\begin{itemize}
+
+    \item \textbf{Persistent Agent Identities and Reputation Tracking}
+    \begin{itemize}
+        \item Pre-provision fixed identities for individual specialist agents and reuse them across sessions.
+        \item Enable the \texttt{ReputationService} to build longitudinal trust scores with 30-day exponential decay, supporting reputation-aware orchestration.
+    \end{itemize}
+
+    \item \textbf{Mainnet Blockchain Anchoring}
+    \begin{itemize}
+        \item Migrate blockchain anchoring from Base Sepolia testnet to Base mainnet for permanent, economically-secured proof of AI audit records.
+        \item Particularly valuable for financial and legal domains where tamper-evident records must survive for years.
+    \end{itemize}
+
+    \item \textbf{HTML/PDF Compliance Report Generation}
+    \begin{itemize}
+        \item Integrate the Attestix \texttt{ReportService} to generate self-contained HTML/PDF compliance reports consolidating all artifacts (DIDs, VCs, audit trail, compliance profile) into a single regulator-ready document.
+    \end{itemize}
+
+    \item \textbf{Adversarial Testing Framework}
+    \begin{itemize}
+        \item Develop a formal adversarial evaluation framework to systematically test: token forgery attempts, proof chain cycle injection, SSRF attacks on the DID resolver, and concurrent delegation race conditions.
+    \end{itemize}
+
+    \item \textbf{Deployment in Real Enterprise Systems}
+    \begin{itemize}
+        \item Deploy the architecture in a real-world multi-agent system in a regulated environment such as a hospital information system or algorithmic trading platform.
+        \item Evaluate performance under production load and adapt the \texttt{ProvenanceService} for distributed, multi-node deployments.
+    \end{itemize}
+
+\end{itemize}

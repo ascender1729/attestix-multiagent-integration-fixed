@@ -1,0 +1,114 @@
+{
+  "patients": {
+    "P-001": {
+      "patient_id": "P-001",
+      "name": "Emily Carter",
+      "age": 8,
+      "gender": "Female",
+      "blood_type": "O+",
+      "known_allergies": ["Amoxicillin", "Peanuts"],
+      "pre_existing_conditions": ["Mild Asthma"],
+      "current_medications": ["Albuterol Inhaler (as needed)"],
+      "family_history": "Mother has eczema."
+    },
+    "P-002": {
+      "patient_id": "P-002",
+      "name": "Robert Miller",
+      "age": 68,
+      "gender": "Male",
+      "blood_type": "A-",
+      "known_allergies": ["None"],
+      "pre_existing_conditions": ["Hypertension", "Hyperlipidemia"],
+      "current_medications": ["Lisinopril 20mg", "Atorvastatin 40mg"],
+      "family_history": "Father died of myocardial infarction at 65."
+    },
+    "P-003": {
+      "patient_id": "P-003",
+      "name": "Sarah Jenkins",
+      "age": 42,
+      "gender": "Female",
+      "blood_type": "B+",
+      "known_allergies": ["Latex"],
+      "pre_existing_conditions": ["Herniated Disc (L4-L5)"],
+      "current_medications": ["Ibuprofen 600mg (as needed)"],
+      "family_history": "No significant history."
+    },
+    "P-004": {
+      "patient_id": "P-004",
+      "name": "David Ramirez",
+      "age": 51,
+      "gender": "Male",
+      "blood_type": "O-",
+      "known_allergies": ["Ibuprofen"],
+      "pre_existing_conditions": ["Gastroesophageal Reflux Disease (GERD)"],
+      "current_medications": ["Omeprazole 20mg"],
+      "family_history": "Mother has angina."
+    },
+    "P-005": {
+      "patient_id": "P-005",
+      "name": "Liam Chen",
+      "age": 16,
+      "gender": "Male",
+      "blood_type": "AB+",
+      "known_allergies": ["None"],
+      "pre_existing_conditions": ["None"],
+      "current_medications": ["None"],
+      "family_history": "Psoriasis on father's side."
+    },
+    "P-006": {
+      "patient_id": "P-006",
+      "name": "Maria Garcia",
+      "age": 35,
+      "gender": "Female",
+      "blood_type": "A+",
+      "known_allergies": ["Sulfa Drugs"],
+      "pre_existing_conditions": ["Migraines with Aura"],
+      "current_medications": ["Sumatriptan 50mg (as needed)"],
+      "family_history": "Sister has Multiple Sclerosis."
+    },
+    "P-007": {
+      "patient_id": "P-007",
+      "name": "James Wilson",
+      "age": 74,
+      "gender": "Male",
+      "blood_type": "O+",
+      "known_allergies": ["Contrast Dye"],
+      "pre_existing_conditions": ["Congestive Heart Failure (CHF)", "Type 2 Diabetes"],
+      "current_medications": ["Furosemide 40mg", "Metformin 1000mg"],
+      "family_history": "Both parents had cardiovascular disease."
+    },
+    "P-008": {
+      "patient_id": "P-008",
+      "name": "Chloe Thompson",
+      "age": 4,
+      "gender": "Female",
+      "blood_type": "B-",
+      "known_allergies": ["None"],
+      "pre_existing_conditions": ["Premature birth (32 weeks)"],
+      "current_medications": ["None"],
+      "family_history": "Brother has severe seasonal allergies."
+    },
+    "P-009": {
+      "patient_id": "P-009",
+      "name": "Thomas Brown",
+      "age": 58,
+      "gender": "Male",
+      "blood_type": "AB-",
+      "known_allergies": ["Penicillin"],
+      "pre_existing_conditions": ["Osteoarthritis", "Peripheral Neuropathy"],
+      "current_medications": ["Gabapentin 300mg", "Meloxicam 15mg"],
+      "family_history": "No significant history."
+    },
+    "P-010": {
+      "patient_id": "P-010",
+      "name": "Anna Kowalski",
+      "age": 29,
+      "gender": "Female",
+      "blood_type": "A+",
+      "known_allergies": ["None"],
+      "pre_existing_conditions": ["Atopic Dermatitis (Eczema)", "Hypothyroidism"],
+      "current_medications": ["Levothyroxine 75mcg", "Hydrocortisone cream 1% (as needed)"],
+      "family_history": "Mother has autoimmune thyroiditis."
+    }
+  }
+}

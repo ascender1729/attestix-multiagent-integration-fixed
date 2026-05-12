@@ -1,0 +1,434 @@
+(venv) PS D:\attestix2\attestix> python Hospital/c_agents/compliant_medical_board.py
+ [Attestix Identity] Provisioning Official Identity for Patient Intake Node...
+   -> DID:  did:key:z6MkhpCDcsThDeVFcbrXTaVjUKU4qvSi1jJ1GCYYQ91Saz93
+   -> UAIT: attestix:a5cdd3e3c7194201
+ [Attestix Identity] Provisioning Official Identity for Enterprise DB Node...
+   -> DID:  did:key:z6MkhpCDcsThDeVFcbrXTaVjUKU4qvSi1jJ1GCYYQ91Saz93
+   -> UAIT: attestix:742517942bc74bb5
+ [Attestix Identity] Provisioning Official Identity for 6-Agent Specialist Panel...
+   -> DID:  did:key:z6MkhpCDcsThDeVFcbrXTaVjUKU4qvSi1jJ1GCYYQ91Saz93
+   -> UAIT: attestix:05fdec97f6174e6d
+ [Attestix Identity] Provisioning Official Identity for Chief Medical Officer...
+   -> DID:  did:key:z6MkhpCDcsThDeVFcbrXTaVjUKU4qvSi1jJ1GCYYQ91Saz93
+   -> UAIT: attestix:8e57aad1d58d4974
+
+==================================================
+ 🛡️  AUTONOMOUS HOSPITAL BOARD (Attestix EU AI Act Compliant)
+==================================================
+
+ [Attestix Framework] Bootstrapping Official Compliance Protocols...
+
+--- ATTESTIX SETUP PHASE ---
+ [Attestix Compliance] Generating EU AI Act Profile for attestix:a5cdd3e3c7194201...
+   -> Profile created. Risk: High (Annex III - Health)
+ [Attestix Compliance] Generating EU AI Act Profile for attestix:742517942bc74bb5...
+   -> Profile created. Risk: High (Annex III - Health)
+ [Attestix Compliance] Generating EU AI Act Profile for attestix:05fdec97f6174e6d...
+   -> Profile created. Risk: High (Annex III - Health)
+ [Attestix Compliance] Generating EU AI Act Profile for attestix:8e57aad1d58d4974...
+   -> Profile created. Risk: High (Annex III - Health)
+ [Attestix Credentials] Minting W3C Verifiable Credential for role 'Board Certified Specialist Panel'...
+   -> Issued VC signed with Ed25519Signature2020
+ [Attestix Credentials] Minting W3C Verifiable Credential for role 'Chief Medical Officer'...
+   -> Issued VC signed with Ed25519Signature2020
+----------------------------
+
+Please enter the patient's statement: My name is James Wilson, my patient ID is P-007. Over the last 48 hours, I have been experiencing severe shortness of breath, even when I am just resting in my chair. My ankles are extremely swollen, and I noticed I gained almost 6 pounds since yesterday. I've been taking my Furosemide and Metformin exactly as prescribed, but my heart feels like it is racing and I feel very lightheaded when I try to stand up.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+
+ [LangChain - Regulated] Initializing Patient Intake...
+ [Attestix Compliance] Conformity Gatekeeper: Patient Intake Node...
+   -> PASS. Risk: HIGH | Profile: comp:446
+ [Attestix Provenance] Hash-chaining 'PARSE_SYMPTOMS' for Patient Intake Node...
+   -> Receipt audit:8a added to Merkle Log.
+   -> Prev Hash:    0000000000000000...
+   -> Current Hash: 0b48fc4e19fe6f7f...
+ [LangChain] Extracted Patient ID: P-007
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+ [Attestix Delegation] 'Patient Intake Node' delegating 'read_patient_record' to 'Enterprise DB Node'...
+   -> UCAN Delegation Token created.
+
+ [Enterprise DB - Regulated] Securely querying records for P-007...
+ [Attestix Gate] Verifying UCAN token for capability 'read_patient_record'...
+   -> VERIFIED  | Delegator: Patient Intake Node | Capability: 'read_patient_record' granted
+ [Attestix Compliance] Conformity Gatekeeper: Enterprise DB Node...
+   -> PASS. Risk: HIGH | Profile: comp:399
+ [Enterprise DB] Found records for James Wilson.
+ [Attestix Provenance] Hash-chaining 'DB_QUERY' for Enterprise DB Node...
+   -> Receipt audit:61 added to Merkle Log.
+   -> Prev Hash:    0000000000000000...
+   -> Current Hash: 1dfdf99523e74c87...
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+ [Attestix Delegation] 'Patient Intake Node' delegating 'diagnose_patient' to '6-Agent Specialist Panel'...
+   -> UCAN Delegation Token created.
+
+ [CrewAI - Regulated] Assembling 6-Agent Specialist Panel...
+ [Attestix Gate] Verifying UCAN token for capability 'diagnose_patient'...
+   -> VERIFIED  | Delegator: Patient Intake Node | Capability: 'diagnose_patient' granted
+ [Attestix Compliance] Conformity Gatekeeper: 6-Agent Specialist Panel...
+   -> PASS. Risk: HIGH | Profile: comp:d9c
+ [CrewAI] Panel Debate Initiated...
+╭──────────────────────────────────────────────── 🚀 Crew Execution Started ────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Crew Execution Started                                                                                                   │
+│  Name: crew                                                                                                               │
+│  ID: 6ce93115-82da-4d51-b8b0-aa81e1111f9a                                                                                 │
+│                                                                                                                           │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────── 📋 Task Started ─────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Task Started                                                                                                             │
+│  Name:                                                                                                                    │
+│          Analyze the following patient data:                                                                              │
+│          - Symptoms: ['shortness of breath', 'swollen ankles', 'weight gain', 'racing heart', 'lightheadedness']          │
+│          - Severity: High                                                                                                 │
+│          - Medical History: {'patient_id': 'P-007', 'name': 'James Wilson', 'age': 74, 'gender': 'Male', 'blood_type':    │
+│  'O+', 'known_allergies': ['Contrast Dye'], 'pre_existing_conditions': ['Congestive Heart Failure (CHF)', 'Type 2         │
+│  Diabetes'], 'current_medications': ['Furosemide 40mg', 'Metformin 1000mg'], 'family_history': 'Both parents had          │
+│  cardiovascular disease.'}                                                                                                │
+│                                                                                                                           │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                                 │
+│          Provide a final unified differential diagnosis.                                                                  │
+│                                                                                                                           │
+│  ID: 90652b8a-853e-4e95-a042-48d7bbe36088                                                                                 │
+│                                                                                                                           │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────── 🤖 Agent Started ─────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Agent: General Practitioner                                                                                              │
+│                                                                                                                           │
+│  Task:                                                                                                                    │
+│          Analyze the following patient data:                                                                              │
+│          - Symptoms: ['shortness of breath', 'swollen ankles', 'weight gain', 'racing heart', 'lightheadedness']          │
+│          - Severity: High                                                                                                 │
+│          - Medical History: {'patient_id': 'P-007', 'name': 'James Wilson', 'age': 74, 'gender': 'Male', 'blood_type':    │
+│  'O+', 'known_allergies': ['Contrast Dye'], 'pre_existing_conditions': ['Congestive Heart Failure (CHF)', 'Type 2         │
+│  Diabetes'], 'current_medications': ['Furosemide 40mg', 'Metformin 1000mg'], 'family_history': 'Both parents had          │
+│  cardiovascular disease.'}                                                                                                │
+│                                                                                                                           │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                                 │
+│          Provide a final unified differential diagnosis.                                                                  │
+│                                                                                                                           │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Agent: General Practitioner                                                                                              │
+│                                                                                                                           │
+│  Final Answer:                                                                                                            │
+│  **Diagnostic Report**                                                                                                    │
+│                                                                                                                           │
+│  **Patient Information:**                                                                                                 │
+│  - Patient ID: P-007                                                                                                      │
+│  - Name: James Wilson                                                                                                     │
+│  - Age: 74                                                                                                                │
+│  - Gender: Male                                                                                                           │
+│  - Blood Type: O+                                                                                                         │
+│  - Known Allergies: Contrast Dye                                                                                          │
+│  - Pre-existing Conditions: Congestive Heart Failure (CHF), Type 2 Diabetes                                               │
+│  - Current Medications: Furosemide 40mg, Metformin 1000mg                                                                 │
+│  - Family History: Both parents had cardiovascular disease                                                                │
+│  - Symptoms: Shortness of breath, swollen ankles, weight gain, racing heart, lightheadedness                              │
+│  - Severity: High                                                                                                         │
+│                                                                                                                           │
+│  **Analysis:**                                                                                                            │
+│                                                                                                                           │
+│  Given the comprehensive patient data, a thorough analysis from various specialist perspectives is crucial for a          │
+│  holistic understanding of the patient's condition.                                                                       │
+│                                                                                                                           │
+│  ### Cardiology Perspective:                                                                                              │
+│  The patient's symptoms, including shortness of breath, swollen ankles, and racing heart, in conjunction with a           │
+│  pre-existing condition of Congestive Heart Failure (CHF), strongly suggest an exacerbation of CHF. CHF is a chronic      │
+│  condition where the heart doesn't pump blood as well as it should, leading to fluid buildup and swelling in the body,    │
+│  among other symptoms. The fact that the patient is on Furosemide, a diuretic commonly used to treat fluid retention in   │
+│  people with CHF, indicates that the patient's heart condition is being managed, but the current symptoms suggest that    │
+│  the condition may not be adequately controlled or that there has been a decompensation.                                  │
+│                                                                                                                           │
+│  ### Endocrinology Perspective:                                                                                           │
+│  Considering the patient's Type 2 Diabetes and the current medication of Metformin 1000mg, the weight gain could be       │
+│  related to the metabolic effects of diabetes or the treatment itself. However, in the context of the other symptoms      │
+│  such as shortness of breath and swollen ankles, it is less likely that the weight gain is solely due to metabolic        │
+│  issues related to diabetes. The focus here remains on how diabetes management may interact with heart function,          │
+│  particularly in the context of CHF, as diabetes is a significant risk factor for heart disease.                          │
+│                                                                                                                           │
+│  ### General Practice Perspective:                                                                                        │
+│  From a general practice standpoint, it's essential to consider the patient's overall clinical picture. The combination   │
+│  of shortness of breath, swollen ankles, weight gain, and a racing heart at rest (lightheadedness) points towards a       │
+│  systemic issue rather than a localized problem. Given the high severity of these symptoms, it's crucial to consider      │
+│  acute decompensation of CHF as a primary concern. The patient's age, medical history, and family history of              │
+│  cardiovascular diseases further support this consideration.                                                              │
+│                                                                                                                           │
+│  ### Debate and Considerations:                                                                                           │
+│  - **Acute Decompensated Heart Failure (ADHF):** Given the symptoms and the patient's history of CHF, ADHF is a strong    │
+│  consideration. The patient's current regimen of Furosemide may need adjustment, and additional therapies such as ACE     │
+│  inhibitors, beta-blockers, or newer agents like SGLT2 inhibitors might be considered based on the latest guidelines and  │
+│  the patient's renal function.                                                                                            │
+│  - **Diabetic Complications:** While the patient's diabetes is a significant aspect of their health, the current          │
+│  presentation seems more closely related to cardiac issues than diabetic emergencies like diabetic ketoacidosis or        │
+│  hyperosmolar hyperglycemic state.                                                                                        │
+│  - **Other Considerations:** Pulmonary embolism, pneumonia, or other respiratory conditions could cause shortness of      │
+│  breath but would not fully explain the other symptoms like swollen ankles and weight gain without additional context.    │
+│                                                                                                                           │
+│  **Unified Differential Diagnosis:**                                                                                      │
+│                                                                                                                           │
+│  Based on the comprehensive analysis, the primary differential diagnosis for James Wilson (P-007) is:                     │
+│                                                                                                                           │
+│  1. **Acute Decompensated Congestive Heart Failure (ADHF):** Given the patient's history of CHF, current symptoms of      │
+│  shortness of breath, swollen ankles, weight gain, and racing heart, ADHF is the most likely diagnosis. Management would  │
+│  involve optimizing current medications, possibly adding new therapies aimed at reducing fluid overload and improving     │
+│  heart function, and close monitoring of the patient's condition.                                                         │
+│                                                                                                                           │
+│  2. **Worsening of Underlying Conditions:** The patient's Type 2 Diabetes and potential interactions with CHF management  │
+│  also need to be considered, ensuring that the treatment plan for CHF does not negatively impact diabetic control and     │
+│  vice versa.                                                                                                              │
+│                                                                                                                           │
+│  3. **Other Cardiac Conditions:** Other cardiac conditions such as coronary artery disease, given the family history of   │
+│  cardiovascular disease, should also be considered and evaluated appropriately.                                           │
+│                                                                                                                           │
+│  **Recommendations:**                                                                                                     │
+│                                                                                                                           │
+│  - Immediate assessment and management of ADHF, possibly requiring hospital admission for close monitoring and            │
+│  adjustment of medications.                                                                                               │
+│  - Optimization of current medications and consideration of additional therapies as guided by current heart failure       │
+│  management guidelines.                                                                                                   │
+│  - Close monitoring of renal function and electrolyte levels, especially when adjusting diuretic therapy.                 │
+│  - Comprehensive diabetic care to ensure that the management of heart failure does not compromise the control of          │
+│  diabetes.                                                                                                                │
+│                                                                                                                           │
+│  This diagnostic report provides a broad, holistic view of the patient's condition, considering the interplay of various  │
+│  factors and pre-existing conditions, leading to a unified differential diagnosis that guides further management and      │
+│  treatment.                                                                                                               │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────────── 📋 Task Completion ────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Task Completed                                                                                                           │
+│  Name:                                                                                                                    │
+│          Analyze the following patient data:                                                                              │
+│          - Symptoms: ['shortness of breath', 'swollen ankles', 'weight gain', 'racing heart', 'lightheadedness']          │
+│          - Severity: High                                                                                                 │
+│          - Medical History: {'patient_id': 'P-007', 'name': 'James Wilson', 'age': 74, 'gender': 'Male', 'blood_type':    │
+│  'O+', 'known_allergies': ['Contrast Dye'], 'pre_existing_conditions': ['Congestive Heart Failure (CHF)', 'Type 2         │
+│  Diabetes'], 'current_medications': ['Furosemide 40mg', 'Metformin 1000mg'], 'family_history': 'Both parents had          │
+│  cardiovascular disease.'}                                                                                                │
+│                                                                                                                           │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                                 │
+│          Provide a final unified differential diagnosis.                                                                  │
+│                                                                                                                           │
+│  Agent: General Practitioner                                                                                              │
+│                                                                                                                           │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ [Attestix Provenance] Hash-chaining 'MULTI_AGENT_DEBATE' for 6-Agent Specialist Panel...
+╭───────────────────────────────────────────────────── Crew Completion ─────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Crew Execution Completed                                                                                                 │
+│  Name: crew                                                                                                               │
+│  ID: 6ce93115-82da-4d51-b8b0-aa81e1111f9a                                                                                 │
+│  Final Output: **Diagnostic Report**                                                                                      │
+│                                                                                                                           │
+│  **Patient Information:**                                                                                                 │
+│  - Patient ID: P-007                                                                                                      │
+│  - Name: James Wilson                                                                                                     │
+│  - Age: 74                                                                                                                │
+│  - Gender: Male                                                                                                           │
+│  - Blood Type: O+                                                                                                         │
+│  - Known Allergies: Contrast Dye                                                                                          │
+│  - Pre-existing Conditions: Congestive Heart Failure (CHF), Type 2 Diabetes                                               │
+│  - Current Medications: Furosemide 40mg, Metformin 1000mg                                                                 │
+│  - Family History: Both parents had cardiovascular disease                                                                │
+│  - Symptoms: Shortness of breath, swollen ankles, weight gain, racing heart, lightheadedness                              │
+│  - Severity: High                                                                                                         │
+│                                                                                                                           │
+│  **Analysis:**                                                                                                            │
+│                                                                                                                           │
+│  Given the comprehensive patient data, a thorough analysis from various specialist perspectives is crucial for a          │
+│  holistic understanding of the patient's condition.                                                                       │
+│                                                                                                                           │
+│  ### Cardiology Perspective:                                                                                              │
+│  The patient's symptoms, including shortness of breath, swollen ankles, and racing heart, in conjunction with a           │
+│  pre-existing condition of Congestive Heart Failure (CHF), strongly suggest an exacerbation of CHF. CHF is a chronic      │
+│  condition where the heart doesn't pump blood as well as it should, leading to fluid buildup and swelling in the body,    │
+│  among other symptoms. The fact that the patient is on Furosemide, a diuretic commonly used to treat fluid retention in   │
+│  people with CHF, indicates that the patient's heart condition is being managed, but the current symptoms suggest that    │
+│  the condition may not be adequately controlled or that there has been a decompensation.                                  │
+│                                                                                                                           │
+│  ### Endocrinology Perspective:                                                                                           │
+│  Considering the patient's Type 2 Diabetes and the current medication of Metformin 1000mg, the weight gain could be       │
+│  related to the metabolic effects of diabetes or the treatment itself. However, in the context of the other symptoms      │
+│  such as shortness of breath and swollen ankles, it is less likely that the weight gain is solely due to metabolic        │
+│  issues related to diabetes. The focus here remains on how diabetes management may interact with heart function,          │
+│  particularly in the context of CHF, as diabetes is a significant risk factor for heart disease.                          │
+│                                                                                                                           │
+│  ### General Practice Perspective:                                                                                        │
+│  From a general practice standpoint, it's essential to consider the patient's overall clinical picture. The combination   │
+│  of shortness of breath, swollen ankles, weight gain, and a racing heart at rest (lightheadedness) points towards a       │
+│  systemic issue rather than a localized problem. Given the high severity of these symptoms, it's crucial to consider      │
+│  acute decompensation of CHF as a primary concern. The patient's age, medical history, and family history of              │
+│  cardiovascular diseases further support this consideration.                                                              │
+│                                                                                                                           │
+│  ### Debate and Considerations:                                                                                           │
+│  - **Acute Decompensated Heart Failure (ADHF):** Given the symptoms and the patient's history of CHF, ADHF is a strong    │
+│  consideration. The patient's current regimen of Furosemide may need adjustment, and additional therapies such as ACE     │
+│  inhibitors, beta-blockers, or newer agents like SGLT2 inhibitors might be considered based on the latest guidelines and  │
+│  the patient's renal function.                                                                                            │
+│  - **Diabetic Complications:** While the patient's diabetes is a significant aspect of their health, the current          │
+│  presentation seems more closely related to cardiac issues than diabetic emergencies like diabetic ketoacidosis or        │
+│  hyperosmolar hyperglycemic state.                                                                                        │
+│  - **Other Considerations:** Pulmonary embolism, pneumonia, or other respiratory conditions could cause shortness of      │
+│  breath but would not fully explain the other symptoms like swollen ankles and weight gain without additional context.    │
+│                                                                                                                           │
+│  **Unified Differential Diagnosis:**                                                                                      │
+│                                                                                                                           │
+│  Based on the comprehensive analysis, the primary differential diagnosis for James Wilson (P-007) is:                     │
+│                                                                                                                           │
+│  1. **Acute Decompensated Congestive Heart Failure (ADHF):** Given the patient's history of CHF, current symptoms of      │
+│  shortness of breath, swollen ankles, weight gain, and racing heart, ADHF is the most likely diagnosis. Management would  │
+│  involve optimizing current medications, possibly adding new therapies aimed at reducing fluid overload and improving     │
+│  heart function, and close monitoring of the patient's condition.                                                         │
+│                                                                                                                           │
+│  2. **Worsening of Underlying Conditions:** The patient's Type 2 Diabetes and potential interactions with CHF management  │
+│  also need to be considered, ensuring that the treatment plan for CHF does not negatively impact diabetic control and     │
+│  vice versa.                                                                                                              │
+│                                                                                                                           │
+│  3. **Other Cardiac Conditions:** Other cardiac conditions such as coronary artery disease, given the family history of   │
+│  cardiovascular disease, should also be considered and evaluated appropriately.                                           │
+│                                                                                                                           │
+│  **Recommendations:**                                                                                                     │
+│                                                                                                                           │
+│  - Immediate assessment and management of ADHF, possibly requiring hospital admission for close monitoring and            │
+│  adjustment of medications.                                                                                               │
+│  - Optimization of current medications and consideration of additional therapies as guided by current heart failure       │
+│  management guidelines.                                                                                                   │
+│  - Close monitoring of renal function and electrolyte levels, especially when adjusting diuretic therapy.                 │
+│  - Comprehensive diabetic care to ensure that the management of heart failure does not compromise the control of          │
+│  diabetes.                                                                                                                │
+│                                                                                                                           │
+│  This diagnostic report provides a broad, holistic view of the patient's condition, considering the interplay of various  │
+│  factors and pre-existing conditions, leading to a unified differential diagnosis that guides further management and      │
+│  treatment.                                                                                                               │
+│                                                                                                                           │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────── Tracing Status ──────────────────────────────────────────────────────╮
+│                                                                                                                           │
+│  Info: Tracing is disabled.                                                                                               │
+│                                                                                                                           │
+│  To enable tracing, do any one of these:                                                                                  │
+│  • Set tracing=True in your Crew/Flow code                                                                                │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                            │
+│  • Run: crewai traces enable                                                                                              │
+│                                                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+   -> Receipt audit:f6 added to Merkle Log.
+   -> Prev Hash:    0000000000000000...
+   -> Current Hash: 508836be04194c32...
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+ [Attestix Delegation] '6-Agent Specialist Panel' delegating 'issue_final_ruling' to 'Chief Medical Officer'...
+   -> UCAN Delegation Token created.
+
+ [OpenAI - Regulated] Chief Medical Officer reviewing the case...
+ [Attestix Gate] Verifying UCAN token for capability 'issue_final_ruling'...
+   -> VERIFIED  | Delegator: 6-Agent Specialist Panel | Capability: 'issue_final_ruling' granted
+ [Attestix Compliance] Conformity Gatekeeper: Chief Medical Officer...
+   -> PASS. Risk: HIGH | Profile: comp:037
+ [Attestix Provenance] Hash-chaining 'FINAL_DIAGNOSIS' for Chief Medical Officer...
+   -> Receipt audit:dd added to Merkle Log.
+   -> Prev Hash:    0000000000000000...
+   -> Current Hash: 94ebf573d6da0929...
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 SECURE FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT AND RECOMMENDED TREATMENT PLAN**
+
+**Patient Information:**
+- Patient ID: P-007
+- Name: James Wilson
+- Age: 74
+- Gender: Male
+- Blood Type: O+
+- Known Allergies: Contrast Dye
+- Pre-existing Conditions: Congestive Heart Failure (CHF), Type 2 Diabetes
+- Current Medications: Furosemide 40mg, Metformin 1000mg
+- Family History: Both parents had cardiovascular disease
+
+**FINAL DIAGNOSIS:**
+Based on the comprehensive analysis and the patient's presentation, the final diagnosis is **Acute Decompensated Congestive Heart Failure (ADHF)**, with consideration of the patient's Type 2 Diabetes and its potential interactions with CHF management.
+
+**RECOMMENDED TREATMENT PLAN:**
+
+1. **Immediate Hospital Admission:** For close monitoring and adjustment of medications to manage ADHF effectively.
+2. **Optimization of Current Medications:**
+   - **Furosemide:** Increase the dose to 80mg twice daily to enhance diuresis, with careful monitoring of renal function and electrolyte levels.
+   - **Metformin:** Continue 1000mg twice daily, with monitoring of blood glucose levels to ensure that the management of heart failure does not compromise diabetic control.
+3. **Additional Therapies:**
+   - **ACE Inhibitors or ARBs:** Consider adding an ACE inhibitor or an ARB to reduce afterload and improve heart function, if not already on one, and if renal function and potassium levels permit.
+   - **Beta-Blockers:** If not already on a beta-blocker, consider adding one to reduce the risk of further cardiac events and improve survival, with careful titration to avoid exacerbating heart failure.
+   - **SGLT2 Inhibitors:** Consider adding an SGLT2 inhibitor for its benefits in heart failure, regardless of diabetic status, if renal function is adequate.
+4. **Monitoring and Follow-Up:**
+   - Close monitoring of vital signs, especially blood pressure, heart rate, and oxygen saturation.
+   - Regular assessment of renal function (eGFR) and electrolyte levels (especially potassium).
+   - Daily weight checks to monitor fluid status.
+   - Regular blood glucose monitoring to ensure that heart failure management does not negatively impact diabetes control.   
+5. **Lifestyle Modifications:**
+   - **Diet:** Low-sodium diet to reduce fluid retention, and a heart-healthy diet to manage cholesterol and blood pressure. 
+   - **Fluid Management:** Restrict fluid intake to 2 liters per day, unless otherwise indicated by the healthcare provider. 
+   - **Exercise:** Encourage regular, gentle exercise, such as walking, as tolerated by the patient, to improve cardiovascular health without overexertion.
+
+**FOLLOW-UP CARE:**
+- Schedule follow-up appointments with the cardiologist and primary care physician within one week of discharge to monitor the patient's condition and adjust the treatment plan as necessary.
+- Educate the patient and family members on the signs of worsening heart failure and the importance of adherence to the prescribed medication regimen and lifestyle modifications.
+
+This final diagnostic report and recommended treatment plan are designed to provide a comprehensive approach to managing the patient's Acute Decompensated Congestive Heart Failure, taking into consideration the patient's Type 2 Diabetes and other relevant factors.
+
+==============================================================
+  CRYPTOGRAPHIC AUDIT TRAIL  —  Merkle Provenance Chain
+==============================================================
+
+  GENESIS  |  Patient Intake Node  (PARSE_SYMPTOMS)
+  Log ID:       audit:8a34fee46459
+  Timestamp:    2026-05-10T13:03:36.284865+00:00
+  Prev Hash:    00000000000000000000000000000000...
+  Chain Hash:   0b48fc4e19fe6f7fca9e7d4e08be22ac...
+       ↓
+
+  GENESIS  |  Enterprise DB Node  (DB_QUERY)
+  Log ID:       audit:610a173579ae
+  Timestamp:    2026-05-10T13:03:36.315866+00:00
+  Prev Hash:    00000000000000000000000000000000...
+  Chain Hash:   1dfdf99523e74c875dab32912afea891...
+       ↓
+
+  GENESIS  |  6-Agent Specialist Panel  (MULTI_AGENT_DEBATE)
+  Log ID:       audit:f65f932ea4d3
+  Timestamp:    2026-05-10T13:03:40.777254+00:00
+  Prev Hash:    00000000000000000000000000000000...
+  Chain Hash:   508836be04194c32f7b872d1cf3a3c13...
+       ↓
+
+  GENESIS  |  Chief Medical Officer  (FINAL_DIAGNOSIS)
+  Log ID:       audit:dd756278702a
+  Timestamp:    2026-05-10T13:03:43.185640+00:00
+  Prev Hash:    00000000000000000000000000000000...
+  Chain Hash:   94ebf573d6da092912725f6aee874d1c...
+
+  4 entries. Chain is tamper-evident.
+  Full log: ~/.attestix/provenance.json
+==============================================================
+
+ ✅ EU AI Act Compliance Verified.
+ View UCAN delegations and W3C Credentials in ~/.attestix/identities.json

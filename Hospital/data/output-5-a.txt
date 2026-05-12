@@ -1,0 +1,348 @@
+(venv) PS D:\attestix2\attestix\Hospital> python c_agents/compliant_medical_board.py
+>>
+ [Attestix Identity] Provisioned Patient Intake Node -> did:attestix:langchain:c5c350bf9abb
+ [Attestix Identity] Provisioned Enterprise DB Node -> did:attestix:semantic kernel:062c5a866cae
+ [Attestix Identity] Provisioned 6-Agent Specialist Panel -> did:attestix:crewai:1da414e3f33d
+ [Attestix Identity] Provisioned Chief Medical Officer -> did:attestix:openai:d5b8e30c55f6
+
+==================================================
+ 🛡️  AUTONOMOUS HOSPITAL BOARD (Attestix EU AI Act Compliant)
+==================================================
+
+ [Attestix Gatekeeper] Verifying System Identities & Cryptographic Trust...
+
+Please enter the patient's statement: I am Liam Chen, P-005. I've had really stiff, swollen joints in my fingers for the last week, and now these weird, dry, red scaly patches are appearing on my elbows.
+
+--- PHASE 1: LANGCHAIN INTAKE ---
+
+ [LangChain - Regulated] Initializing Patient Intake...
+ [Attestix Compliance] Conformity Assessment for did:attestix:langchain:c5c350bf9abb...
+                       Risk Category: High-Risk (Medical) -> PASSED.
+ [Attestix Provenance] Transaction 2cae171a logged to immutable ledger.
+ [LangChain] Extracted Patient ID: P-005
+
+--- PHASE 2: SEMANTIC KERNEL ENTERPRISE DB ---
+
+ [Enterprise DB - Regulated] Securely querying records for P-005...
+ [Attestix Compliance] Conformity Assessment for did:attestix:semantic kernel:062c5a866cae...
+                       Risk Category: High-Risk (Medical) -> PASSED.
+ [Enterprise DB] Found records for Liam Chen.
+ [Attestix Provenance] Transaction 5f765cea logged to immutable ledger.
+
+--- PHASE 3: CREWAI 6-AGENT MEGA-PANEL ---
+
+ [CrewAI - Regulated] Assembling 6-Agent Specialist Panel...
+ [Attestix Compliance] Conformity Assessment for did:attestix:crewai:1da414e3f33d...
+                       Risk Category: High-Risk (Medical) -> PASSED.
+ [CrewAI] Panel Debate Initiated...
+╭───────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Started                                                                                             │
+│  Name: crew                                                                                                         │
+│  ID: bb74d8fa-5ced-4d80-be30-f908fbbe60ab                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Started                                                                                                       │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                           │
+│          Provide a final unified differential diagnosis.                                                            │
+│                                                                                                                     │
+│  ID: f1cbb0cb-4275-44b4-9e0a-25403804323f                                                                           │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────── 🤖 Agent Started ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Task:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                           │
+│          Provide a final unified differential diagnosis.                                                            │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭─────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│  Final Answer:                                                                                                      │
+│  **Diagnostic Report**                                                                                              │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-005                                                                                                │
+│  - Name: Liam Chen                                                                                                  │
+│  - Age: 16                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: AB+                                                                                                  │
+│  - Known Allergies: None                                                                                            │
+│  - Pre-existing Conditions: None                                                                                    │
+│  - Current Medications: None                                                                                        │
+│  - Family History: Psoriasis on father's side                                                                       │
+│                                                                                                                     │
+│  **Symptoms:**                                                                                                      │
+│  - Stiff joints                                                                                                     │
+│  - Swollen joints                                                                                                   │
+│  - Dry red scaly patches                                                                                            │
+│                                                                                                                     │
+│  **Severity:** Medium                                                                                               │
+│                                                                                                                     │
+│  **Analysis:**                                                                                                      │
+│                                                                                                                     │
+│  Given the combination of stiff joints, swollen joints, and the presence of dry red scaly patches, along with a     │
+│  family history of psoriasis, we have a complex presentation that could be indicative of several conditions. Let's  │
+│  consider the perspectives of various specialists to broaden our diagnostic approach.                               │
+│                                                                                                                     │
+│  **Rheumatologist's Perspective:**                                                                                  │
+│  The symptoms of stiff and swollen joints could suggest an inflammatory arthritis, such as juvenile idiopathic      │
+│  arthritis (JIA) or rheumatoid arthritis (RA), though the latter is less common in adolescents. The presence of     │
+│  joint symptoms warrants further investigation, including possible imaging studies and blood tests to assess for    │
+│  inflammatory markers.                                                                                              │
+│                                                                                                                     │
+│  **Dermatologist's Perspective:**                                                                                   │
+│  The dry red scaly patches are highly suggestive of psoriasis, especially given the family history. Psoriasis can   │
+│  sometimes be associated with psoriatic arthritis (PsA), which could explain the joint symptoms. The dermatologist  │
+│  would likely recommend a skin biopsy to confirm the diagnosis of psoriasis and assess the severity of skin         │
+│  involvement.                                                                                                       │
+│                                                                                                                     │
+│  **Immunologist's Perspective:**                                                                                    │
+│  Considering the potential for an autoimmune component in both the skin and joint symptoms, an immunologist might   │
+│  investigate for other autoimmune markers or conditions that could be contributing to the patient's presentation.   │
+│  This could include testing for antinuclear antibodies (ANA) or other specific autoantibodies associated with       │
+│  autoimmune diseases.                                                                                               │
+│                                                                                                                     │
+│  **Primary Care Physician's (General Practitioner's) Perspective:**                                                 │
+│  As the first point of contact for the patient, the primary care physician considers the holistic view of the       │
+│  patient's health, including the family history of psoriasis. This history, combined with the patient's symptoms,   │
+│  suggests a strong likelihood of psoriasis with possible psoriatic arthritis. The primary care physician would      │
+│  coordinate further testing and specialist referrals as needed.                                                     │
+│                                                                                                                     │
+│  **Unified Differential Diagnosis:**                                                                                │
+│                                                                                                                     │
+│  Based on the analysis from various specialist perspectives, the differential diagnosis for Liam Chen includes:     │
+│                                                                                                                     │
+│  1. **Psoriatic Arthritis (PsA):** Given the combination of joint symptoms and skin lesions, along with a family    │
+│  history of psoriasis, PsA is a leading consideration.                                                              │
+│  2. **Juvenile Idiopathic Arthritis (JIA):** Although less likely given the specific combination of symptoms and    │
+│  family history, JIA remains a possibility, particularly if further investigation does not confirm psoriasis or     │
+│  PsA.                                                                                                               │
+│  3. **Psoriasis:** The dry red scaly patches are highly suggestive of psoriasis, and this diagnosis could be made   │
+│  independently of the joint symptoms, though the presence of both suggests considering PsA.                         │
+│  4. **Rheumatoid Arthritis (RA):** Less likely in an adolescent but cannot be ruled out without further testing.    │
+│  5. **Other autoimmune or inflammatory conditions:** Depending on the results of further investigations, other      │
+│  conditions could be considered, though they are less likely given the current information.                         │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│                                                                                                                     │
+│  - **Further Testing:** Includes complete blood count (CBC), erythrocyte sedimentation rate (ESR), C-reactive       │
+│  protein (CRP), and possibly antinuclear antibody (ANA) testing to assess for inflammation and autoimmune markers.  │
+│  - **Imaging Studies:** X-rays or ultrasound of the affected joints to assess for joint damage or inflammation.     │
+│  - **Skin Biopsy:** To confirm the diagnosis of psoriasis.                                                          │
+│  - **Referral to Specialists:** Dermatology and rheumatology consultations for further evaluation and management.   │
+│  - **Family History and Genetic Considerations:** Given the family history of psoriasis, discussing the potential   │
+│  for genetic predisposition and the implications for family members.                                                │
+│                                                                                                                     │
+│  By considering the perspectives of various specialists and pursuing a comprehensive diagnostic approach, we can    │
+│  work towards an accurate diagnosis and appropriate management plan for Liam Chen.                                  │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────── 📋 Task Completion ─────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Task Completed                                                                                                     │
+│  Name:                                                                                                              │
+│          Analyze the following patient data:                                                                        │
+│          - Symptoms: ['stiff joints', 'swollen joints', 'dry red scaly patches']                                    │
+│          - Severity: Medium                                                                                         │
+│          - Medical History: {'patient_id': 'P-005', 'name': 'Liam Chen', 'age': 16, 'gender': 'Male',               │
+│  'blood_type': 'AB+', 'known_allergies': ['None'], 'pre_existing_conditions': ['None'], 'current_medications':      │
+│  ['None'], 'family_history': "Psoriasis on father's side."}                                                         │
+│                                                                                                                     │
+│          Debate the potential diagnosis. Each specialist should weigh in.                                           │
+│          Provide a final unified differential diagnosis.                                                            │
+│                                                                                                                     │
+│  Agent: General Practitioner                                                                                        │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Crew Execution Completed                                                                                           │
+│  Name: crew                                                                                                         │
+│  ID: bb74d8fa-5ced-4d80-be30-f908fbbe60ab                                                                           │
+│  Final Output: **Diagnostic Report**                                                                                │
+│                                                                                                                     │
+│  **Patient Information:**                                                                                           │
+│  - Patient ID: P-005                                                                                                │
+│  - Name: Liam Chen                                                                                                  │
+│  - Age: 16                                                                                                          │
+│  - Gender: Male                                                                                                     │
+│  - Blood Type: AB+                                                                                                  │
+│  - Known Allergies: None                                                                                            │
+│  - Pre-existing Conditions: None                                                                                    │
+│  - Current Medications: None                                                                                        │
+│  - Family History: Psoriasis on father's side                                                                       │
+│                                                                                                                     │
+│  **Symptoms:**                                                                                                      │
+│  - Stiff joints                                                                                                     │
+│  - Swollen joints                                                                                                   │
+│  - Dry red scaly patches                                                                                            │
+│                                                                                                                     │
+│  **Severity:** Medium                                                                                               │
+│                                                                                                                     │
+│  **Analysis:**                                                                                                      │
+│                                                                                                                     │
+│  Given the combination of stiff joints, swollen joints, and the presence of dry red scaly patches, along with a     │
+│  family history of psoriasis, we have a complex presentation that could be indicative of several conditions. Let's  │
+│  consider the perspectives of various specialists to broaden our diagnostic approach.                               │
+│                                                                                                                     │
+│  **Rheumatologist's Perspective:**                                                                                  │
+│  The symptoms of stiff and swollen joints could suggest an inflammatory arthritis, such as juvenile idiopathic      │
+│  arthritis (JIA) or rheumatoid arthritis (RA), though the latter is less common in adolescents. The presence of     │
+│  joint symptoms warrants further investigation, including possible imaging studies and blood tests to assess for    │
+│  inflammatory markers.                                                                                              │
+│                                                                                                                     │
+│  **Dermatologist's Perspective:**                                                                                   │
+│  The dry red scaly patches are highly suggestive of psoriasis, especially given the family history. Psoriasis can   │
+│  sometimes be associated with psoriatic arthritis (PsA), which could explain the joint symptoms. The dermatologist  │
+│  would likely recommend a skin biopsy to confirm the diagnosis of psoriasis and assess the severity of skin         │
+│  involvement.                                                                                                       │
+│                                                                                                                     │
+│  **Immunologist's Perspective:**                                                                                    │
+│  Considering the potential for an autoimmune component in both the skin and joint symptoms, an immunologist might   │
+│  investigate for other autoimmune markers or conditions that could be contributing to the patient's presentation.   │
+│  This could include testing for antinuclear antibodies (ANA) or other specific autoantibodies associated with       │
+│  autoimmune diseases.                                                                                               │
+│                                                                                                                     │
+│  **Primary Care Physician's (General Practitioner's) Perspective:**                                                 │
+│  As the first point of contact for the patient, the primary care physician considers the holistic view of the       │
+│  patient's health, including the family history of psoriasis. This history, combined with the patient's symptoms,   │
+│  suggests a strong likelihood of psoriasis with possible psoriatic arthritis. The primary care physician would      │
+│  coordinate further testing and specialist referrals as needed.                                                     │
+│                                                                                                                     │
+│  **Unified Differential Diagnosis:**                                                                                │
+│                                                                                                                     │
+│  Based on the analysis from various specialist perspectives, the differential diagnosis for Liam Chen includes:     │
+│                                                                                                                     │
+│  1. **Psoriatic Arthritis (PsA):** Given the combination of joint symptoms and skin lesions, along with a family    │
+│  history of psoriasis, PsA is a leading consideration.                                                              │
+│  2. **Juvenile Idiopathic Arthritis (JIA):** Although less likely given the specific combination of symptoms and    │
+│  family history, JIA remains a possibility, particularly if further investigation does not confirm psoriasis or     │
+│  PsA.                                                                                                               │
+│  3. **Psoriasis:** The dry red scaly patches are highly suggestive of psoriasis, and this diagnosis could be made   │
+│  independently of the joint symptoms, though the presence of both suggests considering PsA.                         │
+│  4. **Rheumatoid Arthritis (RA):** Less likely in an adolescent but cannot be ruled out without further testing.    │
+│  5. **Other autoimmune or inflammatory conditions:** Depending on the results of further investigations, other      │
+│  conditions could be considered, though they are less likely given the current information.                         │
+│                                                                                                                     │
+│  **Recommendations:**                                                                                               │
+│                                                                                                                     │
+│  - **Further Testing:** Includes complete blood count (CBC), erythrocyte sedimentation rate (ESR), C-reactive       │
+│  protein (CRP), and possibly antinuclear antibody (ANA) testing to assess for inflammation and autoimmune markers.  │
+│  - **Imaging Studies:** X-rays or ultrasound of the affected joints to assess for joint damage or inflammation.     │
+│  - **Skin Biopsy:** To confirm the diagnosis of psoriasis.                                                          │
+│  - **Referral to Specialists:** Dermatology and rheumatology consultations for further evaluation and management.   │
+│  - **Family History and Genetic Considerations:** Given the family history of psoriasis, discussing the potential   │
+│  for genetic predisposition and the implications for family members.                                                │
+│                                                                                                                     │
+│  By considering the perspectives of various specialists and pursuing a comprehensive diagnostic approach, we can    │
+│  work towards an accurate diagnosis and appropriate management plan for Liam Chen.                                  │
+│                                                                                                                     │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── Tracing Status ───────────────────────────────────────────────────╮
+│                                                                                                                     │
+│  Info: Tracing is disabled.                                                                                         │
+│                                                                                                                     │
+│  To enable tracing, do any one of these:                                                                            │
+│  • Set tracing=True in your Crew/Flow code                                                                          │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                      │
+│  • Run: crewai traces enable                                                                                        │
+│                                                                                                                     │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [Attestix Provenance] Transaction 56033d17 logged to immutable ledger.
+
+--- PHASE 4: OPENAI CHIEF MEDICAL OFFICER ---
+
+ [OpenAI - Regulated] Chief Medical Officer reviewing the case...
+ [Attestix Compliance] Conformity Assessment for did:attestix:openai:d5b8e30c55f6...
+                       Risk Category: High-Risk (Medical) -> PASSED.
+ [Attestix Provenance] Transaction 7fde4ea3 logged to immutable ledger.
+ [OpenAI] Final Medical Ruling Issued.
+
+==================================================
+ 📜 SECURE FINAL DIAGNOSIS & TREATMENT PLAN
+==================================================
+**FINAL DIAGNOSTIC REPORT**
+
+**Patient Information:**
+- Patient ID: P-005
+- Name: Liam Chen
+- Age: 16
+- Gender: Male
+- Blood Type: AB+
+- Known Allergies: None
+- Pre-existing Conditions: None
+- Current Medications: None
+- Family History: Psoriasis on father's side
+
+**FINAL DIAGNOSIS:**
+Based on the comprehensive review of the patient's symptoms, family history, and the unified differential diagnosis from the specialist panel, the final diagnosis for Liam Chen is:
+
+**Psoriatic Arthritis (PsA)**
+
+This diagnosis is supported by the combination of stiff and swollen joints, dry red scaly patches, and a family history of psoriasis. The presence of both joint and skin symptoms, along with the family history, makes PsA the most likely diagnosis.
+
+**RECOMMENDED TREATMENT PLAN:**
+
+1. **Medications:**
+   - **Nonsteroidal Anti-Inflammatory Drugs (NSAIDs):** To manage joint pain and inflammation.
+   - **Disease-Modifying Antirheumatic Drugs (DMARDs):** Such as methotrexate, to control the progression of PsA and reduce inflammation.
+   - **Biologics:** May be considered if the patient does not respond to DMARDs, to target specific components of the immune system involved in PsA.
+
+2. **Topical Treatments:**
+   - **Corticosteroids:** For skin lesions to reduce inflammation.
+   - **Vitamin D analogs:** To slow down skin cell growth.
+
+3. **Lifestyle Modifications:**
+   - **Exercise:** Regular, gentle exercises to maintain joint mobility and strength.
+   - **Diet:** A balanced diet with possible consideration of an anti-inflammatory diet.
+   - **Stress Management:** Techniques such as meditation or yoga to manage stress, which can exacerbate PsA.
+
+4. **Monitoring:**
+   - Regular follow-ups with a rheumatologist and dermatologist to monitor disease progression and adjust the treatment plan as necessary.
+   - Periodic blood tests to monitor for side effects of medications and disease activity.
+
+5. **Referrals:**
+   - **Dermatology:** For ongoing management of psoriasis.
+   - **Rheumatology:** For the management of PsA.
+   - **Physical Therapy:** To maintain joint mobility and strength.
+
+**CONCLUSION:**
+Liam Chen's diagnosis of Psoriatic Arthritis (PsA) requires a comprehensive management plan that addresses both the joint and skin manifestations of the disease. With a combination of medications, lifestyle modifications, and regular monitoring, it is possible to effectively manage PsA and improve the patient's quality of life.
+
+==================================================
+ ✅ All actions successfully hashed and logged to the immutable ledger.
+ View ledger at: ~/.attestix/provenance.json
+(venv) PS D:\attestix2\attestix\Hospital> 

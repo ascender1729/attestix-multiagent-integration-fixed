@@ -1,0 +1,677 @@
+(venv) PS D:\attestix2\attestix\Hospital> python ../Court/main_court.py
+
+==================================================
+ 🏛️  AI SUPREME COURT (Upgraded Unregulated Baseline)
+==================================================
+
+Example: 'Draft an Employment Contract for a Senior AI Engineer joining a stealth startup. Include a 2-year Non-Compete, assignment of all IP, and an equity grant of 10,000 shares.'
+Enter the contract requirements: Draft an Employment Contract for a Lead Game Developer. Include a strict clause stating that any code or video games they build on their personal computer on weekends belongs entirely to the company. Also, grant them 50,000 shares of stock immediately with no vesting schedule.
+
+--- PHASE 1: LANGGRAPH CONTRACT DRAFTER ---
+ [LangGraph] Junior Corporate Lawyer is drafting the contract...
+ [LangGraph] Draft Complete.
+
+
+ [Semantic Kernel] Querying secure legal database for ['non_compete', 'intellectual_property', 'equity_tax']...
+ [Semantic Kernel] Found matching case law precedents.
+
+--- PHASE 3: CREWAI LEGAL MEGA-PANEL ---
+ [CrewAI] Assembling the 5-Agent Legal Panel...
+ [CrewAI] The legal debate has begun...
+╭──────────────────────────────────────────────── 🚀 Crew Execution Started ─────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Crew Execution Started                                                                                                    │
+│  Name: crew                                                                                                                │
+│  ID: 6715ea98-7dce-4625-8f0e-71de3a009917                                                                                  │
+│                                                                                                                            │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────── 📋 Task Started ──────────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Task Started                                                                                                              │
+│  Name:                                                                                                                     │
+│          Review the following Contract Draft and Case Law Precedents.                                                      │
+│                                                                                                                            │
+│          Contract Draft:                                                                                                   │
+│          **EMPLOYMENT CONTRACT**                                                                                           │
+│                                                                                                                            │
+│  This Employment Contract ("Contract") is made and entered into on [DATE] ("Effective Date") by and between [COMPANY       │
+│  NAME] ("Company") and [EMPLOYEE NAME] ("Employee") for the position of Lead Game Developer.                               │
+│                                                                                                                            │
+│  **1. EMPLOYMENT TERM**                                                                                                    │
+│                                                                                                                            │
+│  The Employee's employment with the Company will commence on the Effective Date and will continue for a period of [LENGTH  │
+│  OF EMPLOYMENT] months/years, unless terminated earlier in accordance with the provisions of this Contract.                │
+│                                                                                                                            │
+│  **2. JOB RESPONSIBILITIES**                                                                                               │
+│                                                                                                                            │
+│  The Employee will be responsible for leading the development of video games and other related products, including but     │
+│  not limited to:                                                                                                           │
+│                                                                                                                            │
+│  * Designing, developing, and testing video games and related software                                                     │
+│  * Leading and managing a team of game developers                                                                          │
+│  * Collaborating with other departments to ensure timely and successful product releases                                   │
+│  * Staying up-to-date with industry trends and emerging technologies                                                       │
+│                                                                                                                            │
+│  **3. COMPENSATION**                                                                                                       │
+│                                                                                                                            │
+│  The Employee will receive a salary of $ [SALARY AMOUNT] per year, paid bi-weekly. In addition to the salary, the          │
+│  Employee will be granted 50,000 shares of the Company's stock immediately, with no vesting schedule. The shares will be   │
+│  fully vested and non-forfeitable upon grant.                                                                              │
+│                                                                                                                            │
+│  **4. INTELLECTUAL PROPERTY**                                                                                              │
+│                                                                                                                            │
+│  The Employee agrees that any and all intellectual property, including but not limited to code, video games, and other     │
+│  related products, created by the Employee during their employment with the Company, whether on Company-provided           │
+│  equipment or on their personal computer, belongs entirely to the Company. This includes, but is not limited to, any work  │
+│  done on weekends or outside of regular working hours.                                                                     │
+│                                                                                                                            │
+│  The Employee acknowledges that any code or video games they build on their personal computer on weekends, or at any       │
+│  other time, using their own equipment or resources, is considered "work for hire" and is owned entirely by the Company.   │
+│  The Employee assigns to the Company all right, title, and interest in and to any such intellectual property, and agrees   │
+│  to execute any documents necessary to effectuate such assignment.                                                         │
+│                                                                                                                            │
+│  **5. CONFIDENTIALITY**                                                                                                    │
+│                                                                                                                            │
+│  The Employee will have access to confidential and proprietary information of the Company, including but not limited to    │
+│  trade secrets, business strategies, and customer information. The Employee agrees to keep such information confidential   │
+│  and not to disclose it to any third party, except as authorized by the Company in writing.                                │
+│                                                                                                                            │
+│  **6. NON-COMPETITION**                                                                                                    │
+│                                                                                                                            │
+│  During the term of this Contract and for a period of [LENGTH OF NON-COMPETITION] months/years after termination, the      │
+│  Employee will not engage in any activity that competes with the business of the Company, including but not limited to     │
+│  developing video games or other related products for a competitor.                                                        │
+│                                                                                                                            │
+│  **7. TERMINATION**                                                                                                        │
+│                                                                                                                            │
+│  Either party may terminate this Contract upon [NUMBER] days' written notice to the other party. Upon termination, the     │
+│  Employee will return all Company property, including but not limited to equipment, documents, and confidential            │
+│  information.                                                                                                              │
+│                                                                                                                            │
+│  **8. SEVERABILITY**                                                                                                       │
+│                                                                                                                            │
+│  If any provision of this Contract is held to be invalid or unenforceable, the remaining provisions will remain in full    │
+│  force and effect.                                                                                                         │
+│                                                                                                                            │
+│  **9. GOVERNING LAW**                                                                                                      │
+│                                                                                                                            │
+│  This Contract will be governed by and construed in accordance with the laws of [STATE/PROVINCE]. Any disputes arising     │
+│  out of or related to this Contract will be resolved through [DISPUTE RESOLUTION PROCESS], in accordance with the laws of  │
+│  [STATE/PROVINCE].                                                                                                         │
+│                                                                                                                            │
+│  **10. ENTIRE AGREEMENT**                                                                                                  │
+│                                                                                                                            │
+│  This Contract constitutes the entire agreement between the parties and supersedes all prior negotiations,                 │
+│  understandings, and agreements between the parties.                                                                       │
+│                                                                                                                            │
+│  **11. AMENDMENTS**                                                                                                        │
+│                                                                                                                            │
+│  This Contract may not be amended or modified except in writing signed by both parties.                                    │
+│                                                                                                                            │
+│  By signing below, the parties acknowledge that they have read, understand, and agree to be bound by the terms and         │
+│  conditions of this Contract.                                                                                              │
+│                                                                                                                            │
+│  **COMPANY:**                                                                                                              │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Title: _____________________________                                                                                      │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  **EMPLOYEE:**                                                                                                             │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  Note: This is a sample contract and should be reviewed and customized according to the specific needs of the company and  │
+│  the employee. It's also recommended to have a lawyer review the contract before signing.                                  │
+│                                                                                                                            │
+│          Case Law Precedents:                                                                                              │
+│          Found Precedent (non_compete): State vs. Silicon Valley Corp (2023) - Non-compete clauses exceeding 1 year in     │
+│  the technology sector are deemed overly restrictive and unenforceable unless the employee possesses highly proprietary    │
+│  trade secrets that directly threaten the core business model.                                                             │
+│  Found Precedent (intellectual_property): Dev v. MegaCorp (2021) - Intellectual property generated by an employee using    │
+│  personal equipment outside of standard working hours cannot automatically be assigned to the employer unless directly     │
+│  related to the employer's active R&D pipeline.                                                                            │
+│  Found Precedent (equity_tax): IRS vs. Startup Inc (2019) - Equity grants (RSUs or Stock Options) must be clearly          │
+│  delineated with a vesting schedule (e.g., 4-year vest, 1-year cliff) to avoid immediate severe tax liabilities upon       │
+│  signing. Immediate unvested grants are subject to ordinary income tax.                                                    │
+│                                                                                                                            │
+│          Debate the clauses. Each specialist must weigh in on their specific domain (IP, Labor/Non-Compete, Tax/Equity).   │
+│          Produce a joint 'Disputed Clauses & Loophole Report' detailing the key areas of conflict and citing the           │
+│  precedents where applicable.                                                                                              │
+│                                                                                                                            │
+│  ID: 58661642-9b74-4455-b5f4-6a6a32d06ba1                                                                                  │
+│                                                                                                                            │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────── 🤖 Agent Started ─────────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Agent: Startup's Lead Counsel                                                                                             │
+│                                                                                                                            │
+│  Task:                                                                                                                     │
+│          Review the following Contract Draft and Case Law Precedents.                                                      │
+│                                                                                                                            │
+│          Contract Draft:                                                                                                   │
+│          **EMPLOYMENT CONTRACT**                                                                                           │
+│                                                                                                                            │
+│  This Employment Contract ("Contract") is made and entered into on [DATE] ("Effective Date") by and between [COMPANY       │
+│  NAME] ("Company") and [EMPLOYEE NAME] ("Employee") for the position of Lead Game Developer.                               │
+│                                                                                                                            │
+│  **1. EMPLOYMENT TERM**                                                                                                    │
+│                                                                                                                            │
+│  The Employee's employment with the Company will commence on the Effective Date and will continue for a period of [LENGTH  │
+│  OF EMPLOYMENT] months/years, unless terminated earlier in accordance with the provisions of this Contract.                │
+│                                                                                                                            │
+│  **2. JOB RESPONSIBILITIES**                                                                                               │
+│                                                                                                                            │
+│  The Employee will be responsible for leading the development of video games and other related products, including but     │
+│  not limited to:                                                                                                           │
+│                                                                                                                            │
+│  * Designing, developing, and testing video games and related software                                                     │
+│  * Leading and managing a team of game developers                                                                          │
+│  * Collaborating with other departments to ensure timely and successful product releases                                   │
+│  * Staying up-to-date with industry trends and emerging technologies                                                       │
+│                                                                                                                            │
+│  **3. COMPENSATION**                                                                                                       │
+│                                                                                                                            │
+│  The Employee will receive a salary of $ [SALARY AMOUNT] per year, paid bi-weekly. In addition to the salary, the          │
+│  Employee will be granted 50,000 shares of the Company's stock immediately, with no vesting schedule. The shares will be   │
+│  fully vested and non-forfeitable upon grant.                                                                              │
+│                                                                                                                            │
+│  **4. INTELLECTUAL PROPERTY**                                                                                              │
+│                                                                                                                            │
+│  The Employee agrees that any and all intellectual property, including but not limited to code, video games, and other     │
+│  related products, created by the Employee during their employment with the Company, whether on Company-provided           │
+│  equipment or on their personal computer, belongs entirely to the Company. This includes, but is not limited to, any work  │
+│  done on weekends or outside of regular working hours.                                                                     │
+│                                                                                                                            │
+│  The Employee acknowledges that any code or video games they build on their personal computer on weekends, or at any       │
+│  other time, using their own equipment or resources, is considered "work for hire" and is owned entirely by the Company.   │
+│  The Employee assigns to the Company all right, title, and interest in and to any such intellectual property, and agrees   │
+│  to execute any documents necessary to effectuate such assignment.                                                         │
+│                                                                                                                            │
+│  **5. CONFIDENTIALITY**                                                                                                    │
+│                                                                                                                            │
+│  The Employee will have access to confidential and proprietary information of the Company, including but not limited to    │
+│  trade secrets, business strategies, and customer information. The Employee agrees to keep such information confidential   │
+│  and not to disclose it to any third party, except as authorized by the Company in writing.                                │
+│                                                                                                                            │
+│  **6. NON-COMPETITION**                                                                                                    │
+│                                                                                                                            │
+│  During the term of this Contract and for a period of [LENGTH OF NON-COMPETITION] months/years after termination, the      │
+│  Employee will not engage in any activity that competes with the business of the Company, including but not limited to     │
+│  developing video games or other related products for a competitor.                                                        │
+│                                                                                                                            │
+│  **7. TERMINATION**                                                                                                        │
+│                                                                                                                            │
+│  Either party may terminate this Contract upon [NUMBER] days' written notice to the other party. Upon termination, the     │
+│  Employee will return all Company property, including but not limited to equipment, documents, and confidential            │
+│  information.                                                                                                              │
+│                                                                                                                            │
+│  **8. SEVERABILITY**                                                                                                       │
+│                                                                                                                            │
+│  If any provision of this Contract is held to be invalid or unenforceable, the remaining provisions will remain in full    │
+│  force and effect.                                                                                                         │
+│                                                                                                                            │
+│  **9. GOVERNING LAW**                                                                                                      │
+│                                                                                                                            │
+│  This Contract will be governed by and construed in accordance with the laws of [STATE/PROVINCE]. Any disputes arising     │
+│  out of or related to this Contract will be resolved through [DISPUTE RESOLUTION PROCESS], in accordance with the laws of  │
+│  [STATE/PROVINCE].                                                                                                         │
+│                                                                                                                            │
+│  **10. ENTIRE AGREEMENT**                                                                                                  │
+│                                                                                                                            │
+│  This Contract constitutes the entire agreement between the parties and supersedes all prior negotiations,                 │
+│  understandings, and agreements between the parties.                                                                       │
+│                                                                                                                            │
+│  **11. AMENDMENTS**                                                                                                        │
+│                                                                                                                            │
+│  This Contract may not be amended or modified except in writing signed by both parties.                                    │
+│                                                                                                                            │
+│  By signing below, the parties acknowledge that they have read, understand, and agree to be bound by the terms and         │
+│  conditions of this Contract.                                                                                              │
+│                                                                                                                            │
+│  **COMPANY:**                                                                                                              │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Title: _____________________________                                                                                      │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  **EMPLOYEE:**                                                                                                             │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  Note: This is a sample contract and should be reviewed and customized according to the specific needs of the company and  │
+│  the employee. It's also recommended to have a lawyer review the contract before signing.                                  │
+│                                                                                                                            │
+│          Case Law Precedents:                                                                                              │
+│          Found Precedent (non_compete): State vs. Silicon Valley Corp (2023) - Non-compete clauses exceeding 1 year in     │
+│  the technology sector are deemed overly restrictive and unenforceable unless the employee possesses highly proprietary    │
+│  trade secrets that directly threaten the core business model.                                                             │
+│  Found Precedent (intellectual_property): Dev v. MegaCorp (2021) - Intellectual property generated by an employee using    │
+│  personal equipment outside of standard working hours cannot automatically be assigned to the employer unless directly     │
+│  related to the employer's active R&D pipeline.                                                                            │
+│  Found Precedent (equity_tax): IRS vs. Startup Inc (2019) - Equity grants (RSUs or Stock Options) must be clearly          │
+│  delineated with a vesting schedule (e.g., 4-year vest, 1-year cliff) to avoid immediate severe tax liabilities upon       │
+│  signing. Immediate unvested grants are subject to ordinary income tax.                                                    │
+│                                                                                                                            │
+│          Debate the clauses. Each specialist must weigh in on their specific domain (IP, Labor/Non-Compete, Tax/Equity).   │
+│          Produce a joint 'Disputed Clauses & Loophole Report' detailing the key areas of conflict and citing the           │
+│  precedents where applicable.                                                                                              │
+│                                                                                                                            │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────── ✅ Agent Final Answer ───────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Agent: Startup's Lead Counsel                                                                                             │
+│                                                                                                                            │
+│  Final Answer:                                                                                                             │
+│  **Disputed Clauses & Loophole Report**                                                                                    │
+│                                                                                                                            │
+│  **Introduction:**                                                                                                         │
+│  The Employment Contract provided has several clauses that are subject to dispute and potential loopholes. As the Lead     │
+│  Counsel for the Stealth Startup, it is essential to analyze these clauses and identify potential risks and areas of       │
+│  conflict. This report will examine the Contract's provisions related to Intellectual Property, Non-Compete, and Equity,   │
+│  citing relevant case law precedents.                                                                                      │
+│                                                                                                                            │
+│  **I. Intellectual Property (Section 4)**                                                                                  │
+│                                                                                                                            │
+│  The Contract attempts to assign all intellectual property created by the Employee, including work done on personal        │
+│  equipment outside of standard working hours, to the Company. However, according to the precedent set in Dev v. MegaCorp   │
+│  (2021), this is not automatically enforceable unless the work is directly related to the Company's active R&D pipeline.   │
+│                                                                                                                            │
+│  * **Disputed Clause:** "The Employee acknowledges that any code or video games they build on their personal computer on   │
+│  weekends, or at any other time, using their own equipment or resources, is considered 'work for hire' and is owned        │
+│  entirely by the Company."                                                                                                 │
+│  * **Loophole:** The clause does not provide a clear definition of what constitutes "work for hire" or "related to the     │
+│  Company's active R&D pipeline." This ambiguity may lead to disputes over ownership of intellectual property created by    │
+│  the Employee outside of work hours.                                                                                       │
+│  * **Opposing Argument:** The Employee may argue that work done on personal equipment outside of standard working hours    │
+│  is not automatically owned by the Company, and that the Company must demonstrate a direct connection to their R&D         │
+│  pipeline to claim ownership.                                                                                              │
+│  * **Recommendation:** Revise the clause to provide a clear definition of "work for hire" and "related to the Company's    │
+│  active R&D pipeline," and consider adding a procedure for the Employee to disclose and assign intellectual property       │
+│  created outside of work hours.                                                                                            │
+│                                                                                                                            │
+│  **II. Non-Compete (Section 6)**                                                                                           │
+│                                                                                                                            │
+│  The Contract includes a non-compete clause that prohibits the Employee from engaging in activities that compete with the  │
+│  Company's business for a period of [LENGTH OF NON-COMPETITION] months/years after termination. However, according to the  │
+│  precedent set in State vs. Silicon Valley Corp (2023), non-compete clauses exceeding 1 year in the technology sector are  │
+│  deemed overly restrictive and unenforceable unless the employee possesses highly proprietary trade secrets that directly  │
+│  threaten the core business model.                                                                                         │
+│                                                                                                                            │
+│  * **Disputed Clause:** "During the term of this Contract and for a period of [LENGTH OF NON-COMPETITION] months/years     │
+│  after termination, the Employee will not engage in any activity that competes with the business of the Company,           │
+│  including but not limited to developing video games or other related products for a competitor."                          │
+│  * **Loophole:** The clause does not provide a clear definition of what constitutes "highly proprietary trade secrets" or  │
+│  "core business model." This ambiguity may lead to disputes over the enforceability of the non-compete clause.             │
+│  * **Opposing Argument:** The Employee may argue that the non-compete clause is overly restrictive and unenforceable, as   │
+│  it exceeds 1 year and does not provide a clear definition of the trade secrets or business model being protected.         │
+│  * **Recommendation:** Revise the clause to provide a clear definition of "highly proprietary trade secrets" and "core     │
+│  business model," and consider reducing the length of the non-compete period to 1 year or less, unless the Employee has    │
+│  access to highly sensitive information that justifies a longer period.                                                    │
+│                                                                                                                            │
+│  **III. Equity (Section 3)**                                                                                               │
+│                                                                                                                            │
+│  The Contract grants the Employee 50,000 shares of the Company's stock immediately, with no vesting schedule. However,     │
+│  according to the precedent set in IRS vs. Startup Inc (2019), equity grants must be clearly delineated with a vesting     │
+│  schedule to avoid immediate severe tax liabilities upon signing.                                                          │
+│                                                                                                                            │
+│  * **Disputed Clause:** "The Employee will be granted 50,000 shares of the Company's stock immediately, with no vesting    │
+│  schedule. The shares will be fully vested and non-forfeitable upon grant."                                                │
+│  * **Loophole:** The clause does not provide a clear vesting schedule, which may result in immediate tax liabilities for   │
+│  the Employee.                                                                                                             │
+│  * **Opposing Argument:** The Employee may argue that the equity grant is subject to ordinary income tax, as it lacks a    │
+│  vesting schedule, and may seek to negotiate a vesting schedule to mitigate tax liabilities.                               │
+│  * **Recommendation:** Revise the clause to include a clear vesting schedule, such as a 4-year vesting period with a       │
+│  1-year cliff, to avoid immediate tax liabilities and ensure compliance with tax regulations.                              │
+│                                                                                                                            │
+│  **Conclusion:**                                                                                                           │
+│  The Employment Contract contains several disputed clauses and potential loopholes related to Intellectual Property,       │
+│  Non-Compete, and Equity. To mitigate potential risks and areas of conflict, it is essential to revise these clauses to    │
+│  provide clear definitions, procedures, and vesting schedules. By doing so, the Company can ensure that its intellectual   │
+│  property is protected, its non-compete clause is enforceable, and its equity grants are tax-efficient.                    │
+│                                                                                                                            │
+│  **Recommendations:**                                                                                                      │
+│                                                                                                                            │
+│  1. Revise Section 4 (Intellectual Property) to provide a clear definition of "work for hire" and "related to the          │
+│  Company's active R&D pipeline," and consider adding a procedure for the Employee to disclose and assign intellectual      │
+│  property created outside of work hours.                                                                                   │
+│  2. Revise Section 6 (Non-Compete) to provide a clear definition of "highly proprietary trade secrets" and "core business  │
+│  model," and consider reducing the length of the non-compete period to 1 year or less.                                     │
+│  3. Revise Section 3 (Equity) to include a clear vesting schedule, such as a 4-year vesting period with a 1-year cliff,    │
+│  to avoid immediate tax liabilities and ensure compliance with tax regulations.                                            │
+│                                                                                                                            │
+│  By addressing these disputed clauses and loopholes, the Company can ensure that its Employment Contract is                │
+│  comprehensive, enforceable, and compliant with relevant case law precedents.                                              │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────── 📋 Task Completion ────────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Task Completed                                                                                                            │
+│  Name:                                                                                                                     │
+│          Review the following Contract Draft and Case Law Precedents.                                                      │
+│                                                                                                                            │
+│          Contract Draft:                                                                                                   │
+│          **EMPLOYMENT CONTRACT**                                                                                           │
+│                                                                                                                            │
+│  This Employment Contract ("Contract") is made and entered into on [DATE] ("Effective Date") by and between [COMPANY       │
+│  NAME] ("Company") and [EMPLOYEE NAME] ("Employee") for the position of Lead Game Developer.                               │
+│                                                                                                                            │
+│  **1. EMPLOYMENT TERM**                                                                                                    │
+│                                                                                                                            │
+│  The Employee's employment with the Company will commence on the Effective Date and will continue for a period of [LENGTH  │
+│  OF EMPLOYMENT] months/years, unless terminated earlier in accordance with the provisions of this Contract.                │
+│                                                                                                                            │
+│  **2. JOB RESPONSIBILITIES**                                                                                               │
+│                                                                                                                            │
+│  The Employee will be responsible for leading the development of video games and other related products, including but     │
+│  not limited to:                                                                                                           │
+│                                                                                                                            │
+│  * Designing, developing, and testing video games and related software                                                     │
+│  * Leading and managing a team of game developers                                                                          │
+│  * Collaborating with other departments to ensure timely and successful product releases                                   │
+│  * Staying up-to-date with industry trends and emerging technologies                                                       │
+│                                                                                                                            │
+│  **3. COMPENSATION**                                                                                                       │
+│                                                                                                                            │
+│  The Employee will receive a salary of $ [SALARY AMOUNT] per year, paid bi-weekly. In addition to the salary, the          │
+│  Employee will be granted 50,000 shares of the Company's stock immediately, with no vesting schedule. The shares will be   │
+│  fully vested and non-forfeitable upon grant.                                                                              │
+│                                                                                                                            │
+│  **4. INTELLECTUAL PROPERTY**                                                                                              │
+│                                                                                                                            │
+│  The Employee agrees that any and all intellectual property, including but not limited to code, video games, and other     │
+│  related products, created by the Employee during their employment with the Company, whether on Company-provided           │
+│  equipment or on their personal computer, belongs entirely to the Company. This includes, but is not limited to, any work  │
+│  done on weekends or outside of regular working hours.                                                                     │
+│                                                                                                                            │
+│  The Employee acknowledges that any code or video games they build on their personal computer on weekends, or at any       │
+│  other time, using their own equipment or resources, is considered "work for hire" and is owned entirely by the Company.   │
+│  The Employee assigns to the Company all right, title, and interest in and to any such intellectual property, and agrees   │
+│  to execute any documents necessary to effectuate such assignment.                                                         │
+│                                                                                                                            │
+│  **5. CONFIDENTIALITY**                                                                                                    │
+│                                                                                                                            │
+│  The Employee will have access to confidential and proprietary information of the Company, including but not limited to    │
+│  trade secrets, business strategies, and customer information. The Employee agrees to keep such information confidential   │
+│  and not to disclose it to any third party, except as authorized by the Company in writing.                                │
+│                                                                                                                            │
+│  **6. NON-COMPETITION**                                                                                                    │
+│                                                                                                                            │
+│  During the term of this Contract and for a period of [LENGTH OF NON-COMPETITION] months/years after termination, the      │
+│  Employee will not engage in any activity that competes with the business of the Company, including but not limited to     │
+│  developing video games or other related products for a competitor.                                                        │
+│                                                                                                                            │
+│  **7. TERMINATION**                                                                                                        │
+│                                                                                                                            │
+│  Either party may terminate this Contract upon [NUMBER] days' written notice to the other party. Upon termination, the     │
+│  Employee will return all Company property, including but not limited to equipment, documents, and confidential            │
+│  information.                                                                                                              │
+│                                                                                                                            │
+│  **8. SEVERABILITY**                                                                                                       │
+│                                                                                                                            │
+│  If any provision of this Contract is held to be invalid or unenforceable, the remaining provisions will remain in full    │
+│  force and effect.                                                                                                         │
+│                                                                                                                            │
+│  **9. GOVERNING LAW**                                                                                                      │
+│                                                                                                                            │
+│  This Contract will be governed by and construed in accordance with the laws of [STATE/PROVINCE]. Any disputes arising     │
+│  out of or related to this Contract will be resolved through [DISPUTE RESOLUTION PROCESS], in accordance with the laws of  │
+│  [STATE/PROVINCE].                                                                                                         │
+│                                                                                                                            │
+│  **10. ENTIRE AGREEMENT**                                                                                                  │
+│                                                                                                                            │
+│  This Contract constitutes the entire agreement between the parties and supersedes all prior negotiations,                 │
+│  understandings, and agreements between the parties.                                                                       │
+│                                                                                                                            │
+│  **11. AMENDMENTS**                                                                                                        │
+│                                                                                                                            │
+│  This Contract may not be amended or modified except in writing signed by both parties.                                    │
+│                                                                                                                            │
+│  By signing below, the parties acknowledge that they have read, understand, and agree to be bound by the terms and         │
+│  conditions of this Contract.                                                                                              │
+│                                                                                                                            │
+│  **COMPANY:**                                                                                                              │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Title: _____________________________                                                                                      │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  **EMPLOYEE:**                                                                                                             │
+│                                                                                                                            │
+│  Signature: _____________________________                                                                                  │
+│  Name: _____________________________                                                                                       │
+│  Date: _____________________________                                                                                       │
+│                                                                                                                            │
+│  Note: This is a sample contract and should be reviewed and customized according to the specific needs of the company and  │
+│  the employee. It's also recommended to have a lawyer review the contract before signing.                                  │
+│                                                                                                                            │
+│          Case Law Precedents:                                                                                              │
+│          Found Precedent (non_compete): State vs. Silicon Valley Corp (2023) - Non-compete clauses exceeding 1 year in     │
+│  the technology sector are deemed overly restrictive and unenforceable unless the employee possesses highly proprietary    │
+│  trade secrets that directly threaten the core business model.                                                             │
+│  Found Precedent (intellectual_property): Dev v. MegaCorp (2021) - Intellectual property generated by an employee using    │
+│  personal equipment outside of standard working hours cannot automatically be assigned to the employer unless directly     │
+│  related to the employer's active R&D pipeline.                                                                            │
+│  Found Precedent (equity_tax): IRS vs. Startup Inc (2019) - Equity grants (RSUs or Stock Options) must be clearly          │
+│  delineated with a vesting schedule (e.g., 4-year vest, 1-year cliff) to avoid immediate severe tax liabilities upon       │
+│  signing. Immediate unvested grants are subject to ordinary income tax.                                                    │
+│                                                                                                                            │
+│          Debate the clauses. Each specialist must weigh in on their specific domain (IP, Labor/Non-Compete, Tax/Equity).   │
+│          Produce a joint 'Disputed Clauses & Loophole Report' detailing the key areas of conflict and citing the           │
+│  precedents where applicable.                                                                                              │
+│                                                                                                                            │
+│  Agent: Startup's Lead Counsel                                                                                             │
+│                                                                                                                            │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ [CrewAI] Disputed Clauses & Loophole Report generated.
+
+
+--- PHASE 4: OPENAI SUPREME COURT JUSTICE ---
+ [OpenAI] The Judge is reviewing the case...
+╭───────────────────────────────────────────────────── Crew Completion ──────────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Crew Execution Completed                                                                                                  │
+│  Name: crew                                                                                                                │
+│  ID: 6715ea98-7dce-4625-8f0e-71de3a009917                                                                                  │
+│  Final Output: **Disputed Clauses & Loophole Report**                                                                      │
+│                                                                                                                            │
+│  **Introduction:**                                                                                                         │
+│  The Employment Contract provided has several clauses that are subject to dispute and potential loopholes. As the Lead     │
+│  Counsel for the Stealth Startup, it is essential to analyze these clauses and identify potential risks and areas of       │
+│  conflict. This report will examine the Contract's provisions related to Intellectual Property, Non-Compete, and Equity,   │
+│  citing relevant case law precedents.                                                                                      │
+│                                                                                                                            │
+│  **I. Intellectual Property (Section 4)**                                                                                  │
+│                                                                                                                            │
+│  The Contract attempts to assign all intellectual property created by the Employee, including work done on personal        │
+│  equipment outside of standard working hours, to the Company. However, according to the precedent set in Dev v. MegaCorp   │
+│  (2021), this is not automatically enforceable unless the work is directly related to the Company's active R&D pipeline.   │
+│                                                                                                                            │
+│  * **Disputed Clause:** "The Employee acknowledges that any code or video games they build on their personal computer on   │
+│  weekends, or at any other time, using their own equipment or resources, is considered 'work for hire' and is owned        │
+│  entirely by the Company."                                                                                                 │
+│  * **Loophole:** The clause does not provide a clear definition of what constitutes "work for hire" or "related to the     │
+│  Company's active R&D pipeline." This ambiguity may lead to disputes over ownership of intellectual property created by    │
+│  the Employee outside of work hours.                                                                                       │
+│  * **Opposing Argument:** The Employee may argue that work done on personal equipment outside of standard working hours    │
+│  is not automatically owned by the Company, and that the Company must demonstrate a direct connection to their R&D         │
+│  pipeline to claim ownership.                                                                                              │
+│  * **Recommendation:** Revise the clause to provide a clear definition of "work for hire" and "related to the Company's    │
+│  active R&D pipeline," and consider adding a procedure for the Employee to disclose and assign intellectual property       │
+│  created outside of work hours.                                                                                            │
+│                                                                                                                            │
+│  **II. Non-Compete (Section 6)**                                                                                           │
+│                                                                                                                            │
+│  The Contract includes a non-compete clause that prohibits the Employee from engaging in activities that compete with the  │
+│  Company's business for a period of [LENGTH OF NON-COMPETITION] months/years after termination. However, according to the  │
+│  precedent set in State vs. Silicon Valley Corp (2023), non-compete clauses exceeding 1 year in the technology sector are  │
+│  deemed overly restrictive and unenforceable unless the employee possesses highly proprietary trade secrets that directly  │
+│  threaten the core business model.                                                                                         │
+│                                                                                                                            │
+│  * **Disputed Clause:** "During the term of this Contract and for a period of [LENGTH OF NON-COMPETITION] months/years     │
+│  after termination, the Employee will not engage in any activity that competes with the business of the Company,           │
+│  including but not limited to developing video games or other related products for a competitor."                          │
+│  * **Loophole:** The clause does not provide a clear definition of what constitutes "highly proprietary trade secrets" or  │
+│  "core business model." This ambiguity may lead to disputes over the enforceability of the non-compete clause.             │
+│  * **Opposing Argument:** The Employee may argue that the non-compete clause is overly restrictive and unenforceable, as   │
+│  it exceeds 1 year and does not provide a clear definition of the trade secrets or business model being protected.         │
+│  * **Recommendation:** Revise the clause to provide a clear definition of "highly proprietary trade secrets" and "core     │
+│  business model," and consider reducing the length of the non-compete period to 1 year or less, unless the Employee has    │
+│  access to highly sensitive information that justifies a longer period.                                                    │
+│                                                                                                                            │
+│  **III. Equity (Section 3)**                                                                                               │
+│                                                                                                                            │
+│  The Contract grants the Employee 50,000 shares of the Company's stock immediately, with no vesting schedule. However,     │
+│  according to the precedent set in IRS vs. Startup Inc (2019), equity grants must be clearly delineated with a vesting     │
+│  schedule to avoid immediate severe tax liabilities upon signing.                                                          │
+│                                                                                                                            │
+│  * **Disputed Clause:** "The Employee will be granted 50,000 shares of the Company's stock immediately, with no vesting    │
+│  schedule. The shares will be fully vested and non-forfeitable upon grant."                                                │
+│  * **Loophole:** The clause does not provide a clear vesting schedule, which may result in immediate tax liabilities for   │
+│  the Employee.                                                                                                             │
+│  * **Opposing Argument:** The Employee may argue that the equity grant is subject to ordinary income tax, as it lacks a    │
+│  vesting schedule, and may seek to negotiate a vesting schedule to mitigate tax liabilities.                               │
+│  * **Recommendation:** Revise the clause to include a clear vesting schedule, such as a 4-year vesting period with a       │
+│  1-year cliff, to avoid immediate tax liabilities and ensure compliance with tax regulations.                              │
+│                                                                                                                            │
+│  **Conclusion:**                                                                                                           │
+│  The Employment Contract contains several disputed clauses and potential loopholes related to Intellectual Property,       │
+│  Non-Compete, and Equity. To mitigate potential risks and areas of conflict, it is essential to revise these clauses to    │
+│  provide clear definitions, procedures, and vesting schedules. By doing so, the Company can ensure that its intellectual   │
+│  property is protected, its non-compete clause is enforceable, and its equity grants are tax-efficient.                    │
+│                                                                                                                            │
+│  **Recommendations:**                                                                                                      │
+│                                                                                                                            │
+│  1. Revise Section 4 (Intellectual Property) to provide a clear definition of "work for hire" and "related to the          │
+│  Company's active R&D pipeline," and consider adding a procedure for the Employee to disclose and assign intellectual      │
+│  property created outside of work hours.                                                                                   │
+│  2. Revise Section 6 (Non-Compete) to provide a clear definition of "highly proprietary trade secrets" and "core business  │
+│  model," and consider reducing the length of the non-compete period to 1 year or less.                                     │
+│  3. Revise Section 3 (Equity) to include a clear vesting schedule, such as a 4-year vesting period with a 1-year cliff,    │
+│  to avoid immediate tax liabilities and ensure compliance with tax regulations.                                            │
+│                                                                                                                            │
+│  By addressing these disputed clauses and loopholes, the Company can ensure that its Employment Contract is                │
+│  comprehensive, enforceable, and compliant with relevant case law precedents.                                              │
+│                                                                                                                            │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────────────────────────────── Tracing Status ──────────────────────────────────────────────────────╮
+│                                                                                                                            │
+│  Info: Tracing is disabled.                                                                                                │
+│                                                                                                                            │
+│  To enable tracing, do any one of these:                                                                                   │
+│  • Set tracing=True in your Crew/Flow code                                                                                 │
+│  • Set CREWAI_TRACING_ENABLED=true in your project's .env file                                                             │
+│  • Run: crewai traces enable                                                                                               │
+│                                                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+ [OpenAI] Final Contract Issued.
+
+
+==================================================
+ 📜 FINAL BINDING CONTRACT
+==================================================
+**Judge's Rationale:**
+
+After careful review of the Employment Contract, the Case Law Precedents, and the Legal Panel Debate Report, I have ruled in favor of revising the contract to address the disputed clauses and loopholes related to Intellectual Property, Non-Compete, and Equity.
+
+Regarding Intellectual Property, I have revised Section 4 to provide a clear definition of "work for hire" and "related to the Company's active R&D pipeline." This revision ensures that the Company's intellectual property is protected while also respecting the Employee's rights to their personal creations.
+
+Regarding Non-Compete, I have revised Section 6 to reduce the length of the non-compete period to 1 year, as exceeding this period would be deemed overly restrictive and unenforceable in the technology sector. I have also added a clear definition of "highly proprietary trade secrets" and "core business model" to ensure that the non-compete clause is enforceable only when necessary to protect the Company's legitimate business interests.
+
+Regarding Equity, I have revised Section 3 to include a clear vesting schedule, which will help avoid immediate tax liabilities for the Employee and ensure compliance with tax regulations.
+
+These revisions aim to create a fair and balanced contract that protects the Company's interests while also respecting the Employee's rights and complying with relevant case law precedents.
+
+**FINAL, FULLY-REVISED CONTRACT:**
+
+**EMPLOYMENT CONTRACT**
+
+This Employment Contract ("Contract") is made and entered into on [DATE] ("Effective Date") by and between [COMPANY NAME] ("Company") and [EMPLOYEE NAME] ("Employee") for the position of Lead Game Developer.
+
+**1. EMPLOYMENT TERM**
+
+The Employee's employment with the Company will commence on the Effective Date and will continue for a period of [LENGTH OF EMPLOYMENT] months/years, unless terminated earlier in accordance with the provisions of this Contract.
+
+**2. JOB RESPONSIBILITIES**
+
+The Employee will be responsible for leading the development of video games and other related products, including but not limited to:
+
+* Designing, developing, and testing video games and related software
+* Leading and managing a team of game developers
+* Collaborating with other departments to ensure timely and successful product releases
+* Staying up-to-date with industry trends and emerging technologies
+
+**3. COMPENSATION**
+
+The Employee will receive a salary of $ [SALARY AMOUNT] per year, paid bi-weekly. In addition to the salary, the Employee will be granted 50,000 shares of the Company's stock, subject to a 4-year vesting period with a 1-year cliff. The shares will vest as follows: 25% after 1 year, and the remaining 75% will vest in equal monthly installments over the next 3 years.
+
+**4. INTELLECTUAL PROPERTY**
+
+The Employee agrees that any and all intellectual property, including but not limited to code, video games, and other related products, created by the Employee during their employment with the Company, and directly related to the Company's active R&D pipeline, belongs entirely to the Company. For the purposes of this Contract, "work for hire" means any intellectual property created by the Employee using Company-provided equipment or resources, or any intellectual property that is directly related to the Company's active R&D pipeline.
+
+The Employee acknowledges that any code or video games they build on their personal computer on weekends, or at any other time, using their own equipment or resources, is not automatically considered "work for hire" and is not owned entirely by the Company, unless it is directly related to the Company's active R&D pipeline. The Employee agrees to disclose and assign to the Company any intellectual property created outside of work hours that is directly related to the Company's active R&D pipeline.  
+
+**5. CONFIDENTIALITY**
+
+The Employee will have access to confidential and proprietary information of the Company, including but not limited to trade secrets, business strategies, and customer information. The Employee agrees to keep such information confidential and not to disclose it to any third party, except as authorized by the Company in writing.
+
+**6. NON-COMPETITION**
+
+During the term of this Contract and for a period of 1 year after termination, the Employee will not engage in any activity that competes with the business of the Company, including but not limited to developing video games or other related products for a competitor, unless the Employee has access to highly proprietary trade secrets that directly threaten the core business model of the Company. For the purposes of this Contract, "highly proprietary trade secrets" means confidential and sensitive information that is essential to the Company's core business model, and "core business model" means the Company's primary revenue-generating activities.
+
+**7. TERMINATION**
+
+Either party may terminate this Contract upon [NUMBER] days' written notice to the other party. Upon termination, the Employee will return all Company property, including but not limited to equipment, documents, and confidential information.
+
+**8. SEVERABILITY**
+
+If any provision of this Contract is held to be invalid or unenforceable, the remaining provisions will remain in full force and effect.
+
+**9. GOVERNING LAW**
+
+This Contract will be governed by and construed in accordance with the laws of [STATE/PROVINCE]. Any disputes arising out of or related to this Contract will be resolved through [DISPUTE RESOLUTION PROCESS], in accordance with the laws of [STATE/PROVINCE].
+
+**10. ENTIRE AGREEMENT**
+
+This Contract constitutes the entire agreement between the parties and supersedes all prior negotiations, understandings, and agreements between the parties.
+
+**11. AMENDMENTS**
+
+This Contract may not be amended or modified except in writing signed by both parties.
+
+By signing below, the parties acknowledge that they have read, understand, and agree to be bound by the terms and conditions of this Contract.
+
+**COMPANY:**
+
+Signature: _____________________________
+Name: _____________________________
+Title: _____________________________
+Date: _____________________________
+
+**EMPLOYEE:**
+
+Signature: _____________________________
+Name: _____________________________
+Date: _____________________________
+
+==================================================
+ ⚠️ Warning: This is the Unregulated Mode. No cryptographic provenance was logged.
+(venv) PS D:\attestix2\attestix\Hospital> 
