@@ -153,20 +153,23 @@ def score_fixture(fixture: dict, output: str) -> tuple[float, list[str]]:
     return score, notes
 
 
-def run_domain(domain: str) -> dict:
+def run_domain(domain: str, max_fixtures: int = 0) -> dict:
     cfg = load_fixtures(domain)
-    print(f"\n=== domain: {domain} ===")
-    print(f"entry:      {cfg['entry']}")
-    print(f"fixtures:   {len(cfg['fixtures'])}")
+    fixtures = cfg["fixtures"]
+    if max_fixtures and max_fixtures > 0:
+        fixtures = fixtures[:max_fixtures]
+    print(f"\n=== domain: {domain} ===", flush=True)
+    print(f"entry:      {cfg['entry']}", flush=True)
+    print(f"fixtures:   {len(fixtures)}", flush=True)
 
     results = []
     weighted_score_sum = 0.0
     weight_sum = 0.0
 
-    for fixture in cfg["fixtures"]:
+    for fixture in fixtures:
         fid = fixture["id"]
         w = fixture.get("rubric_weight", 1.0)
-        print(f"\n  [{fid}] weight={w}")
+        print(f"\n  [{fid}] weight={w}", flush=True)
         exit_code, stdout = run_pipeline(domain, fixture)
         if exit_code != 0:
             print(f"    pipeline exit={exit_code} - scoring 0.0")
@@ -175,7 +178,7 @@ def run_domain(domain: str) -> dict:
             score, notes = score_fixture(fixture, stdout)
         weighted_score_sum += score * w
         weight_sum += w
-        print(f"    score: {score:.2f}")
+        print(f"    score: {score:.2f}", flush=True)
         for n in notes[:5]:
             print(f"      - {n}")
         if len(notes) > 5:
@@ -194,12 +197,14 @@ def main():
                           help="Which domain to score, or 'all'.")
     parser.add_argument("--out", default=str(EVAL_DIR / "SCORES.md"),
                           help="Output markdown report.")
+    parser.add_argument("--max-fixtures", type=int, default=0,
+                          help="If >0, only score the first N fixtures per domain.")
     args = parser.parse_args()
 
     assert os.environ.get("GROQ_API_KEY"), "Set GROQ_API_KEY in the environment."
 
     domains = DOMAINS if args.domain == "all" else [args.domain]
-    summaries = [run_domain(d) for d in domains]
+    summaries = [run_domain(d, args.max_fixtures) for d in domains]
 
     md = ["# LLM Eval Scores (V-1)\n", "\n",
             "| Domain   | Fixtures | Aggregate score | Pass (>=0.80) |\n",
