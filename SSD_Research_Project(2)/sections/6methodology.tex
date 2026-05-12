@@ -229,25 +229,26 @@ Chief Medical Officer & OpenAI SDK & \texttt{issue\_final\_ruling} \\
 \centering
 \caption{Finance, ESG and Court Pipeline Agent Configurations}
 \label{tab:other_configs}
-\begin{tabularx}{\textwidth}{|l|l|l|X|}
+\renewcommand{\arraystretch}{1.1}\small
+\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}p{3.6cm}|l|>{\raggedright\arraybackslash}X|}
 \hline
 \textbf{Domain} & \textbf{Agent} & \textbf{Framework} & \textbf{Capability} \\
 \hline
 Finance & Market Researcher & LangChain & Root agent \\
-Finance & Quant DB Connector & Semantic Kernel & \texttt{read\_trading\_algorithms} \\
-Finance & Investment Committee & CrewAI & \texttt{debate\_investment\_strategy} \\
-Finance & Chief Investment Officer & OpenAI SDK & \texttt{issue\_final\_trade\_order} \\
+Finance & Quant DB Connector & Semantic Kernel & \texttt{read\_trading\_\allowbreak algorithms} \\
+Finance & Investment Committee & CrewAI & \texttt{debate\_investment\_\allowbreak strategy} \\
+Finance & Chief Investment Officer & OpenAI SDK & \texttt{issue\_final\_\allowbreak trade\_order} \\
 \hline
 ESG & Global News Observer & LangChain & Root agent \\
 ESG & ESG Audit Panel & CrewAI & \texttt{review\_discrepancies} \\
-ESG & Chief Compliance Officer & OpenAI SDK & \texttt{issue\_final\_audit\_decision} \\
+ESG & Chief Compliance Officer & OpenAI SDK & \texttt{issue\_final\_\allowbreak audit\_decision} \\
 \hline
 Court & Legal Drafter & LangGraph & Root agent \\
-Court & Legal DB Node & Semantic Kernel & \texttt{read\_legal\_precedents} \\
+Court & Legal DB Node & Semantic Kernel & \texttt{read\_legal\_\allowbreak precedents} \\
 Court & 5-Agent Legal Panel & CrewAI & \texttt{analyze\_legal\_risks} \\
 Court & Supreme Court Justice & OpenAI SDK & \texttt{issue\_final\_verdict} \\
 \hline
-\end{tabularx}
+\end{tabularx}\normalsize
 \end{table}
 
 \section{Results Analysis}
@@ -354,16 +355,20 @@ A representative patient case (James Wilson, P-007, 74-year-old male presenting 
 \centering
 \caption{Hospital Merkle Provenance Chain --- Final Verified Run (2026-05-11)}
 \label{tab:merkle_chain}
-\begin{tabularx}{\textwidth}{|l|l|X|}
+\renewcommand{\arraystretch}{1.15}\small
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4.5cm}|l|X|}
 \hline
 \textbf{Entry} & \textbf{Log ID} & \textbf{Chain Hash (SHA-256, truncated)} \\
 \hline
-Patient Intake Node & \texttt{audit:f301eb6ff424} & \texttt{62d70dfdba7d1803c755b208d996...} \\
-Enterprise DB Node & \texttt{audit:bc595a3c972d} & \texttt{0aa53ab57c25d1b3f1b15b7ac998...} \\
-6-Agent Specialist Panel & \texttt{audit:11e3946c2dd2} & \texttt{3d4011eb938aa771bd859d32d363...} \\
-Chief Medical Officer & \texttt{audit:804133019f14} & \texttt{36bad1795d27b46fcef008153dcb...} \\
+Patient Intake Node & \texttt{audit:f301eb6ff424} & \texttt{62d70dfdba7d1803c755...} \\
 \hline
-\end{tabularx}
+Enterprise DB Node & \texttt{audit:bc595a3c972d} & \texttt{0aa53ab57c25d1b3f1b1...} \\
+\hline
+6-Agent Specialist Panel & \texttt{audit:11e3946c2dd2} & \texttt{3d4011eb938aa771bd85...} \\
+\hline
+Chief Medical Officer & \texttt{audit:804133019f14} & \texttt{36bad1795d27b46fcef0...} \\
+\hline
+\end{tabularx}\normalsize
 \end{table}
 
 \subsection{Blockchain Anchoring Results}
