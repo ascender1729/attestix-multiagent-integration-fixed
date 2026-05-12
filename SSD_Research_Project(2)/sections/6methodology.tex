@@ -109,19 +109,19 @@ The proposed security architecture introduces Attestix as a middleware layer int
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\sffamily\small,
-  node distance=0.55cm and 0.45cm,
+  node distance=0.7cm and 0.35cm,
   dombox/.style={rectangle, rounded corners=3pt, draw=black, thick,
-    fill=blue!10, text width=2.7cm, minimum height=0.9cm, align=center, font=\footnotesize\bfseries},
+    fill=blue!10, text width=2.5cm, minimum height=0.85cm, align=center, font=\footnotesize\bfseries},
   mgrbox/.style={rectangle, rounded corners=3pt, draw=black, very thick,
-    fill=orange!25, text width=11cm, minimum height=0.9cm, align=center, font=\small\bfseries},
+    fill=orange!25, text width=11cm, minimum height=0.85cm, align=center, font=\small\bfseries},
   svcbox/.style={rectangle, rounded corners=2pt, draw=black,
-    fill=red!8, text width=2.5cm, minimum height=1.4cm, align=center, font=\scriptsize},
+    fill=red!8, text width=2.25cm, minimum height=1.55cm, align=center, font=\tiny},
   storebox/.style={rectangle, draw=black, dashed, fill=yellow!10,
-    text width=12cm, minimum height=0.45cm, align=center, font=\scriptsize\itshape},
+    text width=13cm, minimum height=0.4cm, align=center, font=\tiny\itshape},
   fwbox/.style={rectangle, rounded corners=2pt, draw=black,
-    fill=green!12, text width=2.2cm, minimum height=0.7cm, align=center, font=\footnotesize\bfseries},
+    fill=green!12, text width=2.1cm, minimum height=0.65cm, align=center, font=\footnotesize\bfseries},
   arrowstyle/.style={->, thick, >={Stealth[length=2mm]}, color=gray!60},
-  layerbox/.style={rectangle, draw=red!40, thick, dashed, inner sep=0.25cm, rounded corners=4pt}
+  layerbox/.style={rectangle, draw=red!40, thick, dashed, inner sep=0.4cm, rounded corners=4pt}
 ]
 % Row 1: domain projects
 \node[dombox] (hosp) {Hospital};
@@ -129,8 +129,8 @@ The proposed security architecture introduces Attestix as a middleware layer int
 \node[dombox, right=of fin] (esg) {ESG Auditor};
 \node[dombox, right=of esg] (court) {Court Panel};
 
-% Row 2: AttestixManager
-\node[mgrbox, below=0.7cm of fin.south east, xshift=-0.5cm] (mgr)
+% Row 2: AttestixManager (centred under the row of domains)
+\node[mgrbox, below=0.75cm of fin.south east, xshift=-0.4cm] (mgr)
   {shared/attestix\_client.py -- AttestixManager (parameterised per domain)};
 
 % Arrows: domains -> manager
@@ -139,59 +139,59 @@ The proposed security architecture introduces Attestix as a middleware layer int
 \draw[arrowstyle] (esg.south) -- (mgr.north -| esg.south);
 \draw[arrowstyle] (court.south) -- (mgr.north -| court.south);
 
-% Label between manager and modules
-\node[below=0.15cm of mgr, font=\scriptsize\itshape, color=gray] (piplabel)
-  {\texttt{pip install attestix} -- v0.3.0};
-
-% Row 3: 5 service modules (top row of attestix package)
-\node[svcbox, below=0.7cm of mgr.south west, xshift=0.4cm] (identity)
-  {\textbf{IdentityService} \\ Ed25519 keypair \\ did:key DID \\ UAIT token};
+% Row 3: 5 service modules (positioned directly below the manager; the
+% package container label above the row will say "attestix Python Package")
+\node[svcbox, below=1.1cm of mgr.south west, xshift=0.6cm] (identity)
+  {\textbf{IdentityService} \\[1pt] Ed25519 keypair \\ did:key DID \\ UAIT token};
 \node[svcbox, right=of identity] (delegation)
-  {\textbf{DelegationService} \\ UCAN JWT issue \\ verify chain \\ revocation list};
+  {\textbf{DelegationService} \\[1pt] UCAN JWT issue \\ verify chain \\ revocation list};
 \node[svcbox, right=of delegation] (credential)
-  {\textbf{CredentialService} \\ W3C VC issue \\ Ed25519Sig2020 \\ VP presentation};
+  {\textbf{CredentialService} \\[1pt] W3C VC issue \\ Ed25519Sig2020 \\ VP presentation};
 \node[svcbox, right=of credential] (provenance)
-  {\textbf{ProvenanceService} \\ log\_action() \\ SHA-256 chain \\ Merkle audit};
+  {\textbf{ProvenanceService} \\[1pt] log\_action() \\ SHA-256 chain \\ Merkle audit};
 \node[svcbox, right=of provenance] (compliance)
-  {\textbf{ComplianceService} \\ EU AI Act profile \\ Annex III mapping \\ conformity gate};
+  {\textbf{ComplianceService} \\[1pt] EU AI Act profile \\ Annex III mapping \\ conformity gate};
 
-% Row 4: 4 more modules
-\node[svcbox, below=0.4cm of identity] (blockchain)
-  {\textbf{BlockchainService} \\ RFC 6962 Merkle root \\ EAS attest() \\ Base Sepolia L2};
+% Row 4: 5 more modules (with wider vertical gap)
+\node[svcbox, below=0.55cm of identity] (blockchain)
+  {\textbf{BlockchainService} \\[1pt] RFC 6962 Merkle \\ EAS attest() \\ Base Sepolia L2};
 \node[svcbox, right=of blockchain] (reputation)
-  {\textbf{ReputationService} \\ action history \\ recency-weighted \\ trust score};
+  {\textbf{ReputationService} \\[1pt] action history \\ recency-weighted \\ trust score};
 \node[svcbox, right=of reputation] (report)
-  {\textbf{ReportService} \\ HTML / PDF export \\ compliance bundle \\ regulator-ready};
+  {\textbf{ReportService} \\[1pt] HTML / PDF export \\ compliance bundle \\ regulator-ready};
 \node[svcbox, right=of report] (mcp)
-  {\textbf{MCP Tools (47)} \\ agent tool calls \\ cross-module \\ access layer};
+  {\textbf{MCP Tools (47)} \\[1pt] agent tool calls \\ cross-module \\ access layer};
 \node[svcbox, right=of mcp, fill=red!4] (didsvc)
-  {\textbf{DID Service} \\ did:key + did:web \\ resolve \\ SSRF guard};
+  {\textbf{DID Service} \\[1pt] did:key + did:web \\ resolve \\ SSRF guard};
 
-% JSON store
-\node[storebox, below=0.5cm of provenance.south] (store)
+% JSON store: position BELOW row 4 (anchored on the row-4 leftmost box), not row 3
+\node[storebox, below=0.55cm of blockchain.south west, anchor=north west, xshift=0pt] (store)
   {\textasciitilde/.attestix/ Local JSON Store: identities.json $\cdot$ credentials.json $\cdot$ delegations.json $\cdot$ provenance.json $\cdot$ compliance.json};
 
-% Package box around all 9 services + store
+% Package box (background) wrapping rows 3 + 4 + JSON store
 \begin{scope}[on background layer]
-  \node[layerbox, fit=(identity)(compliance)(blockchain)(didsvc)(store), label=above:{\footnotesize\itshape attestix Python Package (v0.3.0)}] {};
+  \node[layerbox, fit=(identity)(compliance)(blockchain)(didsvc)(store),
+        label={[font=\scriptsize\itshape,color=red!50!black]above:attestix Python Package (v0.3.0)}] {};
 \end{scope}
 
-% Arrow from manager to package
-\draw[arrowstyle] (mgr.south) -- (piplabel.north);
+% Arrow from manager down into the package container (above the IdentityService box)
+\draw[arrowstyle] (mgr.south) -- ([yshift=0.1cm]identity.north -| mgr.south)
+  node[midway, right, font=\scriptsize\itshape, color=gray] {\texttt{pip install attestix}};
 
 % Row 5: AI orchestration frameworks
-\node[fwbox, below=0.8cm of blockchain.south] (lc) {LangChain};
+\node[fwbox, below=1.0cm of store.south west, xshift=0.4cm, anchor=north west] (lc) {LangChain};
 \node[fwbox, right=of lc] (crew) {CrewAI};
 \node[fwbox, right=of crew] (lg) {LangGraph};
 \node[fwbox, right=of lg] (sk) {Semantic Kernel};
 \node[fwbox, right=of sk] (oai) {OpenAI Agents SDK};
 
-% Label
+% Label on the left of the framework row
 \node[left=0.2cm of lc, font=\scriptsize\bfseries, color=gray!70, align=right]
-  {AI Orchestration\\Frameworks};
+  {AI Orchestration \\ Frameworks};
 
-% Arrow from package down to frameworks
-\draw[arrowstyle] (store.south) -- ($(crew.north)!0.5!(lg.north)$) node[midway, right, font=\scriptsize\itshape, color=gray] {intercepts agent calls};
+% Arrow from store down to the frameworks row (label positioned to the right of the arrow)
+\draw[arrowstyle] ([yshift=-0.4cm]store.south -| lg.north) -- (lg.north)
+  node[midway, left=0.05cm, font=\scriptsize\itshape, color=gray] {intercepts};
 
 \end{tikzpicture}%
 }
