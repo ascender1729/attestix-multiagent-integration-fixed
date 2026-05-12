@@ -45,6 +45,10 @@ The main objectives of this project are:
 
 \item \textbf{Permanent Audit Records:} Anchoring the audit trail's hash on a public blockchain means the records cannot be quietly deleted or edited later, which is important in sectors like healthcare and law where decisions may need to be reviewed years later.
 
+\item \textbf{Inference-Provider Portability:} Production AI systems must not be locked to a single inference provider. The same regulated pipelines run unmodified against Groq or AWS Bedrock; if one provider is rate-limited, slow, or unavailable, the other can be activated by a single environment variable.
+
+\item \textbf{Prompt-Injection Defence at the Boundary:} OWASP LLM01 is the highest-ranked LLM-specific vulnerability for 2025. Every external input that flows into an LLM in this project is quarantined inside spotlighting delimiters with an accompanying safety preamble, raising the cost of role-override and tool-exfiltration attacks.
+
 \end{itemize}
 
 \section{Scope of Work}

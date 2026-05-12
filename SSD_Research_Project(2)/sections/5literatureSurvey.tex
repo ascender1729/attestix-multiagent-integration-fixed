@@ -41,6 +41,18 @@ Merkle trees are used in systems like Certificate Transparency and Bitcoin to cr
 
 The Ethereum Attestation Service (EAS) is an on-chain system for recording structured, signed claims permanently on a blockchain. Base L2 is a low-cost EVM-compatible network built on the OP Stack. Attestix uses these together to anchor the Merkle root of an audit batch on-chain, so there is a public, time-stamped record that a specific audit trail existed at a specific point in time.
 
+\item \textbf{OWASP Top 10 for LLM Applications} (OWASP Foundation, 2025).
+
+The OWASP Top 10 for LLM Applications, 2025 edition, ranks Prompt Injection (LLM01) as the highest-impact LLM-specific vulnerability. Spotlighting --- wrapping untrusted content in unambiguous delimiters together with a system-prompt safety preamble --- is the recommended defence-in-depth pattern at the input boundary. This project implements spotlighting plus a regex-based injection-pattern detector in \texttt{shared/prompt\_safety.py} and applies the guard at every external-input intake (Hospital, Finance, ESG, Court).
+
+\item \textbf{AWS Bedrock and Inference-Provider Portability} (Amazon Web Services, 2024).
+
+Amazon Bedrock exposes managed foundation models through a uniform API with IAM-based authentication, regional residency controls, and cross-region inference profiles. Llama 3.3 70B is available via the cross-region profile \texttt{us.meta.llama3-3-70b-instruct-v1:0}. This project provides a single LLM factory (\texttt{shared/llm\_factory.py}) that routes interchangeably to Groq or to Bedrock, demonstrating that the security middleware is provider-agnostic. The factory is selected by a single environment variable (\texttt{LLM\_PROVIDER}) and changes nothing in the agent code.
+
+\item \textbf{Indian Digital Personal Data Protection Act} (Government of India, 2023).
+
+The DPDP Act, 2023, regulates the processing of digital personal data in India. Healthcare data is in the sensitive-category band and cross-border transfer to a foreign inference provider requires a documented lawful basis and an appropriate transfer mechanism. This project uses synthetic data throughout and flags the DPDP lawful-basis requirement explicitly in the Threat Model and Limitations subsection as a deployment pre-condition for any real-world rollout.
+
 \item \textbf{Attestix Research Paper} (Dubasi, 2026).
 
 The Attestix protocol is described formally in a research paper titled \textit{Attestix: A Unified Attestation Infrastructure for Autonomous AI Agents} by Pavan Kumar Dubasi, VibeTensor, 2026. The paper covers the cryptographic architecture, the 9-module design, and evaluation results across different agent frameworks. This project builds directly on that work by applying Attestix in four regulated domain simulations.

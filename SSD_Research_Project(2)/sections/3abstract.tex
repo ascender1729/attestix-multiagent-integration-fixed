@@ -22,7 +22,10 @@ This project addresses that gap by integrating the Attestix Protocol, a pip-inst
 The integration covers five security areas: agent identity using Ed25519-backed Decentralised Identifiers (DIDs); access control through UCAN delegation tokens with cryptographic verification; role certification via W3C Verifiable Credentials; tamper-evident decision logging through SHA-256 Merkle provenance chains; and EU AI Act compliance profiles mapping each agent to Annex III risk categories. As an optional extension, audit records are anchored to the Base Sepolia blockchain using the Ethereum Attestation Service (EAS).
 \\[0.1in]
 
-Results show that every agent decision is traceable and cryptographically signed, unauthorised access is blocked at the delegation gate, and the full audit trail is hash-chained and cannot be silently modified. A live on-chain transaction (EAS attestation UID: \texttt{0xb2cdbd85...}) confirms that audit records can be made permanently verifiable on a public blockchain.
+Results show that every agent decision is traceable and cryptographically signed, unauthorised access is blocked at the delegation gate (fail-closed on missing delegation), and the full audit trail is hash-chained and cannot be silently modified. A live on-chain transaction (EAS attestation UID: \texttt{0xb2cdbd85...}) confirms that audit records can be made permanently verifiable on a public blockchain.
+\\[0.1in]
+
+The integration is validated by a 13-case automated test suite (13/13 passing on every CI run) and a 20-fixture golden-prompt evaluation harness with seven adversarial safety probes. The Hospital pipeline achieves an aggregate evaluation score of 0.890 (passing the 0.80 regression bar); five of seven safety probes pass outright across all four domains. The pipelines are provider-agnostic at the inference layer: a single shared factory routes interchangeably to Groq \texttt{llama-3.3-70b-versatile} or to AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0}, demonstrating the security layer is independent of the LLM host. An OWASP LLM01 prompt-injection mitigation layer (spotlighting delimiters plus a regex-based injection detector) is applied at every external-input boundary.
 
 \vspace{2cm}
 

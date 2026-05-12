@@ -17,6 +17,10 @@ Key achievements include:
     \item \textbf{Framework-Agnostic Integration:} The security layer operates identically across LangChain, CrewAI, LangGraph, Semantic Kernel, and the OpenAI SDK simultaneously.
 
     \item \textbf{Live Blockchain Anchoring Confirmed:} A real EAS attestation (TX: \texttt{107aa293...}, UID: \texttt{0xb2cdbd85...}) on Base Sepolia confirms that audit records can be made permanently immutable and publicly verifiable.
+    \item \textbf{Measured LLM Output Quality:} A 20-fixture golden-prompt evaluation harness (\texttt{evals/score\_evals.py}) with seven adversarial safety probes was executed against the regulated pipelines. The Hospital domain scored 0.890 (above the 0.80 regression bar); five of seven safety probes passed outright across all four domains.
+    \item \textbf{Provider-Agnostic Inference Layer:} A single LLM factory (\texttt{shared/llm\_factory.py}) routes interchangeably to Groq \texttt{llama-3.3-70b-versatile} or AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0} with no changes to the agent code, demonstrating that the security middleware is decoupled from the LLM host.
+    \item \textbf{OWASP LLM01 Boundary Mitigation:} Every external input that flows into an LLM (patient statements, ticker symbols, supplier names, contract requirements, DuckDuckGo search results, internal documents) is wrapped in spotlighting delimiters and accompanied by an injection-pattern detector. Three pytest cases regression-test the mitigation, contributing to a 13/13 overall test pass rate.
+    \item \textbf{Reproducible Performance Benchmarks:} Real latency, token consumption, and on-chain gas cost numbers are published in \texttt{benchmarks/RESULTS.md} and \texttt{benchmarks/GAS\_COST.md}, replacing earlier ``appears to work'' performance claims.
 \end{itemize}
 
 \section{Future Works}
@@ -40,9 +44,9 @@ Key achievements include:
         \item Integrate the Attestix \texttt{ReportService} to generate self-contained HTML/PDF compliance reports consolidating all artifacts (DIDs, VCs, audit trail, compliance profile) into a single regulator-ready document.
     \end{itemize}
 
-    \item \textbf{Adversarial Testing Framework}
+    \item \textbf{Extended Adversarial Testing Framework}
     \begin{itemize}
-        \item Develop a formal adversarial evaluation framework to systematically test: token forgery attempts, proof chain cycle injection, SSRF attacks on the DID resolver, and concurrent delegation race conditions.
+        \item The current evaluation harness covers prompt-level safety probes (drug-allergy, hallucination, illegal-clause refusal, role-override, tool-exfiltration). Extend it to system-level adversarial cases: token forgery, proof-chain cycle injection, SSRF attacks on the DID resolver, and concurrent delegation race conditions.
     \end{itemize}
 
     \item \textbf{Deployment in Real Enterprise Systems}
