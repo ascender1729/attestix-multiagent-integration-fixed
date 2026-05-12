@@ -3,11 +3,11 @@
 \addcontentsline{toc}{chapter}{Appendix}
 \noindent\rule{\linewidth}{2pt}
 
-\section*{Appendix A — Hospital Unregulated Baseline Run (Full Output)}
+\section*{Appendix A --- Hospital Unregulated Baseline Run (Full Output)}
 
 The following screenshot shows the complete unregulated pipeline output for patient James Wilson (P-007), including the final diagnosis issued by the Chief Medical Officer with no cryptographic accountability.
 
-This unregulated run represents the \textit{before} state — the baseline multi-agent system operating without any Attestix security layer. None of the agents hold a verifiable identity (DID/UAIT), no delegation tokens are checked before data access, no compliance profiles are validated, and no provenance entries are written. The final ruling is produced by the Chief Medical Officer agent, but there is no cryptographic link between the decision and the agent that issued it. In a real deployment, this means the decision could be tampered with retroactively, an unauthorised agent could impersonate the CMO, and there would be no audit record for a regulatory inspection. Compare this output directly against Figure~\ref{fig:carbon_result} (regulated run, same patient) to see the difference that Attestix introduces at each phase transition.
+This unregulated run represents the \textit{before} state --- the baseline multi-agent system operating without any Attestix security layer. None of the agents hold a verifiable identity (DID/UAIT), no delegation tokens are checked before data access, no compliance profiles are validated, and no provenance entries are written. The final ruling is produced by the Chief Medical Officer agent, but there is no cryptographic link between the decision and the agent that issued it. In a real deployment, this means the decision could be tampered with retroactively, an unauthorised agent could impersonate the CMO, and there would be no audit record for a regulatory inspection. Compare this output directly against Figure~\ref{fig:carbon_result} (regulated run, same patient) to see the difference that Attestix introduces at each phase transition.
 
 \begin{figure}[H]
 \centering
@@ -18,9 +18,9 @@ This unregulated run represents the \textit{before} state — the baseline multi
 
 \newpage
 
-\section*{Appendix B — Raw Provenance Log: P-007 Hospital Run}
+\section*{Appendix B --- Raw Provenance Log: P-007 Hospital Run}
 
-The following screenshots show the raw entries from \texttt{\textasciitilde/.attestix/provenance.json} for the P-007 hospital run (lines 990--1045). Each entry contains the Ed25519 signature, UCAN delegation token reference, SHA-256 chain hash, and agent DID — confirming that the cryptographic artifacts exist on disk and match the audit trail displayed in the terminal.
+The following screenshots show the raw entries from \texttt{\textasciitilde/.attestix/provenance.json} for the P-007 hospital run (lines 990--1045). Each entry contains the Ed25519 signature, UCAN delegation token reference, SHA-256 chain hash, and agent DID --- confirming that the cryptographic artifacts exist on disk and match the audit trail displayed in the terminal.
 
 \begin{figure}[H]
 \centering
@@ -38,13 +38,13 @@ The following screenshots show the raw entries from \texttt{\textasciitilde/.att
 
 \newpage
 
-\section*{Appendix C — Blockchain Transaction CSV Export}
+\section*{Appendix C --- Blockchain Transaction CSV Export}
 
 The following table shows the raw CSV export from BaseScan for wallet \texttt{0xf3Fda3af...4797}, confirming all four on-chain transactions: one schema registration and three attestation attempts (two reverted due to insufficient gas, one successful).
 
 \begin{table}[H]
 \centering
-\caption{BaseScan CSV Export — All Transactions for Hospital Wallet}
+\caption{BaseScan CSV Export --- All Transactions for Hospital Wallet}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \textbf{TX Hash (truncated)} & \textbf{Method} & \textbf{Status} & \textbf{Block} \\
