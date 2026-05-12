@@ -1,5 +1,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{lmodern}        % Scalable Latin Modern fonts (required for microtype expansion)
+\usepackage[protrusion=true,expansion=false]{microtype}  % Better tracking, fewer overfulls
 \usepackage[a4paper,margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{float}
@@ -22,6 +24,12 @@
 \usepackage{listings}
 
 \setstretch{1.2}
+
+% Allow LaTeX to stretch glue more aggressively to absorb minor overfulls
+\sloppy
+\setlength{\emergencystretch}{3em}
+\hbadness=10000
+\hfuzz=2pt
 
 \hypersetup{
 colorlinks=true,

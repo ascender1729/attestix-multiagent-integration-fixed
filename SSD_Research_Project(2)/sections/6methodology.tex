@@ -94,8 +94,8 @@ The current proof-of-concept demonstrates the integration approach and exercises
     \item \textbf{Local JSON store.} Identities, credentials, compliance profiles, and provenance entries are persisted to \texttt{\textasciitilde/.attestix/} as JSON without encryption-at-rest, rotation, or retention bound. Healthcare and finance deployments require an audited storage backend with GDPR Article 17 erasure support and tamper-evident on-disk encryption.
 
     \item \textbf{Single-hop delegations.} The four domain pipelines exercise capability-scoped tokens between two principals at a time. UCAN's capability-attenuation property through multi-hop chains is not exercised in the current PoC and is enumerated as Future Work.
-    \item \textbf{Prompt-injection mitigation (OWASP LLM01).} Every external input that flows into an LLM prompt (patient statement, ticker symbol, supplier name, contract requirements, DuckDuckGo search results, internal supplier documents, news feeds) is now wrapped in spotlighting delimiters (\texttt{<<<USER\_CONTENT>>>...<<<END\_USER\_CONTENT>>>}) by a shared helper at \texttt{shared/prompt\_safety.py}. The accompanying system-prompt suffix instructs the model to treat the delimited content strictly as data, never as instructions. A regex layer flags the canonical injection vocabulary (\textit{ignore previous instructions}, \textit{disregard the above}, \textit{reveal your system prompt}, \texttt{<system>} tags, embedded delimiter strings) and annotates the wrapped block with a possible-injection note before forwarding it to the LLM. Three pytest cases in \texttt{tests/test\_attestix\_integration.py} cover the wrap, the detection vocabulary, and idempotence of the system-prompt hardening. This is defense-in-depth; it does not guarantee zero exploitation but it raises the cost of the common attack vectors and documents the safety posture for regulators.
-    \item \textbf{Synthetic data and lawful basis.} All four domain databases (\texttt{mock\_hospital\_db.json}, \texttt{quant\_strategies\_db.json}, \texttt{mock\_legal\_db.json}, \texttt{internal\_supplier\_docs.json}, \texttt{mock\_news\_api.json}, \texttt{mock\_market\_api.json}) are synthetic. No real PHI, PII, customer records, trading IP, or licensed legal data is processed by the PoC. Production deployment with real data in any of the four domains would require: (i) a documented lawful basis under DPDP Act 2023 / GDPR (consent, contract, or legitimate interest, depending on domain and jurisdiction); (ii) a Data Processing Agreement with the LLM inference provider (Standard Contractual Clauses or an equivalent transfer mechanism for cross-border processing to Groq's US infrastructure); (iii) data-minimisation and pseudonymisation at intake to limit the scope of sensitive-category processing. Each mock data file in the repository carries a \texttt{\_synthetic\_data\_notice} key making the synthetic status machine-readable.
+    \item \textbf{Prompt-injection mitigation (OWASP LLM01).} Every external input flowing into an LLM prompt is now wrapped in spotlighting delimiters by a shared helper at \texttt{shared/prompt\_safety.py}, with an accompanying system-prompt suffix instructing the model to treat the delimited content strictly as data and never as instructions. A regex layer additionally flags the canonical injection vocabulary (\textit{ignore previous instructions}, \textit{disregard the above}, \textit{reveal your system prompt}, embedded \texttt{<system>} tags or delimiter strings) and annotates the wrapped block with a possible-injection note before forwarding it to the LLM. The guard is applied at the four intake points (patient statement, ticker, supplier name, contract requirements) and at the points where web-sourced content (DuckDuckGo) and internal documents are appended. Three pytest cases in \texttt{tests/test\_attestix\_integration.py} regression-test the wrap, the detection vocabulary, and idempotence of the system-prompt hardening. This is a defence-in-depth measure: it raises the cost of the common attack vectors but does not guarantee zero exploitation.
+    \item \textbf{Synthetic data and lawful basis.} All six domain database files are synthetic; no real PHI, PII, customer records, trading IP, or licensed legal data is processed by the PoC. Each mock JSON carries a \texttt{\_synthetic\_data\_notice} key making the synthetic status machine-readable. Production deployment with real data in any domain would require (i) a documented lawful basis under DPDP Act 2023 or GDPR; (ii) a Data Processing Agreement with the LLM inference provider (Standard Contractual Clauses or an equivalent cross-border transfer mechanism); and (iii) data-minimisation and pseudonymisation at intake.
 \end{itemize}
 
 These limitations delineate the scope of the experimental claims made by this report; they do not invalidate the integration approach.
@@ -171,7 +171,7 @@ Identity provisioning succeeded for all agents across all four domains. Each age
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.88\textwidth]{carbon_regulated_p1.png}
-\caption{Hospital regulated run: identity provisioning for all 4 agents, EU AI Act compliance profile generation, and W3C Verifiable Credential issuance (Phase 1 — LangChain intake with vertical symptoms output).}
+\caption{Hospital regulated run: identity provisioning for all 4 agents, EU AI Act compliance profile generation, and W3C Verifiable Credential issuance (Phase 1 --- LangChain intake with vertical symptoms output).}
 \label{fig:carbon_reg_p1}
 \end{figure}
 
@@ -191,7 +191,7 @@ Chief Medical Officer & \texttt{did:key:z6MkhpCDcs...} & \texttt{attestix:8e57aa
 \end{tabularx}
 \end{table}
 
-An automated negative test (\texttt{tests/test\_attestix\_integration.py::test\_check\_conformity\_blocks\_unregistered\_agent}) provisions an agent identity, deliberately omits the \texttt{setup\_compliance()} call, and asserts that the conformity gatekeeper returns \texttt{False}. The test passes, confirming the gate is functional and not a placeholder. The full test set is run on every push via the CI workflow at \texttt{.github/workflows/ci.yml}.
+An automated negative test (\texttt{tests/test\_attestix\_\allowbreak integration.py\allowbreak ::test\_\allowbreak check\_conformity\_\allowbreak blocks\_\allowbreak unregistered\_agent}) provisions an agent identity, deliberately omits the \texttt{setup\_compliance()} call, and asserts that the conformity gatekeeper returns \texttt{False}. The test passes, confirming the gate is functional and not a placeholder. The full test set is run on every push via the CI workflow at \texttt{.github/workflows/ci.yml}.
 
 \subsection{UCAN Delegation Results}
 
@@ -204,7 +204,7 @@ All 11 delegation chains were verified successfully across all four domains.
 \label{fig:carbon_reg_p2}
 \end{figure}
 
-Each gate follows the same three-step pattern: (1) the orchestrator mints a short-lived UCAN token scoped to a single capability and passes it to the downstream agent; (2) the receiving agent calls \texttt{verify\_token()} which checks the JWT signature, the \texttt{att} capability field, and the expiry — blocking execution if any check fails; (3) the conformity gatekeeper then calls \texttt{check\_conformity()} against the local compliance store, confirming an EU AI Act profile exists before allowing the agent to produce output. Only after both gates pass does the agent write a provenance entry. This means every inter-agent handoff produces three independent artefacts: a delegation receipt, a compliance confirmation, and a Merkle-chained audit log entry — all stored locally in \texttt{\textasciitilde/.attestix/} with no external dependency.
+Each gate follows the same three-step pattern: (1) the orchestrator mints a short-lived UCAN token scoped to a single capability and passes it to the downstream agent; (2) the receiving agent calls \texttt{verify\_token()} which checks the JWT signature, the \texttt{att} capability field, and the expiry --- blocking execution if any check fails; (3) the conformity gatekeeper then calls \texttt{check\_conformity()} against the local compliance store, confirming an EU AI Act profile exists before allowing the agent to produce output. Only after both gates pass does the agent write a provenance entry. This means every inter-agent handoff produces three independent artefacts: a delegation receipt, a compliance confirmation, and a Merkle-chained audit log entry --- all stored locally in \texttt{\textasciitilde/.attestix/} with no external dependency.
 
 \begin{table}[H]
 \centering
@@ -322,19 +322,28 @@ Status & IMMUTABLE --- cannot be disputed or deleted \\
 \centering
 \caption{Threat Model Coverage}
 \label{tab:threat_model}
-\begin{tabularx}{\textwidth}{|l|X|c|}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{4.2cm}|X|>{\raggedright\arraybackslash}p{3.5cm}|}
 \hline
 \textbf{Threat} & \textbf{Mitigation} & \textbf{Status} \\
 \hline
 Agent impersonation & Ed25519 DIDs, UAIT binding & $\checkmark$ Mitigated \\
+\hline
 Unauthorised data access & UCAN gate blocks unverified agents & $\checkmark$ Mitigated \\
-Privilege escalation (single-hop) & UCAN capability scoping at gate verification & $\checkmark$ Mitigated (PoC scope; multi-hop is Future Work) \\
+\hline
+Privilege escalation (single-hop) & UCAN capability scoping at gate verification & $\checkmark$ Mitigated (PoC scope) \\
+\hline
 Audit log tampering & SHA-256 Merkle chain & $\checkmark$ Mitigated \\
+\hline
 Unregistered agent execution & Conformity gatekeeper blocks & $\checkmark$ Mitigated \\
+\hline
 Token replay after expiry & JWT expiry verified & $\checkmark$ Mitigated \\
+\hline
 Revoked token use & JTI revocation list checked & $\checkmark$ Mitigated \\
+\hline
 Retroactive audit deletion & Merkle root anchored on-chain (EAS) & $\checkmark$ Mitigated \\
-Prompt injection in untrusted inputs & Spotlighting delimiters + injection-pattern detector (OWASP LLM01); 3 pytest cases & $\checkmark$ Partially mitigated (defense-in-depth) \\
+\hline
+Prompt injection in untrusted inputs & Spotlighting delimiters + regex injection-pattern detector (OWASP LLM01); three pytest cases & $\checkmark$ Partially mitigated \\
 \hline
 \end{tabularx}
 \end{table}
