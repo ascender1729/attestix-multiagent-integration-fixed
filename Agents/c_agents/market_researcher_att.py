@@ -3,6 +3,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
 from llm_factory import get_langchain_llm
+from prompt_safety import wrap_untrusted, harden_system_prompt
 from langchain_core.messages import SystemMessage, HumanMessage
 from langchain_community.tools import DuckDuckGoSearchRun
 from c_agents.attestix_client import attestix_client
@@ -26,14 +27,21 @@ def run_market_research(ticker: str, agent_id: str) -> str:
         
     llm = get_langchain_llm(temperature=0.2)
     
-    sys_msg = SystemMessage(content="You are a High-Frequency Trading Market Researcher. Summarize the raw web search results provided into a dense, highly analytical 'Market Sentiment Report'. You MUST explicitly declare the overall sentiment as BULLISH, BEARISH, or NEUTRAL at the very top of your report.")
-    
+    sys_msg = SystemMessage(content=harden_system_prompt(
+        "You are a High-Frequency Trading Market Researcher. Summarize the raw web search results provided into a dense, highly analytical 'Market Sentiment Report'. You MUST explicitly declare the overall sentiment as BULLISH, BEARISH, or NEUTRAL at the very top of your report."
+    ))
+
+    # OWASP LLM01: wrap web-sourced and user-supplied content in spotlighting
+    # delimiters so the LLM treats it as DATA, not as new instructions.
+    safe_ticker = wrap_untrusted(ticker, label="ticker_symbol")
+    safe_search = wrap_untrusted(search_results, label="duckduckgo_search_results")
     user_msg = HumanMessage(content=f"""
-    Target Ticker: {ticker}
-    
+    Target Ticker:
+    {safe_ticker}
+
     LIVE WEB SEARCH RESULTS:
-    {search_results}
-    
+    {safe_search}
+
     Output a concise Market Sentiment Report.
     """)
     

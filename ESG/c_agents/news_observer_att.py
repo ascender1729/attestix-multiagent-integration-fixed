@@ -5,6 +5,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
 from llm_factory import get_langchain_llm
+from prompt_safety import wrap_untrusted, harden_system_prompt
 from langchain_core.messages import SystemMessage, HumanMessage
 from c_agents.attestix_client import attestix_client
 
@@ -35,17 +36,26 @@ def observe_supply_chain(target_supplier: str, agent_id: str) -> str:
         
     llm = get_langchain_llm(temperature=0.2)
     
-    sys_msg = SystemMessage(content="You are a Corporate Intelligence Observer. Your job is to compare a company's internal supplier commitments against real-time global news. Generate a 'Discrepancy Report' highlighting any severe ESG (Environmental, Social, Governance) violations.")
-    
+    sys_msg = SystemMessage(content=harden_system_prompt(
+        "You are a Corporate Intelligence Observer. Your job is to compare a company's internal supplier commitments against real-time global news. Generate a 'Discrepancy Report' highlighting any severe ESG (Environmental, Social, Governance) violations."
+    ))
+
+    # OWASP LLM01: spotlight every external input. internal_supplier_docs.json
+    # and mock_news_api.json are both in-scope because either could be tampered
+    # by an attacker who gains write access to the data folder.
+    safe_supplier = wrap_untrusted(target_supplier, label="supplier_name")
+    safe_internal = wrap_untrusted(json.dumps(supplier_info, indent=2), label="internal_supplier_doc")
+    safe_news = wrap_untrusted(json.dumps(relevant_news, indent=2), label="news_feed")
     user_msg = HumanMessage(content=f"""
-    Target Supplier: {target_supplier}
-    
+    Target Supplier:
+    {safe_supplier}
+
     INTERNAL COMPANY COMMITMENTS:
-    {json.dumps(supplier_info, indent=2)}
-    
+    {safe_internal}
+
     REAL-TIME GLOBAL NEWS:
-    {json.dumps(relevant_news, indent=2)}
-    
+    {safe_news}
+
     Analyze the data and list all discrepancies between what the company promised and what is actually happening on the ground.
     """)
     

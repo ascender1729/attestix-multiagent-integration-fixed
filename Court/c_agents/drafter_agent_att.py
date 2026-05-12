@@ -5,6 +5,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
 from llm_factory import get_langchain_llm
+from prompt_safety import wrap_untrusted, harden_system_prompt
 from langchain_core.messages import SystemMessage, HumanMessage
 from c_agents.attestix_client import attestix_client
 
@@ -25,8 +26,13 @@ def draft_contract(state: AgentState):
     
     llm = get_langchain_llm(temperature=0.2)
     
-    sys_msg = SystemMessage(content="You are a meticulous Junior Corporate Lawyer. Draft a complete, professional legal contract based on the user's requirements. Include standard boilerplate clauses if appropriate. Keep it structured and clear.")
-    user_msg = HumanMessage(content=f"Requirements: {state['requirements']}")
+    sys_msg = SystemMessage(content=harden_system_prompt(
+        "You are a meticulous Junior Corporate Lawyer. Draft a complete, professional legal contract based on the user's requirements. Include standard boilerplate clauses if appropriate. Keep it structured and clear."
+    ))
+    # OWASP LLM01: wrap user-supplied contract requirements so attempts to
+    # inject malicious clauses or override the role are quarantined as DATA.
+    safe_requirements = wrap_untrusted(state["requirements"], label="contract_requirements")
+    user_msg = HumanMessage(content=f"Requirements: {safe_requirements}")
     
     response = llm.invoke([sys_msg, user_msg])
     

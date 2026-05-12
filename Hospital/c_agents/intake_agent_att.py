@@ -3,6 +3,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / 'shared'))
 from llm_factory import get_langchain_llm
+from prompt_safety import wrap_untrusted, SPOTLIGHT_SYSTEM_SUFFIX
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
@@ -27,14 +28,23 @@ def run_intake(raw_text: str) -> dict:
     llm = get_langchain_llm(temperature=0)
     
     parser = JsonOutputParser(pydantic_object=PatientIntake)
+    # OWASP LLM01: spotlight the untrusted patient statement so the LLM treats
+    # it as DATA, not instructions. The wrapper escapes any closing-delimiter
+    # collisions and adds an injection-signal warning if matched.
+    safe_statement = wrap_untrusted(raw_text, label="patient_statement")
     prompt = PromptTemplate(
-        template="Extract the medical information from the patient's statement.\n{format_instructions}\n\nPatient Statement: {statement}\n",
+        template=(
+            "Extract the medical information from the patient's statement.\n"
+            "{format_instructions}\n\n"
+            "Patient Statement: {statement}\n"
+            + SPOTLIGHT_SYSTEM_SUFFIX
+        ),
         input_variables=["statement"],
-        partial_variables={"format_instructions": parser.get_format_instructions()}
+        partial_variables={"format_instructions": parser.get_format_instructions()},
     )
-    
+
     chain = prompt | llm | parser
-    result = chain.invoke({"statement": raw_text})
+    result = chain.invoke({"statement": safe_statement})
     
     # 3. Provenance Logging
     attestix_client.log_action(AGENT_ID, "PARSE_SYMPTOMS", raw_text, str(result))
