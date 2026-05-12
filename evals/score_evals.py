@@ -201,7 +201,11 @@ def main():
                           help="If >0, only score the first N fixtures per domain.")
     args = parser.parse_args()
 
-    assert os.environ.get("GROQ_API_KEY"), "Set GROQ_API_KEY in the environment."
+    # Allow Bedrock path to skip the GROQ_API_KEY requirement
+    if os.environ.get("LLM_PROVIDER", "groq").lower() != "bedrock":
+        assert os.environ.get("GROQ_API_KEY"), (
+            "Set GROQ_API_KEY in the environment, or set LLM_PROVIDER=bedrock to use AWS Bedrock."
+        )
 
     domains = DOMAINS if args.domain == "all" else [args.domain]
     summaries = [run_domain(d, args.max_fixtures) for d in domains]
