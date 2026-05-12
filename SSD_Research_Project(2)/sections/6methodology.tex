@@ -68,7 +68,7 @@ db_token = attestix_client.delegate_capability(
 attestix_client.verify_token(db_token, "read_patient_record")
 \end{lstlisting}
 
-\texttt{verify\_token()} performs JWT signature verification, expiry check, revocation status lookup, and recursive proof chain validation. Any failure raises \texttt{PermissionError} and blocks execution.
+\texttt{verify\_token()} in the integration wrapper delegates to the upstream \texttt{DelegationService.verify\_delegation()} routine, which performs JWT signature verification (EdDSA over Ed25519), expiry check, revocation-list lookup, and recursive proof-chain validation with cycle detection. The wrapper additionally enforces that the returned capability set includes the required scope before returning; any check failure raises \texttt{PermissionError} and blocks execution.
 
 \subsection{Merkle Provenance Chain (Pillar 4)}
 
@@ -81,7 +81,7 @@ Senior agents receive role-specific W3C Verifiable Credentials via \texttt{issue
 \subsection{Blockchain Anchoring (Optional Extension)}
 \label{sec:blockchain}
 
-The \texttt{BlockchainService} computes the RFC 6962 Merkle root of all audit entries and anchors it to Base Sepolia via EAS. An EVM wallet is required; the service fails gracefully when not configured. Two integration issues were identified during testing and addressed: (i) a load-order race condition where \texttt{BlockchainService} initialised before \texttt{.env} was loaded was resolved in the integration code by moving \texttt{load\_dotenv()} to module scope ahead of agent imports; (ii) an insufficient default gas limit of 300k versus an actual EAS attest cost of approximately 451k was identified during repeated reverts on Base Sepolia and addressed in the upstream Attestix library by raising the default limit to 600k with EIP-1559 fee fields.
+The \texttt{BlockchainService} computes the RFC 6962 Merkle root of all audit entries and anchors it to Base Sepolia via EAS. An EVM wallet is required; the service fails gracefully when not configured. Two integration issues were identified during testing and addressed: (i) a load-order race condition where \texttt{BlockchainService} initialised before \texttt{.env} was loaded was resolved in the integration code by moving \texttt{load\_dotenv()} to module scope ahead of agent imports; (ii) an insufficient default gas limit of 300k versus an actual EAS attest cost of approximately 451k was identified during repeated reverts on Base Sepolia. The pragmatic workaround applied in the integration code was to pass an explicit higher gas limit at the call site (600k with EIP-1559 fee fields), and the finding has been recorded for the upstream Attestix library to fold the increased default into a future release.
 
 \subsection{Threat Model and Limitations}
 \label{sec:limitations}
@@ -109,7 +109,7 @@ The proposed security architecture introduces Attestix as a middleware layer int
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[
   font=\sffamily\small,
-  node distance=0.35cm and 0.25cm,
+  node distance=0.55cm and 0.45cm,
   dombox/.style={rectangle, rounded corners=3pt, draw=black, thick,
     fill=blue!10, text width=2.7cm, minimum height=0.9cm, align=center, font=\footnotesize\bfseries},
   mgrbox/.style={rectangle, rounded corners=3pt, draw=black, very thick,
@@ -288,7 +288,7 @@ All 11 delegation chains were verified successfully across all four domains.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.88\textwidth]{carbon_regulated_p2.png}
+\includegraphics[width=0.80\textwidth]{carbon_regulated_p2.png}
 \caption{Hospital regulated run: UCAN delegation gates for all three handoffs (Phase 2 DB, Phase 3 CrewAI, Phase 4 CMO) showing capability verification, conformity gatekeeping, and Merkle provenance logging per agent.}
 \label{fig:carbon_reg_p2}
 \end{figure}

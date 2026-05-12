@@ -4,6 +4,7 @@
 \noindent\rule{\linewidth}{2pt}
 
 \section*{Appendix A --- Hospital Unregulated Baseline Run (Full Output)}
+\addcontentsline{toc}{section}{Appendix A --- Hospital Unregulated Baseline Run}
 
 The following screenshot shows the complete unregulated pipeline output for patient James Wilson (P-007), including the final diagnosis issued by the Chief Medical Officer with no cryptographic accountability.
 
@@ -19,6 +20,7 @@ This unregulated run represents the \textit{before} state --- the baseline multi
 \newpage
 
 \section*{Appendix B --- Raw Provenance Log: P-007 Hospital Run}
+\addcontentsline{toc}{section}{Appendix B --- Raw Provenance Log}
 
 The following screenshots show the raw entries from \texttt{\textasciitilde/.attestix/provenance.json} for the P-007 hospital run (lines 990--1045). Each entry contains the Ed25519 signature, UCAN delegation token reference, SHA-256 chain hash, and agent DID --- confirming that the cryptographic artifacts exist on disk and match the audit trail displayed in the terminal.
 
@@ -39,6 +41,7 @@ The following screenshots show the raw entries from \texttt{\textasciitilde/.att
 \newpage
 
 \section*{Appendix C --- Blockchain Transaction CSV Export}
+\addcontentsline{toc}{section}{Appendix C --- Blockchain Transaction CSV Export}
 
 The following table shows the raw CSV export from BaseScan for wallet \texttt{0xf3Fda3af...4797}, confirming all four on-chain transactions: one schema registration and three attestation attempts (two reverted due to insufficient gas, one successful).
 
@@ -129,7 +132,7 @@ Court    & 47.89 & 4{,}994 \\
 \end{tabular}
 \end{table}
 
-A full four-pipeline sweep consumes approximately 1.58\% of the Groq free-tier daily budget (100{,}000 tokens). On the paid tier, the upper-bound cost per sweep is approximately USD 0.0125.
+A full four-pipeline sweep consumes approximately 1.58\% of the Groq free-tier daily budget (1{,}000{,}000 tokens). On the paid tier, the upper-bound cost per sweep is approximately USD 0.0125.
 
 \section*{Appendix F --- On-Chain Gas-Cost Analysis (V-7)}
 \addcontentsline{toc}{section}{Appendix F --- On-Chain Gas-Cost Analysis (V-7)}
