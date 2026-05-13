@@ -24,12 +24,15 @@
 %%       as the path above, then switch to mode (B).
 %% =====================================================================
 
-%% ---- (B) UNCOMMENT THESE THREE LINES WHEN THE SIGNED PDF IS READY ----
-% \includepdf[pages=-,fitpaper=true]{sections/internship_certificate_signed.pdf}
-% \clearpage
-% \endinput
+%% ---- (B) ACTIVE: embedding the standalone certificate PDF in place of the
+%%        inline LaTeX rendering. Replace internship_certificate_signed.pdf
+%%        with the V-Sign-DSC-signed copy once Pavan completes the digital
+%%        signature; no other changes needed.
+\includepdf[pages=-,fitpaper=true]{sections/internship_certificate_signed.pdf}
+\clearpage
+\endinput
 
-%% ---- (A) INLINE LATEX RENDERING (default; remove or comment when (B) is active) ----
+%% ---- (A) INLINE LATEX RENDERING (skipped via \endinput above; retained for fallback) ----
 
 \noindent\rule{\linewidth}{1.2pt}\\[0.04in]
 
