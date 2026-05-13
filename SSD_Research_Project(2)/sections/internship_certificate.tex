@@ -5,24 +5,41 @@
 
 %% =====================================================================
 %% Internship Certificate - VibeTensor Private Limited
-%% Tight single-page rendering.
+%% Two modes:
+%%   (A) DEFAULT - inline LaTeX rendering (the block below) for review /
+%%       compile-anywhere drafts.
+%%   (B) FINAL HARDBIND - embed the SIGNED scanned PDF in place of the
+%%       inline block by uncommenting the \includepdf line below AND
+%%       commenting out the inline block. The signed PDF should sit at:
+%%
+%%         sections/internship_certificate_signed.pdf
+%%
+%%       The Word template used to print + sign this letter lives at:
+%%         17_HR_AND_PAYROLL/Templates/CANDIDATES/BHAMIDI_SAI_PRANAY/
+%%         [R]_20260513_TPL_05_Internship_Certificate_Pranay_V1.0.docx
+%%
+%%       Workflow: open .docx in Word, replace the inline letterhead with
+%%       VibeTensor pre-printed stationery (or print on letterhead paper),
+%%       have Mr. Dubasi Pavan Kumar sign + affix seal, scan to PDF, save
+%%       as the path above, then switch to mode (B).
 %% =====================================================================
+
+%% ---- (B) UNCOMMENT THESE THREE LINES WHEN THE SIGNED PDF IS READY ----
+% \includepdf[pages=-,fitpaper=true]{sections/internship_certificate_signed.pdf}
+% \clearpage
+% \endinput
+
+%% ---- (A) INLINE LATEX RENDERING (default; remove or comment when (B) is active) ----
 
 \noindent\rule{\linewidth}{1.2pt}\\[0.04in]
 
-%% Letterhead: VibeTensor logo (left) + statutory company info (right)
-\begin{minipage}[c]{0.16\textwidth}
-\centering
-\includegraphics[width=0.85\linewidth]{sections/vibetensor_logo.png}
-\end{minipage}\hfill
-\begin{minipage}[c]{0.82\textwidth}
-\centering
-{\normalsize \textbf{VIBETENSOR PRIVATE LIMITED}}\\[1pt]
-{\scriptsize Reg.\ Office: 5-11-755/2, Sagara Colony Road No.\ 2, Vidyaranyapuri, Warangal,}\\
-{\scriptsize Hanamkonda, Telangana, India --- 506009}\\[1pt]
-{\scriptsize CIN: U74909TS2025PTC197692 \quad GSTIN: 36AAKCV9991Q1ZX \quad DPIIT: DIPP206711}\\
+%% Letterhead: horizontal VibeTensor wordmark (top, full-width) + statutory info (below)
+\begin{center}
+\includegraphics[width=0.55\linewidth]{sections/vibetensor_logo.png}\\[3pt]
+{\scriptsize Reg.\ Office: 5-11-755/2, Sagara Colony Road No.\ 2, Vidyaranyapuri, Warangal, Hanamkonda, Telangana, India --- 506009}\\[1pt]
+{\scriptsize CIN: U74909TS2025PTC197692 \quad GSTIN: 36AAKCV9991Q1ZX \quad DPIIT: DIPP206711}\\[1pt]
 {\scriptsize Email: info@vibetensor.com \quad Website: www.vibetensor.com}
-\end{minipage}
+\end{center}
 
 \vspace{0.04in}
 \noindent\rule{\linewidth}{0.3pt}\\[0.04in]

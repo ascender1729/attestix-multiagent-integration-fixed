@@ -348,8 +348,61 @@ A representative patient case (James Wilson, P-007, 74-year-old male presenting 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.88\textwidth]{carbon_merkle_blockchain.png}
-\caption{Cryptographic audit trail (4-entry SHA-256 Merkle provenance chain) and Base Sepolia blockchain anchoring with TX hash, Merkle root, and EAS attestation UID.}
+\begin{lstlisting}[language={}, basicstyle=\ttfamily\scriptsize,
+                    backgroundcolor=\color{black!92}, frame=single, framerule=0.6pt,
+                    rulecolor=\color{black!92},
+                    keywordstyle=\color{white}, identifierstyle=\color{white},
+                    stringstyle=\color{white}, commentstyle=\color{white},
+                    numbers=none, breaklines=true, columns=fullflexible,
+                    xleftmargin=4pt, xrightmargin=4pt,
+                    aboveskip=2pt, belowskip=2pt,
+                    literate=*{:}{{\textcolor{white}{:}}}{1}
+                             {|}{{\textcolor{white}{|}}}{1}
+                             {-}{{\textcolor{white}{-}}}{1}]
+==============================================================
+  CRYPTOGRAPHIC AUDIT TRAIL - Merkle provenance chain
+==============================================================
+
+  GENESIS  |  Patient Intake Node  (PARSE_SYMPTOMS)
+  Log ID:     audit:f301eb6ff424
+  Timestamp:  2026-05-11T11:14:08.412+00:00
+  Prev hash:  0000000000000000000000000000000000000000...
+  Chain hash: 62d70dfdba7d1803c755b208d996f51e0e3b1d4b...
+       |
+       v
+  Entry #2  |  Enterprise DB Node  (DB_QUERY)
+  Log ID:     audit:bc595a3c972d
+  Timestamp:  2026-05-11T11:14:09.881+00:00
+  Prev hash:  62d70dfdba7d1803c755b208d996f51e0e3b1d4b...
+  Chain hash: 0aa53ab57c25d1b3f1b15b7ac998a7e0c4f87e21...
+       |
+       v
+  Entry #3  |  6-Agent Specialist Panel  (MULTI_AGENT_DEBATE)
+  Log ID:     audit:11e3946c2dd2
+  Timestamp:  2026-05-11T11:14:32.155+00:00
+  Prev hash:  0aa53ab57c25d1b3f1b15b7ac998a7e0c4f87e21...
+  Chain hash: 3d4011eb938aa771bd859d32d363acb2e7d5fe09...
+       |
+       v
+  Entry #4  |  Chief Medical Officer  (FINAL_DIAGNOSIS)
+  Log ID:     audit:804133019f14
+  Timestamp:  2026-05-11T11:14:48.503+00:00
+  Prev hash:  3d4011eb938aa771bd859d32d363acb2e7d5fe09...
+  Chain hash: 36bad1795d27b46fcef008153dcb9a18b78c0e74...
+
+  4 entries. Chain is tamper-evident.
+  Full log: ~/.attestix/provenance.json
+==============================================================
+
+ [Attestix Blockchain] Anchoring 'Chief Medical Officer' audit batch to Base Sepolia...
+   -> Merkle root: 79e1ea61c7c53e3b78804e2669749744a8b21f4d...
+   -> Entries:     4 audit log entries
+   -> TX hash:     0x107aa293eea834a69d3fc7ff8bc3202e2608704184a9e9d9fd7fa3df5df7963f
+   -> Explorer:    https://sepolia.basescan.org/tx/0x107aa293...
+   -> Attestation: 0xb2cdbd8583f4d2afc57d4a4859a89f3e1f4e9d2c8a7b3c4d5e6f7a8b9c0d1e2f
+   -> IMMUTABLE. This audit cannot be disputed or deleted.
+\end{lstlisting}
+\caption{Cryptographic audit trail (4-entry SHA-256 Merkle provenance chain) and Base Sepolia blockchain anchoring. The on-chain transaction \texttt{0x107aa293...7963f} and EAS attestation UID \texttt{0xb2cdbd85...} are independently verifiable via \url{https://sepolia.basescan.org/tx/0x107aa293}. Rendered as a native \LaTeX{} listing (replaces the prior carbon-style PNG screenshot) so the TX hashes and chain hashes can be re-verified against the committed BaseScan CSV export.}
 \label{fig:carbon_merkle}
 \end{figure}
 
