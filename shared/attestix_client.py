@@ -212,11 +212,16 @@ class AttestixManager:
         name = self._agent_names.get(agent_id, agent_id[:8])
         print(f" [Attestix Provenance] Hash-chaining '{action_type}' for {name}...")
 
+        # Canonical ProvenanceService accepts ONLY: data_access, delegation,
+        # external_call, inference. There is no "decision" type. The earlier
+        # MED-13 "improvement" that mapped FINAL/RULING/VERDICT/ORDER to
+        # "decision" caused log_action to fail with "Invalid action_type" and
+        # silently broke the final-step provenance entry. Mapping is now
+        # conservative: DB/QUERY/FETCH go to data_access, everything else to
+        # inference.
         a = action_type.upper()
         if "DB" in a or "QUERY" in a or "FETCH" in a:
             official_type = "data_access"
-        elif "FINAL" in a or "RULING" in a or "VERDICT" in a or "ORDER" in a or "DECISION" in a:
-            official_type = "decision"
         else:
             official_type = "inference"
 

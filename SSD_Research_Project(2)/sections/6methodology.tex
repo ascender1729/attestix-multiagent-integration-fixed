@@ -361,36 +361,39 @@ A representative patient case (James Wilson, P-007, 74-year-old male presenting 
                              {-}{{\textcolor{white}{-}}}{1}]
 ==============================================================
   CRYPTOGRAPHIC AUDIT TRAIL - Merkle provenance chain
+  (Hospital regulated run, 2026-05-13)
 ==============================================================
 
-  GENESIS  |  Patient Intake Node  (PARSE_SYMPTOMS)
-  Log ID:     audit:f301eb6ff424
-  Timestamp:  2026-05-11T11:14:08.412+00:00
-  Prev hash:  0000000000000000000000000000000000000000...
-  Chain hash: 62d70dfdba7d1803c755b208d996f51e0e3b1d4b...
+  GENESIS  |  Patient Intake Node  (PARSE_SYMPTOMS, inference)
+  Log ID:     audit:c931e1b6428f
+  Timestamp:  2026-05-13T02:24:17.298+00:00
+  Prev hash:  00000000000000000000000000000000...
+  Chain hash: 95ebfd08810f1546251e79a16b34c935...
        |
        v
-  Entry #2  |  Enterprise DB Node  (DB_QUERY)
-  Log ID:     audit:bc595a3c972d
-  Timestamp:  2026-05-11T11:14:09.881+00:00
-  Prev hash:  62d70dfdba7d1803c755b208d996f51e0e3b1d4b...
-  Chain hash: 0aa53ab57c25d1b3f1b15b7ac998a7e0c4f87e21...
+  GENESIS  |  Enterprise DB Node  (DB_QUERY, data_access)
+  Log ID:     audit:f4a1c0a7dd0e
+  Timestamp:  2026-05-13T02:24:17.384+00:00
+  Prev hash:  00000000000000000000000000000000...
+  Chain hash: 9cbc375e37631876be6aa00cc40a62e2...
        |
        v
-  Entry #3  |  6-Agent Specialist Panel  (MULTI_AGENT_DEBATE)
-  Log ID:     audit:11e3946c2dd2
-  Timestamp:  2026-05-11T11:14:32.155+00:00
-  Prev hash:  0aa53ab57c25d1b3f1b15b7ac998a7e0c4f87e21...
-  Chain hash: 3d4011eb938aa771bd859d32d363acb2e7d5fe09...
+  GENESIS  |  6-Agent Specialist Panel  (MULTI_AGENT_DEBATE, inference)
+  Log ID:     audit:51dfdf7a5cff
+  Timestamp:  2026-05-13T02:24:27.658+00:00
+  Prev hash:  00000000000000000000000000000000...
+  Chain hash: 43915683f18f25d5c802530dda8d1968...
        |
        v
-  Entry #4  |  Chief Medical Officer  (FINAL_DIAGNOSIS)
-  Log ID:     audit:804133019f14
-  Timestamp:  2026-05-11T11:14:48.503+00:00
-  Prev hash:  3d4011eb938aa771bd859d32d363acb2e7d5fe09...
-  Chain hash: 36bad1795d27b46fcef008153dcb9a18b78c0e74...
+  GENESIS  |  Chief Medical Officer  (FINAL_DIAGNOSIS, inference)
+  Log ID:     audit:6469568fdffa
+  Timestamp:  2026-05-13T02:24:33.340+00:00
+  Prev hash:  00000000000000000000000000000000...
+  Chain hash: 302a94f3029a7217a624f08c2103e524...
 
-  4 entries. Chain is tamper-evident.
+  4 entries. Each agent maintains its own SHA-256 hash chain (per-agent
+  GENESIS); cross-agent linkage is established via the UCAN delegation
+  token referenced in each entry's decision_rationale.
   Full log: ~/.attestix/provenance.json
 ==============================================================
 
@@ -402,7 +405,7 @@ A representative patient case (James Wilson, P-007, 74-year-old male presenting 
    -> Attestation: 0xb2cdbd8583f4d2afc57d4a4859a89f3e1f4e9d2c8a7b3c4d5e6f7a8b9c0d1e2f
    -> IMMUTABLE. This audit cannot be disputed or deleted.
 \end{lstlisting}
-\caption{Cryptographic audit trail (4-entry SHA-256 Merkle provenance chain) and Base Sepolia blockchain anchoring. The on-chain transaction \texttt{0x107aa293...7963f} and EAS attestation UID \texttt{0xb2cdbd85...} are independently verifiable via \url{https://sepolia.basescan.org/tx/0x107aa293}. Rendered as a native \LaTeX{} listing (replaces the prior carbon-style PNG screenshot) so the TX hashes and chain hashes can be re-verified against the committed BaseScan CSV export.}
+\caption{Cryptographic audit trail (4-entry SHA-256 hash chain) for the regulated Hospital pipeline, captured from a fresh live run on 2026-05-13 with the patched code on AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0}. Each agent maintains its own per-agent chain (every entry is GENESIS within its agent's log); cross-agent provenance is established via the UCAN delegation token captured in each entry's \texttt{decision\_rationale}. The blockchain anchor record below uses the previously verified on-chain transaction \texttt{0x107aa293...7963f} and EAS attestation UID \texttt{0xb2cdbd85...} on Base Sepolia, independently inspectable at \url{https://sepolia.basescan.org/tx/0x107aa293}.}
 \label{fig:carbon_merkle}
 \end{figure}
 
