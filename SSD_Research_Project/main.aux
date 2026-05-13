@@ -1,0 +1,118 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {chapter}{Certificate}{i}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Internship Certificate}{ii}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Declaration}{iii}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Acknowledgement}{iv}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Dedication}{v}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{List of Abbreviations}{xii}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Overview}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Regulated AI Orchestration Using Attestix}{1}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Objectives}{2}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Importance}{2}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Scope of Work}{3}{section.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Literature Survey}{4}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Review}{4}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Challenges in Existing Systems}{8}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Comparison of Existing Multi-Agent Frameworks}{8}{section.2.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Security Properties of Existing Multi-Agent Frameworks}}{8}{table.caption.12}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:framework_comparison}{{2.1}{8}{Security Properties of Existing Multi-Agent Frameworks}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Methodology and Results}{9}{chapter.3}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Workflow}{9}{section.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Problem Definition}{9}{subsection.3.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Shared AttestixManager Design}{10}{subsection.3.1.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}{\ignorespaces Domain-specific client instantiation (Hospital)}}{10}{lstlisting.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Identity Provisioning (Pillar 1)}{10}{subsection.3.1.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}{\ignorespaces Identity provisioning output}}{10}{lstlisting.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}EU AI Act Compliance Profiles (Pillar 2)}{10}{subsection.3.1.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}{\ignorespaces Conformity gatekeeper blocking an unregistered agent}}{11}{lstlisting.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.5}UCAN Delegation Gates (Pillar 3)}{11}{subsection.3.1.5}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.4}{\ignorespaces UCAN delegation and verification}}{11}{lstlisting.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.6}Merkle Provenance Chain (Pillar 4)}{11}{subsection.3.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.7}W3C Verifiable Credentials (Pillar 5)}{11}{subsection.3.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.8}Blockchain Anchoring (Optional Extension)}{12}{subsection.3.1.8}\protected@file@percent }
+\newlabel{sec:blockchain}{{3.1.8}{12}{Blockchain Anchoring (Optional Extension)}{subsection.3.1.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.9}Threat Model and Limitations}{12}{subsection.3.1.9}\protected@file@percent }
+\newlabel{sec:limitations}{{3.1.9}{12}{Threat Model and Limitations}{subsection.3.1.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Framework Architecture}{13}{section.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Attestix Protocol module architecture (native LaTeX/TikZ rendering). The four domain projects (top) each instantiate the parameterised \texttt  {AttestixManager} from \texttt  {shared/attestix\_client.py}, which wraps the nine service modules in the pip-installed \texttt  {attestix} package. All cryptographic artefacts are persisted to the local JSON store under \texttt  {\textasciitilde /.attestix/}. The security middleware intercepts agent calls flowing from the five orchestration frameworks at the bottom.}}{14}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:architecture}{{3.1}{14}{Attestix Protocol module architecture (native LaTeX/TikZ rendering). The four domain projects (top) each instantiate the parameterised \texttt {AttestixManager} from \texttt {shared/attestix\_client.py}, which wraps the nine service modules in the pip-installed \texttt {attestix} package. All cryptographic artefacts are persisted to the local JSON store under \texttt {\textasciitilde /.attestix/}. The security middleware intercepts agent calls flowing from the five orchestration frameworks at the bottom}{figure.caption.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Hospital Pipeline Agent Configuration}}{15}{table.caption.14}\protected@file@percent }
+\newlabel{tab:hospital_config}{{3.1}{15}{Hospital Pipeline Agent Configuration}{table.caption.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Finance, ESG and Court Pipeline Agent Configurations}}{15}{table.caption.15}\protected@file@percent }
+\newlabel{tab:other_configs}{{3.2}{15}{Finance, ESG and Court Pipeline Agent Configurations}{table.caption.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Results Analysis}{15}{section.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Identity and Compliance Results}{15}{subsection.3.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Hospital regulated run: identity provisioning for all 4 agents, EU AI Act compliance profile generation, and W3C Verifiable Credential issuance (Phase 1 --- LangChain intake with vertical symptoms output).}}{16}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:carbon_reg_p1}{{3.2}{16}{Hospital regulated run: identity provisioning for all 4 agents, EU AI Act compliance profile generation, and W3C Verifiable Credential issuance (Phase 1 --- LangChain intake with vertical symptoms output)}{figure.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Sample Identity Provisioning Output (Hospital Run)}}{17}{table.caption.17}\protected@file@percent }
+\newlabel{tab:identity_output}{{3.3}{17}{Sample Identity Provisioning Output (Hospital Run)}{table.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}UCAN Delegation Results}{17}{subsection.3.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Hospital regulated run: UCAN delegation gates for all three handoffs (Phase 2 DB, Phase 3 CrewAI, Phase 4 CMO) showing capability verification, conformity gatekeeping, and Merkle provenance logging per agent.}}{18}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:carbon_reg_p2}{{3.3}{18}{Hospital regulated run: UCAN delegation gates for all three handoffs (Phase 2 DB, Phase 3 CrewAI, Phase 4 CMO) showing capability verification, conformity gatekeeping, and Merkle provenance logging per agent}{figure.caption.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces UCAN Delegation Verification Summary (All Domains)}}{19}{table.caption.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}End-to-End Hospital Case Study}{19}{subsection.3.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Unregulated baseline run (no Attestix): Phase 1 LangChain intake and Phase 2 Enterprise DB with no security gates, no delegation verification, and no provenance logging.}}{20}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:carbon_before_p1}{{3.4}{20}{Unregulated baseline run (no Attestix): Phase 1 LangChain intake and Phase 2 Enterprise DB with no security gates, no delegation verification, and no provenance logging}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Hospital regulated run: secure final diagnosis and treatment plan issued by the Chief Medical Officer, with Contrast Dye allergy flagged and no fatal drug interactions identified.}}{21}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:carbon_result}{{3.5}{21}{Hospital regulated run: secure final diagnosis and treatment plan issued by the Chief Medical Officer, with Contrast Dye allergy flagged and no fatal drug interactions identified}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Cryptographic audit trail (4-entry SHA-256 hash chain) for the regulated Hospital pipeline, captured from a fresh live run on 2026-05-13 with the patched code on AWS Bedrock \texttt  {us.meta.llama3-3-70b-instruct-v1:0}. Each agent maintains its own per-agent chain (every entry is GENESIS within its agent's log); cross-agent provenance is established via the UCAN delegation token captured in each entry's \texttt  {decision\_rationale}. The blockchain anchor record below uses the previously verified on-chain transaction \texttt  {0x107aa293...7963f} and EAS attestation UID \texttt  {0xb2cdbd85...} on Base Sepolia, independently inspectable at \url  {https://sepolia.basescan.org/tx/0x107aa293}.}}{22}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:carbon_merkle}{{3.6}{22}{Cryptographic audit trail (4-entry SHA-256 hash chain) for the regulated Hospital pipeline, captured from a fresh live run on 2026-05-13 with the patched code on AWS Bedrock \texttt {us.meta.llama3-3-70b-instruct-v1:0}. Each agent maintains its own per-agent chain (every entry is GENESIS within its agent's log); cross-agent provenance is established via the UCAN delegation token captured in each entry's \texttt {decision\_rationale}. The blockchain anchor record below uses the previously verified on-chain transaction \texttt {0x107aa293...7963f} and EAS attestation UID \texttt {0xb2cdbd85...} on Base Sepolia, independently inspectable at \url {https://sepolia.basescan.org/tx/0x107aa293}}{figure.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.5}{\ignorespaces Hospital Merkle Provenance Chain --- Final Verified Run (2026-05-11)}}{22}{table.caption.23}\protected@file@percent }
+\newlabel{tab:merkle_chain}{{3.5}{22}{Hospital Merkle Provenance Chain --- Final Verified Run (2026-05-11)}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Blockchain Anchoring Results}{23}{subsection.3.3.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces EAS attestation record on Base Sepolia confirming the hospital audit trail anchor (UID: \texttt  {0xb2cdbd8583f4d2afc57...})}}{23}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:easscan}{{3.7}{23}{EAS attestation record on Base Sepolia confirming the hospital audit trail anchor (UID: \texttt {0xb2cdbd8583f4d2afc57...})}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces BaseScan wallet history: schema registration (block 41364881), two reverted attest transactions due to insufficient gas limit, and the final successful anchoring (block 41365382)}}{23}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:basescan}{{3.8}{23}{BaseScan wallet history: schema registration (block 41364881), two reverted attest transactions due to insufficient gas limit, and the final successful anchoring (block 41365382)}{figure.caption.25}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.6}{\ignorespaces Base Sepolia EAS Anchoring Record --- Confirmed Transaction}}{24}{table.caption.26}\protected@file@percent }
+\newlabel{tab:blockchain_record}{{3.6}{24}{Base Sepolia EAS Anchoring Record --- Confirmed Transaction}{table.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Threat Model Coverage}{24}{subsection.3.3.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.7}{\ignorespaces Threat Model Coverage}}{24}{table.caption.27}\protected@file@percent }
+\newlabel{tab:threat_model}{{3.7}{24}{Threat Model Coverage}{table.caption.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.6}LLM Output Evaluation Results (V-1)}{24}{subsection.3.3.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3.8}{\ignorespaces V-1 LLM Output Evaluation Headline Scores}}{25}{table.caption.28}\protected@file@percent }
+\newlabel{tab:v1_headline}{{3.8}{25}{V-1 LLM Output Evaluation Headline Scores}{table.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.7}Pipeline Performance Benchmarks (V-5, V-6)}{25}{subsection.3.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.8}Regression Test Suite}{25}{subsection.3.3.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.9}Summary}{26}{subsection.3.3.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion and Future Works}{27}{chapter.4}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Conclusion}{27}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Future Works}{28}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}References}{30}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{Appendix}{33}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Appendix A --- Hospital Unregulated Baseline Run}{33}{section*.31}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Unregulated run: final diagnosis output. No audit log, no identity binding, no delegation record. The decision cannot be attributed to any specific agent after the fact.}}{34}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:carbon_before_p2}{{5.1}{34}{Unregulated run: final diagnosis output. No audit log, no identity binding, no delegation record. The decision cannot be attributed to any specific agent after the fact}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {section}{Appendix B --- Raw Provenance Log}{35}{figure.caption.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces provenance.json entries for Patient Intake Node (audit:8a34fee46459, action: inference) and Enterprise DB Node (audit:610a173579ae, action: data\_access). Both entries contain the UCAN token reference and Ed25519 signature.}}{35}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:prov_p1}{{5.2}{35}{provenance.json entries for Patient Intake Node (audit:8a34fee46459, action: inference) and Enterprise DB Node (audit:610a173579ae, action: data\_access). Both entries contain the UCAN token reference and Ed25519 signature}{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces provenance.json entries for 6-Agent Specialist Panel (audit:f65f932ea4d3, action: inference) and Chief Medical Officer (audit:dd756278702a, action: inference). All entries signed with \texttt  {did:key:z6MkhpCDcs...}}}{36}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:prov_p2}{{5.3}{36}{provenance.json entries for 6-Agent Specialist Panel (audit:f65f932ea4d3, action: inference) and Chief Medical Officer (audit:dd756278702a, action: inference). All entries signed with \texttt {did:key:z6MkhpCDcs...}}{figure.caption.34}{}}
+\@writefile{toc}{\contentsline {section}{Appendix C --- Blockchain Transaction CSV Export}{37}{figure.caption.34}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces BaseScan CSV Export --- All Transactions for Hospital Wallet}}{37}{table.caption.35}\protected@file@percent }
+\newlabel{tab:csv_export}{{5.1}{37}{BaseScan CSV Export --- All Transactions for Hospital Wallet}{table.caption.35}{}}
+\@writefile{toc}{\contentsline {section}{Appendix D --- LLM Output Evaluation Scores (V-1)}{38}{table.caption.35}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces V-1 Domain Aggregate Scores (Bedrock, 5 fixtures per domain)}}{38}{table.caption.36}\protected@file@percent }
+\newlabel{tab:v1_domain_scores}{{5.2}{38}{V-1 Domain Aggregate Scores (Bedrock, 5 fixtures per domain)}{table.caption.36}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces V-1 Adversarial Safety Probe Scorecard}}{38}{table.caption.37}\protected@file@percent }
+\newlabel{tab:v1_safety_probes}{{5.3}{38}{V-1 Adversarial Safety Probe Scorecard}{table.caption.37}{}}
+\@writefile{toc}{\contentsline {section}{Appendix E --- Pipeline Performance Benchmarks (V-5 / V-6)}{38}{table.caption.37}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Per-Domain Pipeline Benchmarks (single representative run)}}{39}{table.caption.38}\protected@file@percent }
+\newlabel{tab:benchmarks}{{5.4}{39}{Per-Domain Pipeline Benchmarks (single representative run)}{table.caption.38}{}}
+\@writefile{toc}{\contentsline {section}{Appendix F --- On-Chain Gas-Cost Analysis (V-7)}{39}{table.caption.38}\protected@file@percent }
+\gdef \@abspage@last{52}

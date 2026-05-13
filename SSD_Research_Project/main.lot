@@ -1,0 +1,18 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Security Properties of Existing Multi-Agent Frameworks}}{8}{table.caption.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Hospital Pipeline Agent Configuration}}{15}{table.caption.14}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Finance, ESG and Court Pipeline Agent Configurations}}{15}{table.caption.15}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Sample Identity Provisioning Output (Hospital Run)}}{17}{table.caption.17}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces UCAN Delegation Verification Summary (All Domains)}}{19}{table.caption.19}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Hospital Merkle Provenance Chain --- Final Verified Run (2026-05-11)}}{22}{table.caption.23}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Base Sepolia EAS Anchoring Record --- Confirmed Transaction}}{24}{table.caption.26}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Threat Model Coverage}}{24}{table.caption.27}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces V-1 LLM Output Evaluation Headline Scores}}{25}{table.caption.28}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces BaseScan CSV Export --- All Transactions for Hospital Wallet}}{37}{table.caption.35}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces V-1 Domain Aggregate Scores (Bedrock, 5 fixtures per domain)}}{38}{table.caption.36}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces V-1 Adversarial Safety Probe Scorecard}}{38}{table.caption.37}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Per-Domain Pipeline Benchmarks (single representative run)}}{39}{table.caption.38}%
