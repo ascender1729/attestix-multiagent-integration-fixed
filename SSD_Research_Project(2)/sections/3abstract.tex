@@ -4,30 +4,23 @@
 
 \vspace*{-\topskip}
 \rule{\linewidth}{2pt} \\
-\vspace{0.1in}
+\vspace{0.05in}
 
 \begin{center}
-{\bf \Large ABSTRACT }\\
-\par\vspace{5mm}
+{\bf \Large ABSTRACT}
 \end{center}
+\vspace{0.05in}
 
 \setlength{\parindent}{15pt}
 \setlength{\parskip}{0.4em}
-Autonomous AI agents are being deployed increasingly in regulated sectors such as healthcare, finance, law, and environmental governance. While these systems can make high-stakes decisions, most existing multi-agent frameworks like LangChain, CrewAI, LangGraph, and the OpenAI Agents SDK were built for capability and not for compliance. They offer no built-in mechanisms for verifying agent identity, controlling data access, or maintaining tamper-proof records of decisions.
-\\[0.1in]
 
-This project addresses that gap by integrating the Attestix Protocol, a pip-installable Python security library, as a security layer across four domain simulations: an Autonomous Medical Board, an Algorithmic Hedge Fund, a Global ESG Supply Chain Auditor, and an Autonomous Legal Advisory Panel. Each domain uses a different combination of orchestration frameworks, showing that the security layer works independently of the underlying tools.
-\\[0.1in]
+Autonomous AI agents are being deployed in regulated sectors such as healthcare, finance, law, and environmental governance. Existing multi-agent frameworks (LangChain, CrewAI, LangGraph, Semantic Kernel, OpenAI Agents SDK) were built for capability rather than compliance: they provide no built-in mechanisms for verifying agent identity, controlling data access, or maintaining tamper-proof records of decisions.
 
-The integration covers five security areas: agent identity using Ed25519-backed Decentralised Identifiers (DIDs); access control through UCAN delegation tokens with cryptographic verification; role certification via W3C Verifiable Credentials; tamper-evident decision logging through SHA-256 Merkle provenance chains; and EU AI Act compliance profiles mapping each agent to Annex III risk categories. As an optional extension, audit records are anchored to the Base Sepolia blockchain using the Ethereum Attestation Service (EAS).
-\\[0.1in]
+This project integrates the Attestix Protocol, a pip-installable Python security library, as a non-invasive middleware across four domain simulations: an AI-Assisted Medical Panel, an Algorithmic Hedge Fund, a Global ESG Supply Chain Auditor, and an Autonomous Legal Advisory Panel. Each domain uses a different mix of orchestration frameworks, demonstrating that the security layer is framework-agnostic.
 
-Results show that every agent decision is traceable and cryptographically signed, unauthorised access is blocked at the delegation gate (fail-closed on missing delegation), and the full audit trail is hash-chained and cannot be silently modified. A live on-chain transaction (EAS attestation UID: \texttt{0xb2cdbd85...}) confirms that audit records can be made permanently verifiable on a public blockchain.
-\\[0.1in]
+Five security pillars are exercised end-to-end: Ed25519-backed Decentralised Identifiers (DIDs); UCAN delegation tokens with cryptographic verification; W3C Verifiable Credentials for role certification; SHA-256 Merkle provenance chains for tamper-evident decision logging; and EU AI Act compliance profiles aligned to Annex III risk categories. An optional extension anchors the Merkle root to Base Sepolia via the Ethereum Attestation Service (live attestation UID: \texttt{0xb2cdbd85...}).
 
-The integration is validated by a 13-case automated test suite (13/13 passing on every CI run) and a 20-fixture golden-prompt evaluation harness with seven adversarial safety probes. The Hospital pipeline achieves an aggregate evaluation score of 0.890 (passing the 0.80 regression bar); five of seven safety probes pass outright across all four domains. The pipelines are provider-agnostic at the inference layer: a single shared factory routes interchangeably to Groq \texttt{llama-3.3-70b-versatile} or to AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0}, demonstrating the security layer is independent of the LLM host. An OWASP LLM01 prompt-injection mitigation layer (spotlighting delimiters plus a regex-based injection detector) is applied at every external-input boundary.
-
-\vspace{2cm}
+The integration is validated by a 13-case automated test suite (13/13 passing) and a 20-fixture golden-prompt evaluation harness with seven adversarial safety probes; the Hospital pipeline achieves an aggregate evaluation score of 0.890 (above the 0.80 regression bar) and five of seven safety probes pass outright. The pipelines are provider-agnostic at the inference layer (Groq \texttt{llama-3.3-70b-versatile} or AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0} via a single factory), and an OWASP LLM01 prompt-injection mitigation layer is applied at every external-input boundary.
 
 \vfill
 \rule{\linewidth}{1pt}

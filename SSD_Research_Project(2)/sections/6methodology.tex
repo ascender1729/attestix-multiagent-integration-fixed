@@ -174,9 +174,11 @@ The proposed security architecture introduces Attestix as a middleware layer int
         label={[font=\scriptsize\itshape,color=red!50!black]above:attestix Python Package (v0.3.0)}] {};
 \end{scope}
 
-% Arrow from manager down into the package container (above the IdentityService box)
-\draw[arrowstyle] (mgr.south) -- ([yshift=0.1cm]identity.north -| mgr.south)
-  node[midway, right, font=\scriptsize\itshape, color=gray] {\texttt{pip install attestix}};
+% Arrow from manager down into the package container.
+% The dashed container's own label already says "attestix Python Package (v0.3.0)",
+% so the redundant "pip install attestix" caption was removed - the arrow alone
+% suffices to show the dependency direction.
+\draw[arrowstyle] (mgr.south) -- ([yshift=0.1cm]identity.north -| mgr.south);
 
 % Row 5: AI orchestration frameworks
 \node[fwbox, below=1.0cm of store.south west, xshift=0.4cm, anchor=north west] (lc) {LangChain};
