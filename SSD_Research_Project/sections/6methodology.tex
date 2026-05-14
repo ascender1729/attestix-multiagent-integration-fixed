@@ -405,7 +405,7 @@ A representative patient case (James Wilson, P-007, 74-year-old male presenting 
    -> Attestation: 0xb2cdbd8583f4d2afc57d4a4859a89f3e1f4e9d2c8a7b3c4d5e6f7a8b9c0d1e2f
    -> IMMUTABLE. This audit cannot be disputed or deleted.
 \end{lstlisting}
-\caption{Cryptographic audit trail (4-entry SHA-256 hash chain) for the regulated Hospital pipeline, captured from a fresh live run on 2026-05-13 with the patched code on AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0}. Each agent maintains its own per-agent chain (every entry is GENESIS within its agent's log); cross-agent provenance is established via the UCAN delegation token captured in each entry's \texttt{decision\_rationale}. The blockchain anchor record below uses the previously verified on-chain transaction \texttt{0x107aa293...7963f} and EAS attestation UID \texttt{0xb2cdbd85...} on Base Sepolia, independently inspectable at \url{https://sepolia.basescan.org/tx/0x107aa293}.}
+\caption{Cryptographic audit trail (4-entry SHA-256 hash chain) for the regulated Hospital pipeline, captured from a fresh live run on 2026-05-13 with the patched code on AWS Bedrock \texttt{us.meta.llama3-3-70b-instruct-v1:0}. Each agent maintains its own per-agent chain (every entry is GENESIS within its agent's log); cross-agent provenance is established via the UCAN delegation token captured in each entry's \texttt{decision\_rationale}. The blockchain anchor record below uses the previously verified on-chain transaction \texttt{0x107aa293...7963f} and EAS attestation UID \texttt{0xb2cdbd85...} on Base Sepolia, independently inspectable at \url{https://sepolia.basescan.org/tx/0x107aa293eea834a69d3fc7ff8bc3202e2608704184a9e9d9fd7fa3df5df7963f}.}
 \label{fig:carbon_merkle}
 \end{figure}
 
